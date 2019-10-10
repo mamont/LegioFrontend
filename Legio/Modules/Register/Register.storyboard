@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Register View-->
+        <scene sceneID="Tyv-lc-aL5">
+            <objects>
+                <viewController storyboardIdentifier="RegisterView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qh2-oD-D26" customClass="RegisterView" customModule="Legio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aR8-3j-Qi1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="wxz-cf-mIb">
+                                <rect key="frame" x="16" y="384" width="382" height="138"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMq-Rd-aaM">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pass" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sOs-9v-ZRl">
+                                        <rect key="frame" x="0.0" y="46" width="382" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8yT-fw-xGK">
+                                        <rect key="frame" x="0.0" y="92" width="382" height="46"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Seu-pM-Lx5">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="46"/>
+                                                <state key="normal" title="Sign In"/>
+                                                <connections>
+                                                    <action selector="buttonSingInTapped:" destination="Qh2-oD-D26" eventType="touchUpInside" id="zgp-tX-2Uy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="Cdo-Cy-ogi"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZzH-qh-B4x" firstAttribute="trailing" secondItem="wxz-cf-mIb" secondAttribute="trailing" constant="16" id="QzE-Tb-NLu"/>
+                            <constraint firstItem="wxz-cf-mIb" firstAttribute="leading" secondItem="ZzH-qh-B4x" secondAttribute="leading" constant="16" id="V1W-1r-BTW"/>
+                            <constraint firstItem="wxz-cf-mIb" firstAttribute="centerY" secondItem="ZzH-qh-B4x" secondAttribute="centerY" id="oaa-sP-AVe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZzH-qh-B4x"/>
+                    </view>
+                    <connections>
+                        <outlet property="textFieldLogin" destination="eMq-Rd-aaM" id="2jy-t1-quY"/>
+                        <outlet property="textFieldPassword" destination="sOs-9v-ZRl" id="SDi-PD-ZCE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qaw-dP-Ktd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-168" y="94"/>
+        </scene>
+    </scenes>
+</document>

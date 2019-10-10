@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Forgot View-->
+        <scene sceneID="Btk-SZ-YiI">
+            <objects>
+                <viewController storyboardIdentifier="ForgotView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZdE-D0-hdP" customClass="ForgotView" customModule="Legio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hFO-rY-x95">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bO8-SH-hXl">
+                                <rect key="frame" x="16" y="407" width="382" height="92"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7l2-5l-nWU">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CVG-0I-CPQ">
+                                        <rect key="frame" x="0.0" y="46" width="382" height="46"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9W-bo-OcI">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="46"/>
+                                                <state key="normal" title="Forgot"/>
+                                                <connections>
+                                                    <action selector="buttonForgotTapped:" destination="ZdE-D0-hdP" eventType="touchUpInside" id="wwE-VS-W9n"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="WxM-i7-OBk"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bO8-SH-hXl" firstAttribute="leading" secondItem="HbO-4T-a2p" secondAttribute="leading" constant="16" id="UF6-Op-PMK"/>
+                            <constraint firstItem="HbO-4T-a2p" firstAttribute="trailing" secondItem="bO8-SH-hXl" secondAttribute="trailing" constant="16" id="fBC-XB-S1Q"/>
+                            <constraint firstItem="bO8-SH-hXl" firstAttribute="centerY" secondItem="HbO-4T-a2p" secondAttribute="centerY" id="fj0-80-W0G"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HbO-4T-a2p"/>
+                    </view>
+                    <connections>
+                        <outlet property="textFieldLogin" destination="7l2-5l-nWU" id="lb8-tK-jcs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RcJ-ah-4Hd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-168" y="94"/>
+        </scene>
+    </scenes>
+</document>

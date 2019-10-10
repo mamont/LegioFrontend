@@ -1,0 +1,562 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA2654A2234F54D60013B777 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654A1234F54D60013B777 /* AppDelegate.swift */; };
+		AA2654AA234F54D60013B777 /* Legio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA2654A8234F54D60013B777 /* Legio.xcdatamodeld */; };
+		AA2654AC234F54DA0013B777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA2654AB234F54DA0013B777 /* Assets.xcassets */; };
+		AA2654AF234F54DA0013B777 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA2654AD234F54DA0013B777 /* LaunchScreen.storyboard */; };
+		AA2654B9234F56E90013B777 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA2654B8234F56E90013B777 /* Root.storyboard */; };
+		AA2654BB234F57050013B777 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654BA234F57050013B777 /* RootView.swift */; };
+		AA2654C8234F5BA00013B777 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654C7234F5BA00013B777 /* RootRouter.swift */; };
+		AA2654CB234F5EFC0013B777 /* ViewControllerNavigation+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654CA234F5EFC0013B777 /* ViewControllerNavigation+Ex.swift */; };
+		AA2654CD234F5F7F0013B777 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654CC234F5F7F0013B777 /* BaseRouter.swift */; };
+		AA2654D0234F61740013B777 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654CF234F61740013B777 /* AuthView.swift */; };
+		AA2654D2234F61820013B777 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654D1234F61820013B777 /* AuthRouter.swift */; };
+		AA2654D4234F618D0013B777 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA2654D3234F618D0013B777 /* Auth.storyboard */; };
+		AA2654DA234F66D50013B777 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654D9234F66D50013B777 /* RegisterView.swift */; };
+		AA2654DC234F66E50013B777 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654DB234F66E50013B777 /* RegisterRouter.swift */; };
+		AA2654DE234F66F10013B777 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA2654DD234F66F10013B777 /* Register.storyboard */; };
+		AA2654E0234F67020013B777 /* ForgotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654DF234F67020013B777 /* ForgotView.swift */; };
+		AA2654E2234F67110013B777 /* ForgotRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654E1234F67110013B777 /* ForgotRouter.swift */; };
+		AA2654E4234F671A0013B777 /* Forgot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA2654E3234F671A0013B777 /* Forgot.storyboard */; };
+		AA2654E6234F682D0013B777 /* PresetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654E5234F682D0013B777 /* PresetView.swift */; };
+		AA2654E8234F68360013B777 /* PresetRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654E7234F68360013B777 /* PresetRouter.swift */; };
+		AA2654EA234F683F0013B777 /* Preset.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA2654E9234F683F0013B777 /* Preset.storyboard */; };
+		AA2654ED234F6B730013B777 /* EventTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654EC234F6B730013B777 /* EventTypesView.swift */; };
+		AA2654EF234F6B820013B777 /* EventTypesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654EE234F6B820013B777 /* EventTypesRouter.swift */; };
+		AA2654F1234F6B8C0013B777 /* EventTypes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA2654F0234F6B8C0013B777 /* EventTypes.storyboard */; };
+		AA2654F3234F6C490013B777 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654F2234F6C490013B777 /* MainView.swift */; };
+		AA2654F5234F6C520013B777 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654F4234F6C520013B777 /* MainRouter.swift */; };
+		AA2654F7234F6C5B0013B777 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA2654F6234F6C5B0013B777 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA26549E234F54D60013B777 /* Legio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Legio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA2654A1234F54D60013B777 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AA2654A9234F54D60013B777 /* Legio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Legio.xcdatamodel; sourceTree = "<group>"; };
+		AA2654AB234F54DA0013B777 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA2654AE234F54DA0013B777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AA2654B0234F54DA0013B777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA2654B8234F56E90013B777 /* Root.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
+		AA2654BA234F57050013B777 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		AA2654C7234F5BA00013B777 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		AA2654CA234F5EFC0013B777 /* ViewControllerNavigation+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerNavigation+Ex.swift"; sourceTree = "<group>"; };
+		AA2654CC234F5F7F0013B777 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		AA2654CF234F61740013B777 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		AA2654D1234F61820013B777 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		AA2654D3234F618D0013B777 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		AA2654D9234F66D50013B777 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		AA2654DB234F66E50013B777 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		AA2654DD234F66F10013B777 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		AA2654DF234F67020013B777 /* ForgotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotView.swift; sourceTree = "<group>"; };
+		AA2654E1234F67110013B777 /* ForgotRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotRouter.swift; sourceTree = "<group>"; };
+		AA2654E3234F671A0013B777 /* Forgot.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Forgot.storyboard; sourceTree = "<group>"; };
+		AA2654E5234F682D0013B777 /* PresetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetView.swift; sourceTree = "<group>"; };
+		AA2654E7234F68360013B777 /* PresetRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetRouter.swift; sourceTree = "<group>"; };
+		AA2654E9234F683F0013B777 /* Preset.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preset.storyboard; sourceTree = "<group>"; };
+		AA2654EC234F6B730013B777 /* EventTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTypesView.swift; sourceTree = "<group>"; };
+		AA2654EE234F6B820013B777 /* EventTypesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTypesRouter.swift; sourceTree = "<group>"; };
+		AA2654F0234F6B8C0013B777 /* EventTypes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventTypes.storyboard; sourceTree = "<group>"; };
+		AA2654F2234F6C490013B777 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		AA2654F4234F6C520013B777 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		AA2654F6234F6C5B0013B777 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA26549B234F54D60013B777 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA265495234F54D60013B777 = {
+			isa = PBXGroup;
+			children = (
+				AA2654A0234F54D60013B777 /* Legio */,
+				AA26549F234F54D60013B777 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA26549F234F54D60013B777 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA26549E234F54D60013B777 /* Legio.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA2654A0234F54D60013B777 /* Legio */ = {
+			isa = PBXGroup;
+			children = (
+				AA2654BD234F58060013B777 /* Application */,
+				AA2654BE234F581B0013B777 /* Common */,
+				AA2654B6234F56D50013B777 /* Modules */,
+				AA2654BC234F57100013B777 /* Resources */,
+			);
+			path = Legio;
+			sourceTree = "<group>";
+		};
+		AA2654B6234F56D50013B777 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				AA2654B7234F56DE0013B777 /* Root */,
+				AA2654CE234F61640013B777 /* Auth */,
+				AA2654D7234F64170013B777 /* Register */,
+				AA2654D6234F640A0013B777 /* Forgot */,
+				AA2654D8234F64C30013B777 /* Preset */,
+				AA2654EB234F6B560013B777 /* EventTypes */,
+				AA2654D5234F64000013B777 /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		AA2654B7234F56DE0013B777 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				AA2654BA234F57050013B777 /* RootView.swift */,
+				AA2654C7234F5BA00013B777 /* RootRouter.swift */,
+				AA2654B8234F56E90013B777 /* Root.storyboard */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		AA2654BC234F57100013B777 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA2654AB234F54DA0013B777 /* Assets.xcassets */,
+				AA2654AD234F54DA0013B777 /* LaunchScreen.storyboard */,
+				AA2654B0234F54DA0013B777 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AA2654BD234F58060013B777 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				AA2654A1234F54D60013B777 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		AA2654BE234F581B0013B777 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AA2654C9234F5EE30013B777 /* Extension */,
+				AA2654C4234F5AEE0013B777 /* Prototypes */,
+				AA2654C3234F5ADD0013B777 /* Models */,
+				AA2654BF234F582C0013B777 /* Services */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		AA2654BF234F582C0013B777 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AA2654C0234F58310013B777 /* Database */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AA2654C0234F58310013B777 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				AA2654A8234F54D60013B777 /* Legio.xcdatamodeld */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		AA2654C3234F5ADD0013B777 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AA2654C4234F5AEE0013B777 /* Prototypes */ = {
+			isa = PBXGroup;
+			children = (
+				AA2654CC234F5F7F0013B777 /* BaseRouter.swift */,
+			);
+			path = Prototypes;
+			sourceTree = "<group>";
+		};
+		AA2654C9234F5EE30013B777 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AA2654CA234F5EFC0013B777 /* ViewControllerNavigation+Ex.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		AA2654CE234F61640013B777 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				AA2654CF234F61740013B777 /* AuthView.swift */,
+				AA2654D1234F61820013B777 /* AuthRouter.swift */,
+				AA2654D3234F618D0013B777 /* Auth.storyboard */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		AA2654D5234F64000013B777 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AA2654F2234F6C490013B777 /* MainView.swift */,
+				AA2654F4234F6C520013B777 /* MainRouter.swift */,
+				AA2654F6234F6C5B0013B777 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		AA2654D6234F640A0013B777 /* Forgot */ = {
+			isa = PBXGroup;
+			children = (
+				AA2654DF234F67020013B777 /* ForgotView.swift */,
+				AA2654E1234F67110013B777 /* ForgotRouter.swift */,
+				AA2654E3234F671A0013B777 /* Forgot.storyboard */,
+			);
+			path = Forgot;
+			sourceTree = "<group>";
+		};
+		AA2654D7234F64170013B777 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				AA2654D9234F66D50013B777 /* RegisterView.swift */,
+				AA2654DB234F66E50013B777 /* RegisterRouter.swift */,
+				AA2654DD234F66F10013B777 /* Register.storyboard */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		AA2654D8234F64C30013B777 /* Preset */ = {
+			isa = PBXGroup;
+			children = (
+				AA2654E5234F682D0013B777 /* PresetView.swift */,
+				AA2654E7234F68360013B777 /* PresetRouter.swift */,
+				AA2654E9234F683F0013B777 /* Preset.storyboard */,
+			);
+			path = Preset;
+			sourceTree = "<group>";
+		};
+		AA2654EB234F6B560013B777 /* EventTypes */ = {
+			isa = PBXGroup;
+			children = (
+				AA2654EC234F6B730013B777 /* EventTypesView.swift */,
+				AA2654EE234F6B820013B777 /* EventTypesRouter.swift */,
+				AA2654F0234F6B8C0013B777 /* EventTypes.storyboard */,
+			);
+			path = EventTypes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA26549D234F54D60013B777 /* Legio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA2654B3234F54DA0013B777 /* Build configuration list for PBXNativeTarget "Legio" */;
+			buildPhases = (
+				AA26549A234F54D60013B777 /* Sources */,
+				AA26549B234F54D60013B777 /* Frameworks */,
+				AA26549C234F54D60013B777 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Legio;
+			productName = Legio;
+			productReference = AA26549E234F54D60013B777 /* Legio.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA265496234F54D60013B777 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Марат Нургалиев";
+				TargetAttributes = {
+					AA26549D234F54D60013B777 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = AA265499234F54D60013B777 /* Build configuration list for PBXProject "Legio" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA265495234F54D60013B777;
+			productRefGroup = AA26549F234F54D60013B777 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA26549D234F54D60013B777 /* Legio */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA26549C234F54D60013B777 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA2654D4234F618D0013B777 /* Auth.storyboard in Resources */,
+				AA2654EA234F683F0013B777 /* Preset.storyboard in Resources */,
+				AA2654E4234F671A0013B777 /* Forgot.storyboard in Resources */,
+				AA2654F1234F6B8C0013B777 /* EventTypes.storyboard in Resources */,
+				AA2654AF234F54DA0013B777 /* LaunchScreen.storyboard in Resources */,
+				AA2654AC234F54DA0013B777 /* Assets.xcassets in Resources */,
+				AA2654F7234F6C5B0013B777 /* Main.storyboard in Resources */,
+				AA2654B9234F56E90013B777 /* Root.storyboard in Resources */,
+				AA2654DE234F66F10013B777 /* Register.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA26549A234F54D60013B777 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA2654DA234F66D50013B777 /* RegisterView.swift in Sources */,
+				AA2654DC234F66E50013B777 /* RegisterRouter.swift in Sources */,
+				AA2654A2234F54D60013B777 /* AppDelegate.swift in Sources */,
+				AA2654CD234F5F7F0013B777 /* BaseRouter.swift in Sources */,
+				AA2654E0234F67020013B777 /* ForgotView.swift in Sources */,
+				AA2654AA234F54D60013B777 /* Legio.xcdatamodeld in Sources */,
+				AA2654C8234F5BA00013B777 /* RootRouter.swift in Sources */,
+				AA2654E2234F67110013B777 /* ForgotRouter.swift in Sources */,
+				AA2654D0234F61740013B777 /* AuthView.swift in Sources */,
+				AA2654EF234F6B820013B777 /* EventTypesRouter.swift in Sources */,
+				AA2654ED234F6B730013B777 /* EventTypesView.swift in Sources */,
+				AA2654F3234F6C490013B777 /* MainView.swift in Sources */,
+				AA2654CB234F5EFC0013B777 /* ViewControllerNavigation+Ex.swift in Sources */,
+				AA2654D2234F61820013B777 /* AuthRouter.swift in Sources */,
+				AA2654E6234F682D0013B777 /* PresetView.swift in Sources */,
+				AA2654BB234F57050013B777 /* RootView.swift in Sources */,
+				AA2654E8234F68360013B777 /* PresetRouter.swift in Sources */,
+				AA2654F5234F6C520013B777 /* MainRouter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AA2654AD234F54DA0013B777 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA2654AE234F54DA0013B777 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA2654B1234F54DA0013B777 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA2654B2234F54DA0013B777 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA2654B4234F54DA0013B777 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7J4TANDD7J;
+				INFOPLIST_FILE = "$(SRCROOT)/Legio/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.gb.Legio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA2654B5234F54DA0013B777 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7J4TANDD7J;
+				INFOPLIST_FILE = "$(SRCROOT)/Legio/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.gb.Legio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA265499234F54D60013B777 /* Build configuration list for PBXProject "Legio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA2654B1234F54DA0013B777 /* Debug */,
+				AA2654B2234F54DA0013B777 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA2654B3234F54DA0013B777 /* Build configuration list for PBXNativeTarget "Legio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA2654B4234F54DA0013B777 /* Debug */,
+				AA2654B5234F54DA0013B777 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AA2654A8234F54D60013B777 /* Legio.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AA2654A9234F54D60013B777 /* Legio.xcdatamodel */,
+			);
+			currentVersion = AA2654A9234F54D60013B777 /* Legio.xcdatamodel */;
+			path = Legio.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AA265496234F54D60013B777 /* Project object */;
+}
