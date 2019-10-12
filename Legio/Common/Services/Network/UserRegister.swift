@@ -11,10 +11,6 @@ import UIKit
 extension RegisterView {
     func registerUser() {
         
-        let configuration = URLSessionConfiguration.default
-        // создаем свою сесию
-        let sesion = URLSession(configuration: configuration)
-        // создаем конструктор для URL
         var urlConstructor = URLComponents()
         
         
@@ -42,6 +38,8 @@ extension RegisterView {
         
         URLSession.shared.dataTask(with: requst) { (data, response, error) in
             guard let data = data else { return }
+            let json = try! JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
+            print(json)
             DispatchQueue.main.async {
                 do {
                     let items = try JSONDecoder().decode(Success.self, from: data)

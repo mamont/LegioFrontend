@@ -38,11 +38,12 @@ class AuthView: UIViewController {
 extension AuthView {
 	
 	@IBAction func buttonSingInTapped(_ sender: Any) {
-		router?.showSingIn()
+		authUser()
 	}
 	
 	@IBAction func buttonForgotTapped(_ sender: Any) {
-		router?.showForgot()
+        plugsAlert(title: "This feature is not available yet")
+        //router?.showForgot()
 	}
 	
 	@IBAction func buttonRegisterTapped(_ sender: Any) {
