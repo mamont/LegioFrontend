@@ -21,6 +21,6 @@ extension RootRouter: RootRouterProtocol {
 	func showAuth() {
 		let controller = UIStoryboard(name: "Auth", bundle: nil)
 			.instantiateViewController(withIdentifier: AuthView.storyboardIdentifier)
-		self.show(controller)
+		self.present(controller)
 	}
 }

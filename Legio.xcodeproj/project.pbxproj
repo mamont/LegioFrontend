@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08D896F8235265180026ACBC /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D896F7235265180026ACBC /* UserRegister.swift */; };
+		08D896FA23526F2D0026ACBC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D896F923526F2D0026ACBC /* User.swift */; };
 		AA2654A2234F54D60013B777 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654A1234F54D60013B777 /* AppDelegate.swift */; };
 		AA2654AA234F54D60013B777 /* Legio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA2654A8234F54D60013B777 /* Legio.xcdatamodeld */; };
 		AA2654AC234F54DA0013B777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA2654AB234F54DA0013B777 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08D896F7235265180026ACBC /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
+		08D896F923526F2D0026ACBC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = Legio/Common/Services/Network/User.swift; sourceTree = SOURCE_ROOT; };
 		AA26549E234F54D60013B777 /* Legio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Legio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA2654A1234F54D60013B777 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA2654A9234F54D60013B777 /* Legio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Legio.xcdatamodel; sourceTree = "<group>"; };
@@ -79,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08D896F6235264FF0026ACBC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				08D896F7235265180026ACBC /* UserRegister.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		AA265495234F54D60013B777 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +174,7 @@
 		AA2654BF234F582C0013B777 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				08D896F6235264FF0026ACBC /* Network */,
 				AA2654C0234F58310013B777 /* Database */,
 			);
 			path = Services;
@@ -178,6 +191,7 @@
 		AA2654C3234F5ADD0013B777 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				08D896F923526F2D0026ACBC /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -343,6 +357,7 @@
 				AA2654AA234F54D60013B777 /* Legio.xcdatamodeld in Sources */,
 				AA2654C8234F5BA00013B777 /* RootRouter.swift in Sources */,
 				AA2654E2234F67110013B777 /* ForgotRouter.swift in Sources */,
+				08D896FA23526F2D0026ACBC /* User.swift in Sources */,
 				AA2654D0234F61740013B777 /* AuthView.swift in Sources */,
 				AA2654EF234F6B820013B777 /* EventTypesRouter.swift in Sources */,
 				AA2654ED234F6B730013B777 /* EventTypesView.swift in Sources */,
@@ -351,6 +366,7 @@
 				AA2654D2234F61820013B777 /* AuthRouter.swift in Sources */,
 				AA2654E6234F682D0013B777 /* PresetView.swift in Sources */,
 				AA2654BB234F57050013B777 /* RootView.swift in Sources */,
+				08D896F8235265180026ACBC /* UserRegister.swift in Sources */,
 				AA2654E8234F68360013B777 /* PresetRouter.swift in Sources */,
 				AA2654F5234F6C520013B777 /* MainRouter.swift in Sources */,
 			);

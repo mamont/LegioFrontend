@@ -36,7 +36,7 @@ class RegisterView: UIViewController {
 extension RegisterView {
 	
 	@IBAction func buttonSingInTapped(_ sender: Any) {
-		router?.showSingIn()
+		registerUser()
 	}
 	
 }
