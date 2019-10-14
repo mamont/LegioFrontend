@@ -22,10 +22,15 @@ class RegisterView: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = false
 		self.navigationItem.title = titleText
 		router = RegisterRouter(controller: self)
+        
 	}
-	
+    override func viewWillAppear(_ animated: Bool) {
+        textFieldLogin.becomeFirstResponder()
+    }
+    
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		self.view.endEditing(true)
 	}
@@ -36,7 +41,7 @@ class RegisterView: UIViewController {
 extension RegisterView {
 	
 	@IBAction func buttonSingInTapped(_ sender: Any) {
-		registerUser()
+		plugsAlert(title: "This feature is not available yet")
 	}
 	
 }

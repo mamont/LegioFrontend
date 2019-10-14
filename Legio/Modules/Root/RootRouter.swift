@@ -10,6 +10,9 @@ import UIKit
 
 protocol RootRouterProtocol: class {
 	func showAuth()
+    func showVkontakte()
+    func showFacebook()
+    func showRegister()
 }
 
 class RootRouter: BaseRouter {
@@ -17,10 +20,28 @@ class RootRouter: BaseRouter {
 }
 
 extension RootRouter: RootRouterProtocol {
+    
+    func showRegister() {
+        let controller = UIStoryboard(name: "Register", bundle: nil)
+            .instantiateViewController(withIdentifier: RegisterView.storyboardIdentifier)
+        self.show(controller)
+    }
+    
+    func showVkontakte() {
+       print("nil")
+    }
+    
+    func showFacebook() {
+         print("nil")
+    }
+    
 	
 	func showAuth() {
 		let controller = UIStoryboard(name: "Auth", bundle: nil)
 			.instantiateViewController(withIdentifier: AuthView.storyboardIdentifier)
-		self.present(controller)
+		self.show(controller)
 	}
+    
+    
+    
 }

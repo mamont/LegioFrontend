@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pUA-nj-SSR">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,29 +13,142 @@
         <!--Root View-->
         <scene sceneID="K2f-gF-n7Q">
             <objects>
-                <viewController storyboardIdentifier="RootView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dhw-UK-et1" customClass="RootView" customModule="Legio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RootView" wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dhw-UK-et1" customClass="RootView" customModule="Legio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wFg-C4-o6u">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lud-2K-k5Y">
-                                <rect key="frame" x="171" y="435" width="72" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="dKS-qZ-uX2">
+                                <rect key="frame" x="24" y="564" width="327" height="62"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Уже есть аккаунт?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqo-Q2-zBB">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xb-hW-awr">
+                                        <rect key="frame" x="0.0" y="26" width="327" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Войти">
+                                            <color key="titleColor" red="0.0" green="0.45882352941176469" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="authButton:" destination="dhw-UK-et1" eventType="touchUpInside" id="EeQ-Vf-taC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0Xb-hW-awr" firstAttribute="top" secondItem="Lqo-Q2-zBB" secondAttribute="bottom" constant="8" id="1e6-zK-xX8"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcn-Oj-5hF">
+                                <rect key="frame" x="24" y="170" width="327" height="64"/>
+                                <color key="backgroundColor" red="0.0" green="0.45882352941176469" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="TSJ-xU-J2v"/>
+                                    <constraint firstAttribute="width" constant="327" id="U95-aX-GFK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Зарегистрироваться">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerButton:" destination="dhw-UK-et1" eventType="touchUpInside" id="Zhp-TJ-wdW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMK-PS-rvu">
+                                <rect key="frame" x="24" y="247" width="327" height="64"/>
+                                <color key="backgroundColor" red="0.23529411764705882" green="0.3529411764705882" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="6ih-O1-xfr"/>
+                                    <constraint firstAttribute="width" constant="327" id="p13-MW-vH5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Facebook">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="facebookButton:" destination="dhw-UK-et1" eventType="touchUpInside" id="BmM-h8-H6J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IxM-Sa-Meq">
+                                <rect key="frame" x="24" y="324" width="327" height="64"/>
+                                <color key="backgroundColor" red="0.31764705882352939" green="0.50588235294117645" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="327" id="gH3-c5-k90"/>
+                                    <constraint firstAttribute="height" constant="64" id="orh-fU-gy1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Вконтакте">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="vkontakteButton:" destination="dhw-UK-et1" eventType="touchUpInside" id="ELB-AA-DEf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="lud-2K-k5Y" firstAttribute="centerY" secondItem="OMY-1z-x43" secondAttribute="centerY" id="STp-2X-Vxl"/>
-                            <constraint firstItem="lud-2K-k5Y" firstAttribute="centerX" secondItem="OMY-1z-x43" secondAttribute="centerX" id="Wdj-gS-K4X"/>
+                            <constraint firstItem="IxM-Sa-Meq" firstAttribute="leading" secondItem="OMY-1z-x43" secondAttribute="leading" constant="24" id="0FH-O4-ELP"/>
+                            <constraint firstItem="Hcn-Oj-5hF" firstAttribute="leading" secondItem="OMY-1z-x43" secondAttribute="leading" constant="24" id="3hk-Ic-Xay"/>
+                            <constraint firstItem="OMY-1z-x43" firstAttribute="trailing" secondItem="IxM-Sa-Meq" secondAttribute="trailing" constant="24" id="3it-1f-WS0"/>
+                            <constraint firstItem="dKS-qZ-uX2" firstAttribute="top" secondItem="IxM-Sa-Meq" secondAttribute="bottom" constant="176" id="Gma-LN-j9i"/>
+                            <constraint firstItem="OMY-1z-x43" firstAttribute="trailing" secondItem="Hcn-Oj-5hF" secondAttribute="trailing" constant="24" id="LeY-NR-ZPb"/>
+                            <constraint firstItem="hMK-PS-rvu" firstAttribute="top" secondItem="Hcn-Oj-5hF" secondAttribute="bottom" constant="13" id="cjx-ii-9G3"/>
+                            <constraint firstItem="hMK-PS-rvu" firstAttribute="leading" secondItem="OMY-1z-x43" secondAttribute="leading" constant="24" id="gcp-Kd-hTK"/>
+                            <constraint firstItem="dKS-qZ-uX2" firstAttribute="leading" secondItem="OMY-1z-x43" secondAttribute="leading" constant="24" id="iac-OY-XIe"/>
+                            <constraint firstItem="Hcn-Oj-5hF" firstAttribute="top" secondItem="OMY-1z-x43" secondAttribute="top" constant="150" id="kcR-KE-MDN"/>
+                            <constraint firstItem="Hcn-Oj-5hF" firstAttribute="leading" secondItem="OMY-1z-x43" secondAttribute="leading" constant="24" id="mVD-6a-dc8"/>
+                            <constraint firstItem="OMY-1z-x43" firstAttribute="trailing" secondItem="Hcn-Oj-5hF" secondAttribute="trailing" constant="24" id="rnO-wi-Ex0"/>
+                            <constraint firstItem="OMY-1z-x43" firstAttribute="trailing" secondItem="hMK-PS-rvu" secondAttribute="trailing" constant="24" id="xvQ-nV-ttJ"/>
+                            <constraint firstItem="OMY-1z-x43" firstAttribute="trailing" secondItem="dKS-qZ-uX2" secondAttribute="trailing" constant="24" id="y5E-cW-jsB"/>
+                            <constraint firstItem="IxM-Sa-Meq" firstAttribute="top" secondItem="hMK-PS-rvu" secondAttribute="bottom" constant="13" id="z4c-Ha-zyg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OMY-1z-x43"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="vhs-dV-vsv"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gjG-mx-AHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-148" y="61"/>
+            <point key="canvasLocation" x="791.20000000000005" y="60.719640179910051"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yLX-XZ-BPD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pUA-nj-SSR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sdo-Fi-9as">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dhw-UK-et1" kind="relationship" relationship="rootViewController" id="crw-Wc-OAx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GIV-s0-sDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-148" y="60.719640179910051"/>
         </scene>
     </scenes>
 </document>

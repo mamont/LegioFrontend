@@ -19,3 +19,22 @@ extension AuthView {
     }
 }
 
+extension RootView {
+    func plugsAlert(title: String) {
+        
+        let alert = UIAlertController(title: "Error", message: title, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension RegisterView {
+    func plugsAlert(title: String) {
+        
+        let alert = UIAlertController(title: "Error", message: title, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+}

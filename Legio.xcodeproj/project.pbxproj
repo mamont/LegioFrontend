@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0881753B2353BBB400B021EB /* ActivKetboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0881753A2353BBB400B021EB /* ActivKetboard.swift */; };
 		08D896F8235265180026ACBC /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D896F7235265180026ACBC /* UserRegister.swift */; };
 		08D896FA23526F2D0026ACBC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D896F923526F2D0026ACBC /* User.swift */; };
 		08D896FC2352829A0026ACBC /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D896FB2352829A0026ACBC /* UserAuth.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0881753A2353BBB400B021EB /* ActivKetboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivKetboard.swift; sourceTree = "<group>"; };
 		08D896F7235265180026ACBC /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
 		08D896F923526F2D0026ACBC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = Legio/Common/Services/Network/User.swift; sourceTree = SOURCE_ROOT; };
 		08D896FB2352829A0026ACBC /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			children = (
 				AA2654CA234F5EFC0013B777 /* ViewControllerNavigation+Ex.swift */,
 				08D896FD235282E40026ACBC /* plugs.swift */,
+				0881753A2353BBB400B021EB /* ActivKetboard.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				08D896FC2352829A0026ACBC /* UserAuth.swift in Sources */,
 				AA2654C8234F5BA00013B777 /* RootRouter.swift in Sources */,
 				AA2654E2234F67110013B777 /* ForgotRouter.swift in Sources */,
+				0881753B2353BBB400B021EB /* ActivKetboard.swift in Sources */,
 				08D896FA23526F2D0026ACBC /* User.swift in Sources */,
 				AA2654D0234F61740013B777 /* AuthView.swift in Sources */,
 				AA2654EF234F6B820013B777 /* EventTypesRouter.swift in Sources */,
@@ -515,8 +519,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7J4TANDD7J;
+				DEVELOPMENT_TEAM = L9WGK6Z7X3;
 				INFOPLIST_FILE = "$(SRCROOT)/Legio/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -533,8 +538,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7J4TANDD7J;
+				DEVELOPMENT_TEAM = L9WGK6Z7X3;
 				INFOPLIST_FILE = "$(SRCROOT)/Legio/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

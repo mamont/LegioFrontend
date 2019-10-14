@@ -24,10 +24,8 @@ extension RegisterView {
         }
         
         urlConstructor.queryItems = [
-            URLQueryItem(name: "name", value: login),
             URLQueryItem(name: "email",  value: login),
             URLQueryItem(name: "password", value: password),
-            URLQueryItem(name: "c_password", value: password)
         ]
         
         guard let registerURL = urlConstructor.url else {
@@ -38,20 +36,20 @@ extension RegisterView {
         
         URLSession.shared.dataTask(with: requst) { (data, response, error) in
             guard let data = data else { return }
-            let json = try! JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
-            print(json)
+            
+           
+            
+            
             DispatchQueue.main.async {
-                do {
-                    let items = try JSONDecoder().decode(Success.self, from: data)
-                    
-                    userData.name = items.success.name
-                    userData.token = items.success.token
-                    self.router?.showSingIn()
-                    
-                } catch let error {
-                    print(error)
-                }
-            }
+            do {
+                
+               //   let items = try JSONDecoder().decode(UserData.self, from: data)
+                    // userData.token = items.token
+                 //self.router?.showSingIn()
+               } catch let error {
+                   print(error)
+              }
+           }
         }.resume()
     }
 }

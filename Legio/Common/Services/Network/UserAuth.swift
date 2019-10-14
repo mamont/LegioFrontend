@@ -38,13 +38,11 @@ func authUser() {
     
     URLSession.shared.dataTask(with: requst) { (data, response, error) in
         guard let data = data else { return }
-        let json = try! JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
-        print(json)
         DispatchQueue.main.async {
             do {
                 let items = try JSONDecoder().decode(Success.self, from: data)
                 
-                userData.name = items.success.name
+                
                 userData.token = items.success.token
                 self.router?.showSingIn()
                 
