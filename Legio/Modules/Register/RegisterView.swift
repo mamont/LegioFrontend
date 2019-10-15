@@ -8,8 +8,8 @@
 
 import UIKit
 
-protocol RegisterViewProtocol {
-	
+protocol RegisterViewProtocol: class {
+	func show(error: String)
 }
 
 class RegisterView: UIViewController {
@@ -17,16 +17,16 @@ class RegisterView: UIViewController {
 	@IBOutlet weak var textFieldLogin: UITextField!
 	@IBOutlet weak var textFieldPassword: UITextField!
 	
-	var router: RegisterRouterProtocol?
+	var presenter: RegisterPresenterProtocol!
+	
 	private let titleText = "Register"
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = false
-		self.navigationItem.title = titleText
-		router = RegisterRouter(controller: self)
-        
+		self.configureViews()
 	}
+	
     override func viewWillAppear(_ animated: Bool) {
         textFieldLogin.becomeFirstResponder()
     }
@@ -41,7 +41,24 @@ class RegisterView: UIViewController {
 extension RegisterView {
 	
 	@IBAction func buttonSingInTapped(_ sender: Any) {
-		plugsAlert(title: "This feature is not available yet")
+		presenter.registrateTapped(email: textFieldLogin.text,
+							 password: textFieldPassword.text)
+	}
+	
+}
+
+extension RegisterView: RegisterViewProtocol {
+	
+	func show(error: String) {
+		plugsAlert(title: error)
+	}
+}
+
+extension RegisterView {
+	
+	private func configureViews() {
+		self.navigationController?.navigationBar.isHidden = false
+		self.navigationItem.title = titleText
 	}
 	
 }

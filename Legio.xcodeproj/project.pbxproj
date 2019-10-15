@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0881753B2353BBB400B021EB /* ActivKetboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0881753A2353BBB400B021EB /* ActivKetboard.swift */; };
-		08D896F8235265180026ACBC /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D896F7235265180026ACBC /* UserRegister.swift */; };
 		08D896FA23526F2D0026ACBC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D896F923526F2D0026ACBC /* User.swift */; };
 		08D896FC2352829A0026ACBC /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D896FB2352829A0026ACBC /* UserAuth.swift */; };
 		08D896FE235282E40026ACBC /* plugs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D896FD235282E40026ACBC /* plugs.swift */; };
@@ -39,11 +38,23 @@
 		AA2654F3234F6C490013B777 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654F2234F6C490013B777 /* MainView.swift */; };
 		AA2654F5234F6C520013B777 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2654F4234F6C520013B777 /* MainRouter.swift */; };
 		AA2654F7234F6C5B0013B777 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA2654F6234F6C5B0013B777 /* Main.storyboard */; };
+		AAB4B816235643E6008273AE /* LoginMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B815235643E6008273AE /* LoginMainView.swift */; };
+		AAB4B818235643F3008273AE /* LoginMainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B817235643F3008273AE /* LoginMainPresenter.swift */; };
+		AAB4B81A235643FE008273AE /* LoginMainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B819235643FE008273AE /* LoginMainInteractor.swift */; };
+		AAB4B81C23564409008273AE /* LoginMainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B81B23564409008273AE /* LoginMainRouter.swift */; };
+		AAB4B81E23564413008273AE /* LoginMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAB4B81D23564413008273AE /* LoginMain.storyboard */; };
+		AAB4B82023564423008273AE /* LoginMainAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B81F23564423008273AE /* LoginMainAssembler.swift */; };
+		AAB4B82423564A86008273AE /* RootAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B82323564A86008273AE /* RootAssembler.swift */; };
+		AAB4B82623564A8F008273AE /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B82523564A8F008273AE /* RootInteractor.swift */; };
+		AAB4B82823564AA1008273AE /* RootPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B82723564AA1008273AE /* RootPresenter.swift */; };
+		AAB4B82A23564F29008273AE /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B82923564F29008273AE /* RegisterPresenter.swift */; };
+		AAB4B82C23564F35008273AE /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B82B23564F35008273AE /* RegisterInteractor.swift */; };
+		AAB4B82E23564F41008273AE /* RegisterAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B82D23564F41008273AE /* RegisterAssembler.swift */; };
+		AAB4B8302356538B008273AE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B82F2356538B008273AE /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0881753A2353BBB400B021EB /* ActivKetboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivKetboard.swift; sourceTree = "<group>"; };
-		08D896F7235265180026ACBC /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
 		08D896F923526F2D0026ACBC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = Legio/Common/Services/Network/User.swift; sourceTree = SOURCE_ROOT; };
 		08D896FB2352829A0026ACBC /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 		08D896FD235282E40026ACBC /* plugs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plugs.swift; sourceTree = "<group>"; };
@@ -76,6 +87,19 @@
 		AA2654F2234F6C490013B777 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		AA2654F4234F6C520013B777 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		AA2654F6234F6C5B0013B777 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		AAB4B815235643E6008273AE /* LoginMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainView.swift; sourceTree = "<group>"; };
+		AAB4B817235643F3008273AE /* LoginMainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainPresenter.swift; sourceTree = "<group>"; };
+		AAB4B819235643FE008273AE /* LoginMainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainInteractor.swift; sourceTree = "<group>"; };
+		AAB4B81B23564409008273AE /* LoginMainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainRouter.swift; sourceTree = "<group>"; };
+		AAB4B81D23564413008273AE /* LoginMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginMain.storyboard; sourceTree = "<group>"; };
+		AAB4B81F23564423008273AE /* LoginMainAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainAssembler.swift; sourceTree = "<group>"; };
+		AAB4B82323564A86008273AE /* RootAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAssembler.swift; sourceTree = "<group>"; };
+		AAB4B82523564A8F008273AE /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
+		AAB4B82723564AA1008273AE /* RootPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenter.swift; sourceTree = "<group>"; };
+		AAB4B82923564F29008273AE /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		AAB4B82B23564F35008273AE /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
+		AAB4B82D23564F41008273AE /* RegisterAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAssembler.swift; sourceTree = "<group>"; };
+		AAB4B82F2356538B008273AE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +116,8 @@
 		08D896F6235264FF0026ACBC /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				08D896F7235265180026ACBC /* UserRegister.swift */,
 				08D896FB2352829A0026ACBC /* UserAuth.swift */,
+				AAB4B82F2356538B008273AE /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -129,8 +153,9 @@
 			isa = PBXGroup;
 			children = (
 				AA2654B7234F56DE0013B777 /* Root */,
-				AA2654CE234F61640013B777 /* Auth */,
+				AAB4B81423564394008273AE /* LoginMain */,
 				AA2654D7234F64170013B777 /* Register */,
+				AA2654CE234F61640013B777 /* Auth */,
 				AA2654D6234F640A0013B777 /* Forgot */,
 				AA2654D8234F64C30013B777 /* Preset */,
 				AA2654EB234F6B560013B777 /* EventTypes */,
@@ -142,7 +167,10 @@
 		AA2654B7234F56DE0013B777 /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				AAB4B82323564A86008273AE /* RootAssembler.swift */,
 				AA2654BA234F57050013B777 /* RootView.swift */,
+				AAB4B82723564AA1008273AE /* RootPresenter.swift */,
+				AAB4B82523564A8F008273AE /* RootInteractor.swift */,
 				AA2654C7234F5BA00013B777 /* RootRouter.swift */,
 				AA2654B8234F56E90013B777 /* Root.storyboard */,
 			);
@@ -254,7 +282,10 @@
 		AA2654D7234F64170013B777 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				AAB4B82D23564F41008273AE /* RegisterAssembler.swift */,
 				AA2654D9234F66D50013B777 /* RegisterView.swift */,
+				AAB4B82923564F29008273AE /* RegisterPresenter.swift */,
+				AAB4B82B23564F35008273AE /* RegisterInteractor.swift */,
 				AA2654DB234F66E50013B777 /* RegisterRouter.swift */,
 				AA2654DD234F66F10013B777 /* Register.storyboard */,
 			);
@@ -279,6 +310,19 @@
 				AA2654F0234F6B8C0013B777 /* EventTypes.storyboard */,
 			);
 			path = EventTypes;
+			sourceTree = "<group>";
+		};
+		AAB4B81423564394008273AE /* LoginMain */ = {
+			isa = PBXGroup;
+			children = (
+				AAB4B81F23564423008273AE /* LoginMainAssembler.swift */,
+				AAB4B815235643E6008273AE /* LoginMainView.swift */,
+				AAB4B817235643F3008273AE /* LoginMainPresenter.swift */,
+				AAB4B819235643FE008273AE /* LoginMainInteractor.swift */,
+				AAB4B81B23564409008273AE /* LoginMainRouter.swift */,
+				AAB4B81D23564413008273AE /* LoginMain.storyboard */,
+			);
+			path = LoginMain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +386,7 @@
 				AA2654D4234F618D0013B777 /* Auth.storyboard in Resources */,
 				AA2654EA234F683F0013B777 /* Preset.storyboard in Resources */,
 				AA2654E4234F671A0013B777 /* Forgot.storyboard in Resources */,
+				AAB4B81E23564413008273AE /* LoginMain.storyboard in Resources */,
 				AA2654F1234F6B8C0013B777 /* EventTypes.storyboard in Resources */,
 				AA2654AF234F54DA0013B777 /* LaunchScreen.storyboard in Resources */,
 				AA2654AC234F54DA0013B777 /* Assets.xcassets in Resources */,
@@ -358,29 +403,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAB4B81C23564409008273AE /* LoginMainRouter.swift in Sources */,
 				AA2654DA234F66D50013B777 /* RegisterView.swift in Sources */,
 				AA2654DC234F66E50013B777 /* RegisterRouter.swift in Sources */,
 				AA2654A2234F54D60013B777 /* AppDelegate.swift in Sources */,
 				AA2654CD234F5F7F0013B777 /* BaseRouter.swift in Sources */,
 				AA2654E0234F67020013B777 /* ForgotView.swift in Sources */,
 				AA2654AA234F54D60013B777 /* Legio.xcdatamodeld in Sources */,
+				AAB4B818235643F3008273AE /* LoginMainPresenter.swift in Sources */,
 				08D896FC2352829A0026ACBC /* UserAuth.swift in Sources */,
 				AA2654C8234F5BA00013B777 /* RootRouter.swift in Sources */,
 				AA2654E2234F67110013B777 /* ForgotRouter.swift in Sources */,
+				AAB4B82023564423008273AE /* LoginMainAssembler.swift in Sources */,
 				0881753B2353BBB400B021EB /* ActivKetboard.swift in Sources */,
+				AAB4B81A235643FE008273AE /* LoginMainInteractor.swift in Sources */,
 				08D896FA23526F2D0026ACBC /* User.swift in Sources */,
+				AAB4B82A23564F29008273AE /* RegisterPresenter.swift in Sources */,
 				AA2654D0234F61740013B777 /* AuthView.swift in Sources */,
+				AAB4B8302356538B008273AE /* NetworkManager.swift in Sources */,
+				AAB4B82E23564F41008273AE /* RegisterAssembler.swift in Sources */,
+				AAB4B82823564AA1008273AE /* RootPresenter.swift in Sources */,
 				AA2654EF234F6B820013B777 /* EventTypesRouter.swift in Sources */,
+				AAB4B82423564A86008273AE /* RootAssembler.swift in Sources */,
 				AA2654ED234F6B730013B777 /* EventTypesView.swift in Sources */,
 				08D896FE235282E40026ACBC /* plugs.swift in Sources */,
 				AA2654F3234F6C490013B777 /* MainView.swift in Sources */,
 				AA2654CB234F5EFC0013B777 /* ViewControllerNavigation+Ex.swift in Sources */,
 				AA2654D2234F61820013B777 /* AuthRouter.swift in Sources */,
 				AA2654E6234F682D0013B777 /* PresetView.swift in Sources */,
+				AAB4B82623564A8F008273AE /* RootInteractor.swift in Sources */,
 				AA2654BB234F57050013B777 /* RootView.swift in Sources */,
-				08D896F8235265180026ACBC /* UserRegister.swift in Sources */,
 				AA2654E8234F68360013B777 /* PresetRouter.swift in Sources */,
+				AAB4B82C23564F35008273AE /* RegisterInteractor.swift in Sources */,
 				AA2654F5234F6C520013B777 /* MainRouter.swift in Sources */,
+				AAB4B816235643E6008273AE /* LoginMainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +575,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L9WGK6Z7X3;
+				DEVELOPMENT_TEAM = 7J4TANDD7J;
 				INFOPLIST_FILE = "$(SRCROOT)/Legio/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -538,7 +594,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L9WGK6Z7X3;
+				DEVELOPMENT_TEAM = 7J4TANDD7J;
 				INFOPLIST_FILE = "$(SRCROOT)/Legio/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (

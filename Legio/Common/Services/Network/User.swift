@@ -11,7 +11,7 @@ import Foundation
 
 class UserRegister: Decodable {
 
-        static var userData = UserRegister()
+	static var userData = UserRegister()
     
     private init() {}
     var name: String?

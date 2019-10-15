@@ -9,39 +9,23 @@
 import UIKit
 
 protocol RootRouterProtocol: class {
-	func showAuth()
-    func showVkontakte()
-    func showFacebook()
-    func showRegister()
+	func showLoginMain()
 }
 
 class RootRouter: BaseRouter {
-		
+	
 }
 
 extension RootRouter: RootRouterProtocol {
     
-    func showRegister() {
-        let controller = UIStoryboard(name: "Register", bundle: nil)
-            .instantiateViewController(withIdentifier: RegisterView.storyboardIdentifier)
+    func showLoginMain() {
+        guard let controller = UIStoryboard(name: "LoginMain", bundle: nil)
+			.instantiateViewController(withIdentifier:  LoginMainView.storyboardIdentifier) as? LoginMainView else {
+				return
+		}
+		let assembler: LoginMainAssemblerProtocol = LoginMainAssembler()
+		assembler.assemble(with: controller)
         self.show(controller)
     }
-    
-    func showVkontakte() {
-       print("nil")
-    }
-    
-    func showFacebook() {
-         print("nil")
-    }
-    
-	
-	func showAuth() {
-		let controller = UIStoryboard(name: "Auth", bundle: nil)
-			.instantiateViewController(withIdentifier: AuthView.storyboardIdentifier)
-		self.show(controller)
-	}
-    
-    
     
 }
