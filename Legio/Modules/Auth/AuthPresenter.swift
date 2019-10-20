@@ -1,42 +1,40 @@
 //
-//  RegisterPresenter.swift
+//  AuthPresenter.swift
 //  Legio
 //
-//  Created by Марат Нургалиев on 15/10/2019.
+//  Created by MIkkyMouse on 19/10/2019.
 //  Copyright © 2019 Марат Нургалиев. All rights reserved.
 //
 
 import UIKit
 
-protocol RegisterPresenterProtocol: class {
-    func registrateTapped()
+protocol AuthPresenterProtocol {
+    func authTapped()
     func changed(login: String?)
     func changed(password: String?)
 }
 
-class RegisterPresenter {
+class AuthPresenter {
     
-    weak var view: RegisterViewProtocol?
-    var interactor: RegisterInteractorProtocol!
-    var router: RegisterRouterProtocol!
-    
+    weak var view: AuthViewProtocol?
+    var router: AuthRouterProtocol!
+    var interactor: AuthInteractorProtocol!
+
     private var login: String?
     private var password: String?
 
     private let validImage = UIImage(named: "checkMarkTF")
-    private let incorrectDataError = "You set incorrect data"
-    
+   
 }
 
-extension RegisterPresenter: RegisterPresenterProtocol {
+extension AuthPresenter: AuthPresenterProtocol {
     
-    func registrateTapped() {
-        guard let email = login,
-            let password = password else {
-                self.view?.show(error: incorrectDataError)
-                return
+    func authTapped() {
+        guard let email = self.login,
+        let password = self.password else {
+           return
         }
-        registrate(email: email, password: password)
+        auth(email: email, password: password)
     }
     
     func changed(login: String?) {
@@ -48,7 +46,7 @@ extension RegisterPresenter: RegisterPresenterProtocol {
             self.login = nil
         }
         updateLoginViews(isValidated: isValidated)
-        updateButtonRegister()
+        updateButtonLogin()
     }
     
     func changed(password: String?) {
@@ -60,22 +58,21 @@ extension RegisterPresenter: RegisterPresenterProtocol {
             self.password = nil
         }
         updatePasswordViews(isValidated: isValidated)
-        updateButtonRegister()
+        updateButtonLogin()
     }
 }
 
-extension RegisterPresenter {
+extension AuthPresenter {
     
-    private func registrate(email: String, password: String) {
+    private func auth(email: String, password: String) {
         // progress hud load
-        interactor.registrate(email: email, password: password) { [weak self] (userData, error) in
+        interactor.auth(email: email, password: password) { (userData, error) in
             // self?. progress hud finish load
             if let userData = userData {
                 //do something with data
-                self?.router.showSingIn()
+                self.router.showSingIn()
             } else {
                 let errorText = error?.localizedDescription ?? "some network error"
-                self?.view?.show(error: errorText)
             }
         }
     }
@@ -100,9 +97,9 @@ extension RegisterPresenter {
         view?.updatePasswordSuccess(image: shownImage)
     }
     
-    private func updateButtonRegister() {
+    private func updateButtonLogin() {
            let buttonRegisterIsEnabled = isCorrectData()
-        view?.updateButtonRegister(isEnabled: buttonRegisterIsEnabled)
+        view?.updateButtonLogin(isEnabled: buttonRegisterIsEnabled)
        }
     
     private func getProgress(isValidated: Bool) -> Float {
@@ -124,8 +121,4 @@ extension RegisterPresenter {
         }
         return true
     }
-    
 }
-
-
-
