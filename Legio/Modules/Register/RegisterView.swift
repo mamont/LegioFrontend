@@ -24,12 +24,12 @@ class RegisterView: UIViewController {
 	@IBOutlet weak var textFieldLogin: UITextField!
     @IBOutlet weak var labelFalseEmail: UILabel!
     @IBOutlet weak var errorEmailView: UIProgressView!
-    private let imageViewLoginSuccess = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: 20.0, height: 20.0))
+    private var imageViewLoginSuccess = UIImageView()
     
 	@IBOutlet weak var textFieldPassword: UITextField!
     @IBOutlet weak var labelFalsePassword: UILabel!
     @IBOutlet weak var errorPasswordView: UIProgressView!
-    private let imageViewPasswordSuccess = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: 20.0, height: 20.0))
+    private var imageViewPasswordSuccess = UIImageView()
     
     @IBOutlet weak var buttonRegister: CustomButton!
     
@@ -113,11 +113,13 @@ extension RegisterView {
     
     private func configureTextFields() {
         textFieldLogin.addTarget(self, action: #selector(self.loginChanged(_:)), for: UIControl.Event.editingChanged)
+        imageViewLoginSuccess = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: 20.0, height: 20.0))
         textFieldLogin.rightView = imageViewLoginSuccess
         textFieldLogin.rightViewMode = .always
         imageViewLoginSuccess.contentMode = .scaleAspectFit
         
         textFieldPassword.addTarget(self, action: #selector(self.passwordChanged(_:)), for: UIControl.Event.editingChanged)
+        imageViewPasswordSuccess = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: 20.0, height: 20.0))
         textFieldPassword.rightView = imageViewPasswordSuccess
         textFieldPassword.rightViewMode = .always
         imageViewPasswordSuccess.contentMode = .scaleAspectFit
