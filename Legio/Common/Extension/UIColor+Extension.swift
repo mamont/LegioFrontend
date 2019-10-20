@@ -10,6 +10,10 @@ import UIKit
 
 extension UIColor {
     
+    struct legio {
+        static let legioBlue = UIColor(red: 0/255, green: 117/255, blue: 255/255, alpha: 1)
+    }
+    
     public convenience init?(hex: String) {
         let r, g, b, a: CGFloat
 

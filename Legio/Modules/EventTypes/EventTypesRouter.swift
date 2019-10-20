@@ -18,8 +18,10 @@ class EventTypesRouter: BaseRouter {
 extension EventTypesRouter: EventTypesRouterProtocol {
 	
 	func showMain() {
-		let controller = UIStoryboard(name: "Main", bundle: nil)
-			.instantiateViewController(withIdentifier: MainView.storyboardIdentifier)
+		guard let controller = UIStoryboard(name: "Event", bundle: nil)
+			.instantiateViewController(withIdentifier: EventView.storyboardIdentifier) as? EventView else { return }
+        let assemler: EventAssemblerProtocol = EventAssembler()
+        assemler.assemble(with: controller)
 		self.show(controller)
 	}
 }

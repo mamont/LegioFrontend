@@ -14,6 +14,15 @@
 		0463E326235CBFE7008DF20B /* PresetSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E325235CBFE7008DF20B /* PresetSlider.swift */; };
 		0463E328235CC142008DF20B /* Float+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E327235CC142008DF20B /* Float+Extention.swift */; };
 		0463E32A235CC16F008DF20B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E329235CC16F008DF20B /* UIColor+Extension.swift */; };
+		0463E32D235CD3AF008DF20B /* EventAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E32C235CD3AF008DF20B /* EventAssembler.swift */; };
+		0463E32F235CD3B9008DF20B /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E32E235CD3B9008DF20B /* EventView.swift */; };
+		0463E331235CD3C4008DF20B /* EventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E330235CD3C4008DF20B /* EventPresenter.swift */; };
+		0463E333235CD3D5008DF20B /* EventInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E332235CD3D5008DF20B /* EventInteractor.swift */; };
+		0463E335235CD3DE008DF20B /* EventRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E334235CD3DE008DF20B /* EventRouter.swift */; };
+		0463E337235CD3E6008DF20B /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0463E336235CD3E6008DF20B /* Event.storyboard */; };
+		0463E339235CD43F008DF20B /* EventWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E338235CD43E008DF20B /* EventWebView.swift */; };
+		0463E33B235CD559008DF20B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E33A235CD559008DF20B /* Event.swift */; };
+		0463E33D235CD5E1008DF20B /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E33C235CD5E1008DF20B /* UIImageView+Extension.swift */; };
 		0486528D235C94BF00151324 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486528C235C94BF00151324 /* CustomButton.swift */; };
 		082B935F235A5881004AD930 /* ValidateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B935E235A5881004AD930 /* ValidateProtocol.swift */; };
 		082B9361235A58FF004AD930 /* ValidateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082B9360235A58FF004AD930 /* ValidateManager.swift */; };
@@ -72,6 +81,15 @@
 		0463E325235CBFE7008DF20B /* PresetSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetSlider.swift; sourceTree = "<group>"; };
 		0463E327235CC142008DF20B /* Float+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Extention.swift"; sourceTree = "<group>"; };
 		0463E329235CC16F008DF20B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		0463E32C235CD3AF008DF20B /* EventAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAssembler.swift; sourceTree = "<group>"; };
+		0463E32E235CD3B9008DF20B /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		0463E330235CD3C4008DF20B /* EventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenter.swift; sourceTree = "<group>"; };
+		0463E332235CD3D5008DF20B /* EventInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInteractor.swift; sourceTree = "<group>"; };
+		0463E334235CD3DE008DF20B /* EventRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRouter.swift; sourceTree = "<group>"; };
+		0463E336235CD3E6008DF20B /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
+		0463E338235CD43E008DF20B /* EventWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventWebView.swift; sourceTree = "<group>"; };
+		0463E33A235CD559008DF20B /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Legio/Modules/Event/Event.swift; sourceTree = SOURCE_ROOT; };
+		0463E33C235CD5E1008DF20B /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		0486527F235C81A100151324 /* SFUIText-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-MediumItalic.ttf"; sourceTree = "<group>"; };
 		04865280235C81A100151324 /* SFUIText-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-RegularItalic.ttf"; sourceTree = "<group>"; };
 		04865281235C81A100151324 /* SFUIText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Medium.ttf"; sourceTree = "<group>"; };
@@ -147,6 +165,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0463E32B235CD386008DF20B /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				0463E32C235CD3AF008DF20B /* EventAssembler.swift */,
+				0463E32E235CD3B9008DF20B /* EventView.swift */,
+				0463E330235CD3C4008DF20B /* EventPresenter.swift */,
+				0463E332235CD3D5008DF20B /* EventInteractor.swift */,
+				0463E334235CD3DE008DF20B /* EventRouter.swift */,
+				0463E336235CD3E6008DF20B /* Event.storyboard */,
+				0463E338235CD43E008DF20B /* EventWebView.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
 		0486527E235C818F00151324 /* SFUIText */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +269,7 @@
 				AA2654D6234F640A0013B777 /* Forgot */,
 				AA2654D8234F64C30013B777 /* Preset */,
 				AA2654EB234F6B560013B777 /* EventTypes */,
+				0463E32B235CD386008DF20B /* Event */,
 				AA2654D5234F64000013B777 /* Main */,
 			);
 			path = Modules;
@@ -309,6 +342,7 @@
 			children = (
 				08D896F923526F2D0026ACBC /* User.swift */,
 				0463E323235CBF55008DF20B /* PresetEntity.swift */,
+				0463E33A235CD559008DF20B /* Event.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -328,6 +362,7 @@
 				08D896FD235282E40026ACBC /* plugs.swift */,
 				0463E327235CC142008DF20B /* Float+Extention.swift */,
 				0463E329235CC16F008DF20B /* UIColor+Extension.swift */,
+				0463E33C235CD5E1008DF20B /* UIImageView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -475,6 +510,7 @@
 				AA2654D4234F618D0013B777 /* Auth.storyboard in Resources */,
 				AA2654EA234F683F0013B777 /* Preset.storyboard in Resources */,
 				AA2654E4234F671A0013B777 /* Forgot.storyboard in Resources */,
+				0463E337235CD3E6008DF20B /* Event.storyboard in Resources */,
 				AAB4B81E23564413008273AE /* LoginMain.storyboard in Resources */,
 				AA2654F1234F6B8C0013B777 /* EventTypes.storyboard in Resources */,
 				AA2654AF234F54DA0013B777 /* LaunchScreen.storyboard in Resources */,
@@ -504,12 +540,16 @@
 				AA2654E0234F67020013B777 /* ForgotView.swift in Sources */,
 				AA2654AA234F54D60013B777 /* Legio.xcdatamodeld in Sources */,
 				AAB4B818235643F3008273AE /* LoginMainPresenter.swift in Sources */,
+				0463E33B235CD559008DF20B /* Event.swift in Sources */,
 				AA2654C8234F5BA00013B777 /* RootRouter.swift in Sources */,
 				AA2654E2234F67110013B777 /* ForgotRouter.swift in Sources */,
 				AAB4B82023564423008273AE /* LoginMainAssembler.swift in Sources */,
 				AAB4B81A235643FE008273AE /* LoginMainInteractor.swift in Sources */,
 				08D896FA23526F2D0026ACBC /* User.swift in Sources */,
+				0463E333235CD3D5008DF20B /* EventInteractor.swift in Sources */,
 				AAB4B82A23564F29008273AE /* RegisterPresenter.swift in Sources */,
+				0463E335235CD3DE008DF20B /* EventRouter.swift in Sources */,
+				0463E339235CD43F008DF20B /* EventWebView.swift in Sources */,
 				AA2654D0234F61740013B777 /* AuthView.swift in Sources */,
 				AAB4B8302356538B008273AE /* NetworkManager.swift in Sources */,
 				AAB4B82E23564F41008273AE /* RegisterAssembler.swift in Sources */,
@@ -517,6 +557,7 @@
 				AAB4B82823564AA1008273AE /* RootPresenter.swift in Sources */,
 				0463E328235CC142008DF20B /* Float+Extention.swift in Sources */,
 				0463E324235CBF55008DF20B /* PresetEntity.swift in Sources */,
+				0463E32D235CD3AF008DF20B /* EventAssembler.swift in Sources */,
 				AA2654EF234F6B820013B777 /* EventTypesRouter.swift in Sources */,
 				AAB4B82423564A86008273AE /* RootAssembler.swift in Sources */,
 				AA2654ED234F6B730013B777 /* EventTypesView.swift in Sources */,
@@ -532,7 +573,10 @@
 				082B936C235BA173004AD930 /* AuthAssemler.swift in Sources */,
 				0463E320235CBEA9008DF20B /* PresetPresenter.swift in Sources */,
 				0463E32A235CC16F008DF20B /* UIColor+Extension.swift in Sources */,
+				0463E331235CD3C4008DF20B /* EventPresenter.swift in Sources */,
 				AA2654E8234F68360013B777 /* PresetRouter.swift in Sources */,
+				0463E32F235CD3B9008DF20B /* EventView.swift in Sources */,
+				0463E33D235CD5E1008DF20B /* UIImageView+Extension.swift in Sources */,
 				AAB4B82C23564F35008273AE /* RegisterInteractor.swift in Sources */,
 				0463E326235CBFE7008DF20B /* PresetSlider.swift in Sources */,
 				AA2654F5234F6C520013B777 /* MainRouter.swift in Sources */,
