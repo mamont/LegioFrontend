@@ -60,6 +60,14 @@ extension RegisterView {
 		presenter.registrateTapped()
 	}
 	
+    @objc func loginChanged(_ textField: UITextField) {
+        self.presenter.changed(login: textField.text)
+    }
+    
+    @objc func passwordChanged(_ textField: UITextField) {
+        self.presenter.changed(password: textField.text)
+    }
+    
 }
 
 extension RegisterView: RegisterViewProtocol {
@@ -125,27 +133,7 @@ extension RegisterView {
         imageViewPasswordSuccess.contentMode = .scaleAspectFit
     }
     
-    @objc func loginChanged(_ textField: UITextField) {
-        self.presenter.changed(login: textField.text)
-    }
-    
-    @objc func passwordChanged(_ textField: UITextField) {
-        self.presenter.changed(password: textField.text)
-    }
-	
 }
 
-//MARK: - TextFieldDelegate
-extension RegisterView: UITextFieldDelegate {
-    
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//
-//        chekLoginPasswprd.enableButton(actionTF: textField, textfield: [textFieldLogin, textFieldPassword], alertLabel: [labelFalseEmail, labelFalsePassword], alertAction: [errorEmailView, errorPasswordView], registerBT: registerButtonPressed)
-//        return true
-//    }
-    
-    
-    
-}
 
 

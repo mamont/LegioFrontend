@@ -19,6 +19,7 @@ class BaseRouter: NSObject {
 	func show(_ controller: UIViewController) {
         controller.navigationItem.title = ""
 		self.controller.show(controller, sender: nil)
+        removeBackWord()
 	}
 	
 	func present(_ controller: UIViewController) {
@@ -30,5 +31,12 @@ class BaseRouter: NSObject {
         controller.navigationItem.title = ""
 		UIApplication.shared.keyWindow?.rootViewController = controller
 	}
+    
+    private func removeBackWord() {
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        controller.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        
+    }
 	
 }

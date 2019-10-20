@@ -56,10 +56,10 @@ class PresetView: UIViewController {
 extension PresetView: PresetViewProtocol{
     
     func setupViews() {
-        
         emojiNerdy.text = "🤓"
         emojiParty.text = "🥳"
         
+        //8 вывести в константу и присваивать здесь
         nextButton.layer.cornerRadius = 8
         nextButton.clipsToBounds = true
         
@@ -67,6 +67,16 @@ extension PresetView: PresetViewProtocol{
     }
     
     func updateViews(preset: PresetEntity) {
+        //если подумать, чтобы во вью не было логики, можно
+        // сделать 2 функции updatePartyViews(и передавать значения)
+        //
+        
+        /*func updatePartyViews(font: UIFont, percentText: String) {
+            emojiParty.font = font
+            partyPercent.font = font
+            partyPercent.text = percentText
+         }*/
+        
         if(preset.typePreset == .Party){
             emojiParty.font = UIFont(name:"ArialRoundedMTBold" , size: CGFloat(preset.size))
             partyPercent.font = UIFont(name:"ArialRoundedMTBold" , size: CGFloat(preset.size))
@@ -88,13 +98,6 @@ extension PresetView {
     
 }
 
-extension UINavigationController {
-    func addCustomBackButton(title: String = "Back") {
-        let backButton = UIBarButtonItem()
-        backButton.title = title
-        navigationBar.topItem?.backBarButtonItem = backButton
-    }
-}
 
 
 

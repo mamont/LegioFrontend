@@ -62,7 +62,14 @@ extension AuthView {
     
     @IBAction func buttonForgotTapped(_ sender: Any) {
         plugsAlert(title: "This feature is not available yet")
-        //router?.showForgot()
+    }
+    
+    @objc func loginChanged(_ textField: UITextField) {
+        self.presenter.changed(login: textField.text)
+    }
+    
+    @objc func passwordChanged(_ textField: UITextField) {
+        self.presenter.changed(password: textField.text)
     }
     
 }
@@ -132,14 +139,6 @@ extension AuthView {
         textFieldPassword.rightView = imageViewPasswordSuccess
         textFieldPassword.rightViewMode = .always
         imageViewPasswordSuccess.contentMode = .scaleAspectFit
-    }
-    
-    @objc func loginChanged(_ textField: UITextField) {
-        self.presenter.changed(login: textField.text)
-    }
-    
-    @objc func passwordChanged(_ textField: UITextField) {
-        self.presenter.changed(password: textField.text)
     }
     
 }

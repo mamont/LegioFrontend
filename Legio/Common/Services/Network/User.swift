@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class UserRegister: Decodable {
 
 	static var userData = UserRegister()

@@ -11,8 +11,6 @@ import UIKit
 protocol PresetPresenterProtocol {
     func setupData()
     func updateData(percents: Int)
-    //func getData() ->PresetEntity
-    //func setData(data: PresetEntity)
     func calculatePreset(preset: PresetEntity) ->PresetEntity
     func showEventTypesTapped()
 }
@@ -54,6 +52,7 @@ class PresetPresenter: PresetPresenterProtocol {
     }
     
     internal func calculatePreset(preset: PresetEntity) -> PresetEntity {
+        //магические числа должны быть раскрыты
         let size: Double = Double(12 * (1 + (1.67 * (Double(preset.percent) / 100))))
         var presetToReturn = preset
         presetToReturn.size = Float(size)

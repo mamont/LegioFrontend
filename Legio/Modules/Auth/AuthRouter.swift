@@ -39,9 +39,6 @@ extension AuthRouter: AuthRouterProtocol {
 			.instantiateViewController(withIdentifier: RegisterView.storyboardIdentifier)
 		self.show(controller)
 	}
-	
-//	func showAuth() {
-
-//	}
+    
 }
 
