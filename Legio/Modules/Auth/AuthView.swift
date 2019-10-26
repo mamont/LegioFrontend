@@ -131,12 +131,28 @@ extension AuthView {
         textFieldLogin.rightView = imageViewLoginSuccess
         textFieldLogin.rightViewMode = .always
         imageViewLoginSuccess.contentMode = .scaleAspectFit
+        textFieldLogin.delegate = self
         
         textFieldPassword.addTarget(self, action: #selector(self.passwordChanged(_:)), for: UIControl.Event.editingChanged)
         imageViewPasswordSuccess = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: 20.0, height: 20.0))
         textFieldPassword.rightView = imageViewPasswordSuccess
         textFieldPassword.rightViewMode = .always
         imageViewPasswordSuccess.contentMode = .scaleAspectFit
+        textFieldPassword.delegate = self
+    }
+    
+}
+
+extension AuthView: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == textFieldLogin {
+            textFieldPassword.becomeFirstResponder()
+            return false
+        } else {
+            self.view.endEditing(true)
+            return true
+        }
     }
     
 }
