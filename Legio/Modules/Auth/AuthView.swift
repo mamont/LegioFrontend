@@ -33,8 +33,6 @@ class AuthView: UIViewController {
     
     @IBOutlet weak var buttonLogin: CustomButton!
     
-    private let titleText = "Auth"
-    
     var presenter: AuthPresenterProtocol!
     
     
@@ -44,7 +42,9 @@ class AuthView: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         textFieldLogin.becomeFirstResponder()
+        self.configureNavigationBar(state: .onlyBackButton)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -118,7 +118,6 @@ extension AuthView {
     
     private func configureViews() {
         self.navigationController?.navigationBar.isHidden = false
-        self.navigationItem.title = titleText
         self.labelFalseEmail.isHidden = true
         self.labelFalsePassword.isHidden = true
         self.errorEmailView.progress = 0.0

@@ -42,9 +42,9 @@ class EventView: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if mainEvent {
-            self.navigationController?.navigationBar.isHidden = true
+            self.configureNavigationBar(state: .hide)
         } else {
-            self.navigationController?.navigationBar.isHidden = false
+            self.configureNavigationBar(state: .show)
         }
     }
     

@@ -24,7 +24,8 @@ class RootView: UIViewController {
 	}
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
+        super.viewWillAppear(animated)
+        self.configureNavigationBar(state: .hide)
     }
     
 }

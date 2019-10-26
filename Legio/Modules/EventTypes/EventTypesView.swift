@@ -15,13 +15,16 @@ protocol EventTypesViewProtocol {
 class EventTypesView: UIViewController {
 	
 	var router: EventTypesRouterProtocol?
-	private let titleText = "Event Types"
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.navigationItem.title = titleText
 		router = EventTypesRouter(controller: self)
 	}
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.configureNavigationBar(state: .onlyBackButton)
+    }
 	
 }
 
