@@ -8,21 +8,28 @@
 
 import UIKit
 
-protocol RootViewProtocol {
+protocol RootViewProtocol: class {
 	
 }
 
 class RootView: UIViewController {
 	
-	var router: RootRouterProtocol?
+	private let assembler: RootAssemblerProtocol = RootAssembler()
+	var presenter: RootPresenterProtocol!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		router = RootRouter(controller: self)
-		router?.showAuth()
+        assembler.assemble(with: self)
+		presenter.viewDidLoad()
 	}
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.configureNavigationBar(state: .hide)
+    }
+    
 }
 
 extension RootView: RootViewProtocol {
-	
+    
 }

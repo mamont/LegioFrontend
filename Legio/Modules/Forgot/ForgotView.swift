@@ -17,13 +17,16 @@ class ForgotView: UIViewController {
 	@IBOutlet weak var textFieldLogin: UITextField!
 	
 	var router: ForgotRouterProtocol?
-	private let titleText = "Forgot"
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.navigationItem.title = titleText
 		router = ForgotRouter(controller: self)
 	}
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.configureNavigationBar(state: .onlyBackButton)
+    }
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		self.view.endEditing(true)

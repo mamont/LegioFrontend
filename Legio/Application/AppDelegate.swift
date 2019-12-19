@@ -9,7 +9,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		showRootView()
 		return true
 	}
 
@@ -30,13 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 	
 	
-	private func showRootView() {
-		let controller = UIStoryboard(name: "Root", bundle: nil)
-			.instantiateViewController(withIdentifier: RootView.storyboardIdentifier)
-		window = UIWindow()
-		window?.rootViewController = UINavigationController(rootViewController: controller)
-		window?.makeKeyAndVisible()
-	}
+
 
 	
 	// MARK: - Core Data stack

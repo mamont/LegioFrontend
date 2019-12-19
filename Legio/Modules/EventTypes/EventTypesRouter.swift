@@ -9,7 +9,7 @@
 import UIKit
 
 protocol EventTypesRouterProtocol: class {
-	func showMain()
+	func showEvent()
 }
 
 class EventTypesRouter: BaseRouter {
@@ -17,9 +17,11 @@ class EventTypesRouter: BaseRouter {
 
 extension EventTypesRouter: EventTypesRouterProtocol {
 	
-	func showMain() {
-		let controller = UIStoryboard(name: "Main", bundle: nil)
-			.instantiateViewController(withIdentifier: MainView.storyboardIdentifier)
+	func showEvent() {
+		guard let controller = UIStoryboard(name: "Event", bundle: nil)
+			.instantiateViewController(withIdentifier: EventView.storyboardIdentifier) as? EventView else { return }
+        let assemler: EventAssemblerProtocol = EventAssembler()
+        assemler.assemble(with: controller)
 		self.show(controller)
 	}
 }

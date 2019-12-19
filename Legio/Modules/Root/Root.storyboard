@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pUA-nj-SSR">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,29 +13,55 @@
         <!--Root View-->
         <scene sceneID="K2f-gF-n7Q">
             <objects>
-                <viewController storyboardIdentifier="RootView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dhw-UK-et1" customClass="RootView" customModule="Legio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RootView" wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dhw-UK-et1" customClass="RootView" customModule="Legio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wFg-C4-o6u">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lud-2K-k5Y">
-                                <rect key="frame" x="171" y="435" width="72" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxi-4B-hc4">
+                                <rect key="frame" x="166.5" y="333" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="lud-2K-k5Y" firstAttribute="centerY" secondItem="OMY-1z-x43" secondAttribute="centerY" id="STp-2X-Vxl"/>
-                            <constraint firstItem="lud-2K-k5Y" firstAttribute="centerX" secondItem="OMY-1z-x43" secondAttribute="centerX" id="Wdj-gS-K4X"/>
+                            <constraint firstItem="kxi-4B-hc4" firstAttribute="centerY" secondItem="OMY-1z-x43" secondAttribute="centerY" id="j6X-xO-UyQ"/>
+                            <constraint firstItem="kxi-4B-hc4" firstAttribute="centerX" secondItem="OMY-1z-x43" secondAttribute="centerX" id="xcP-2b-Qe5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OMY-1z-x43"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="vhs-dV-vsv">
+                        <barButtonItem key="backBarButtonItem" title="go" id="G3P-5I-bYc"/>
+                    </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gjG-mx-AHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-148" y="61"/>
+            <point key="canvasLocation" x="791.20000000000005" y="60.719640179910051"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yLX-XZ-BPD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pUA-nj-SSR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sdo-Fi-9as">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dhw-UK-et1" kind="relationship" relationship="rootViewController" id="crw-Wc-OAx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GIV-s0-sDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-90" y="53"/>
         </scene>
     </scenes>
 </document>

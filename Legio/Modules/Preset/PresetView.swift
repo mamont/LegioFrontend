@@ -9,28 +9,78 @@
 import UIKit
 
 protocol PresetViewProtocol {
-	
+    func setupViews()
+    func updateViews(preset: PresetEntity, font: UIFont)
 }
 
 class PresetView: UIViewController {
-	
-	var router: PresetRouterProtocol?
-	private let titleText = "Preset"
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		self.navigationItem.title = titleText
-		router = PresetRouter(controller: self)
-	}
-	
+    
+    @IBOutlet var nerdyPercent: UILabel!
+    @IBOutlet var partyPercent: UILabel!
+    @IBOutlet var presetSlider: PresetSlider!
+    @IBOutlet var emojiNerdy: UILabel!
+    @IBOutlet var emojiParty: UILabel!
+    @IBOutlet var nextButton: UIButton!
+    
+    var presenter: PresetPresenterProtocol!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.configureNavigationBar(state: .onlyBackButton)
+    }
+    
+    @IBAction func presetSliderAction(_ sender: Any) {
+        let value = presetSlider.value
+        //print(value.convertToPercent())
+        
+        guard presenter != nil else { return }
+        presenter.updateData(percents: value.convertToPercent())
+        
+    }
+    
+}
+
+//MARK: - Scale by percents
+extension PresetView: PresetViewProtocol{
+    
+    func setupViews() {
+        emojiNerdy.text = "🤓"
+        emojiParty.text = "🥳"
+
+        nextButton.clipsToBounds = true
+        
+        presetSlider.setThumbImage(UIImage(named:"OvalPreset"), for: .normal)
+    }
+    
+    func updateViews(preset: PresetEntity, font: UIFont) {
+        
+        if(preset.typePreset == .Party){
+            emojiParty.font = font
+            partyPercent.font = font
+            partyPercent.text = "\(preset.percent)%\nвеселее"
+        }else{
+            emojiNerdy.font = font
+            nerdyPercent.font = font
+            nerdyPercent.text = "\(preset.percent)%\nумнее"
+        }
+    }
 }
 
 //MARK: - Actions
 extension PresetView {
-	
-	@IBAction func buttonNextTapped(_ sender: Any) {
-		router?.showEventTypes()
-	}
-	
+    
+    @IBAction func buttonNextTapped(_ sender: Any) {
+        presenter.showEventTypesTapped()
+    }
+    
 }
+
+
+
 

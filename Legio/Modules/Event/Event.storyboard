@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Event View-->
+        <scene sceneID="uJE-9Q-jrS">
+            <objects>
+                <viewController storyboardIdentifier="EventView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0ju-0k-I1B" customClass="EventView" customModule="Legio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CXE-9v-FVP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KRk-Zg-qcF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="327"/>
+                            </imageView>
+                            <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мультимедийные выставки «Ван Гог. Письма к Тео» и «Густав Климт. Золото Модерна»" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEx-T9-cr8">
+                                <rect key="frame" x="24" y="251" width="366" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="JQu-3C-9qQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vv-Im-VJE">
+                                <rect key="frame" x="347" y="88" width="37" height="49"/>
+                                <state key="normal" image="user"/>
+                                <connections>
+                                    <action selector="profileButton:" destination="0ju-0k-I1B" eventType="touchUpInside" id="Jfv-Ej-TWV"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_calendar" translatesAutoresizingMaskIntoConstraints="NO" id="JLL-Jr-aTX">
+                                <rect key="frame" x="19" y="403" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="PEf-al-Rb4"/>
+                                    <constraint firstAttribute="width" constant="24" id="rWK-Fq-ayp"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сегодня, 20:45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qI0-mK-0zO">
+                                <rect key="frame" x="65" y="403" width="330" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="YOq-H0-BOg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_pin" translatesAutoresizingMaskIntoConstraints="NO" id="FwY-Ij-3hr">
+                                <rect key="frame" x="19" y="439" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="N16-tD-s47"/>
+                                    <constraint firstAttribute="height" constant="24" id="UIU-1p-eHE"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Басманный пер, 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJo-sB-a3z">
+                                <rect key="frame" x="65" y="439" width="330" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Npy-Hw-YCo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cc-M9-RJA">
+                                <rect key="frame" x="64" y="475" width="331" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="pZY-P1-J2f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Детали"/>
+                                <connections>
+                                    <action selector="detailsButton:" destination="0ju-0k-I1B" eventType="touchUpInside" id="PU4-Wr-NrG"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="c9o-gU-86Z">
+                                <rect key="frame" x="125" y="768" width="164" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B85-yV-ibF">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="ERT-l2-VYX"/>
+                                            <constraint firstAttribute="width" constant="64" id="s2u-uN-4xG"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="like"/>
+                                        <state key="disabled" image="likePressed"/>
+                                        <state key="selected" image="likePressed"/>
+                                        <state key="highlighted" image="likePressed"/>
+                                        <connections>
+                                            <action selector="likeButton:" destination="0ju-0k-I1B" eventType="touchUpInside" id="Uut-9Y-vDu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJz-iI-2ac">
+                                        <rect key="frame" x="100" y="0.0" width="64" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="Dzh-nY-Tpx"/>
+                                            <constraint firstAttribute="height" constant="64" id="hLa-qd-MUs"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="dislike"/>
+                                        <state key="disabled" image="dislikePressed"/>
+                                        <state key="selected" image="dislikePressed"/>
+                                        <state key="highlighted" image="dislikePressed"/>
+                                        <connections>
+                                            <action selector="dislikeButton:" destination="0ju-0k-I1B" eventType="touchUpInside" id="z0n-UM-8U8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="siG-BC-eyK"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vnt-it-d3d">
+                                <rect key="frame" x="20" y="882" width="374" height="32"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGd-53-zA3">
+                                        <rect key="frame" x="0.0" y="0.0" width="183" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="gLK-kf-3yg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="🥳 веселее">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="partyButton:" destination="0ju-0k-I1B" eventType="touchUpInside" id="bgy-Za-yIE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjb-1f-GGv">
+                                        <rect key="frame" x="191" y="0.0" width="183" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="q71-ON-vud"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="умнее 🤓">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nerdyButton:" destination="0ju-0k-I1B" eventType="touchUpInside" id="gp9-9y-Wna"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="uGd-53-zA3" firstAttribute="width" secondItem="vjb-1f-GGv" secondAttribute="width" id="6s9-nf-FhG"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vnt-it-d3d" secondAttribute="trailing" constant="20" id="0oP-ti-nCN"/>
+                            <constraint firstItem="hRe-wJ-Uv1" firstAttribute="bottom" secondItem="c9o-gU-86Z" secondAttribute="bottom" constant="30" id="2Uq-us-wF9"/>
+                            <constraint firstItem="JLL-Jr-aTX" firstAttribute="leading" secondItem="hRe-wJ-Uv1" secondAttribute="leading" constant="19" id="Bpv-Ts-Sog"/>
+                            <constraint firstItem="WEx-T9-cr8" firstAttribute="bottom" secondItem="KRk-Zg-qcF" secondAttribute="bottom" constant="-24" id="CDL-A0-XpC"/>
+                            <constraint firstItem="bJo-sB-a3z" firstAttribute="top" secondItem="qI0-mK-0zO" secondAttribute="bottom" constant="12" id="Cch-01-BL0"/>
+                            <constraint firstItem="WEx-T9-cr8" firstAttribute="leading" secondItem="KRk-Zg-qcF" secondAttribute="leading" constant="24" id="Dpa-kJ-9hI"/>
+                            <constraint firstItem="WEx-T9-cr8" firstAttribute="trailing" secondItem="KRk-Zg-qcF" secondAttribute="trailing" constant="-24" id="Fo6-7k-HFl"/>
+                            <constraint firstItem="vnt-it-d3d" firstAttribute="top" secondItem="c9o-gU-86Z" secondAttribute="bottom" constant="50" id="M52-jL-h8G"/>
+                            <constraint firstItem="JLL-Jr-aTX" firstAttribute="top" secondItem="KRk-Zg-qcF" secondAttribute="bottom" constant="32" id="MHD-0k-yfX"/>
+                            <constraint firstItem="KRk-Zg-qcF" firstAttribute="trailing" secondItem="hRe-wJ-Uv1" secondAttribute="trailing" id="NAX-a8-zQr"/>
+                            <constraint firstItem="9cc-M9-RJA" firstAttribute="leading" secondItem="hRe-wJ-Uv1" secondAttribute="leading" constant="64" id="Nje-lP-1l4"/>
+                            <constraint firstItem="6vv-Im-VJE" firstAttribute="trailing" secondItem="KRk-Zg-qcF" secondAttribute="trailing" constant="-30" id="Obt-YI-7aF"/>
+                            <constraint firstItem="hRe-wJ-Uv1" firstAttribute="trailing" secondItem="bJo-sB-a3z" secondAttribute="trailing" constant="19" id="QFU-jE-uuP"/>
+                            <constraint firstItem="c9o-gU-86Z" firstAttribute="centerX" secondItem="CXE-9v-FVP" secondAttribute="centerX" id="R6f-oV-4Jo"/>
+                            <constraint firstItem="vnt-it-d3d" firstAttribute="leading" secondItem="CXE-9v-FVP" secondAttribute="leading" constant="20" id="TdC-tk-WHj"/>
+                            <constraint firstItem="KRk-Zg-qcF" firstAttribute="leading" secondItem="hRe-wJ-Uv1" secondAttribute="leading" id="Tzj-sj-Jrc"/>
+                            <constraint firstItem="9cc-M9-RJA" firstAttribute="top" secondItem="bJo-sB-a3z" secondAttribute="bottom" constant="12" id="aS9-LY-gOd"/>
+                            <constraint firstItem="qI0-mK-0zO" firstAttribute="top" secondItem="KRk-Zg-qcF" secondAttribute="bottom" constant="32" id="eAV-De-rsH"/>
+                            <constraint firstItem="hRe-wJ-Uv1" firstAttribute="trailing" secondItem="9cc-M9-RJA" secondAttribute="trailing" constant="19" id="egT-zc-lJU"/>
+                            <constraint firstItem="KRk-Zg-qcF" firstAttribute="height" secondItem="hRe-wJ-Uv1" secondAttribute="height" multiplier="0.4" id="f8M-Su-cwF"/>
+                            <constraint firstItem="KRk-Zg-qcF" firstAttribute="top" secondItem="hRe-wJ-Uv1" secondAttribute="top" id="fyd-af-BFp"/>
+                            <constraint firstItem="bJo-sB-a3z" firstAttribute="leading" secondItem="FwY-Ij-3hr" secondAttribute="trailing" constant="22" id="hQu-Eb-iE1"/>
+                            <constraint firstItem="qI0-mK-0zO" firstAttribute="leading" secondItem="JLL-Jr-aTX" secondAttribute="trailing" constant="22" id="iLH-Mq-h8S"/>
+                            <constraint firstItem="FwY-Ij-3hr" firstAttribute="leading" secondItem="hRe-wJ-Uv1" secondAttribute="leading" constant="19" id="lt6-na-syq"/>
+                            <constraint firstItem="FwY-Ij-3hr" firstAttribute="top" secondItem="JLL-Jr-aTX" secondAttribute="bottom" constant="12" id="mgD-1R-uL4"/>
+                            <constraint firstItem="6vv-Im-VJE" firstAttribute="top" secondItem="KRk-Zg-qcF" secondAttribute="top" constant="44" id="off-6b-b5F"/>
+                            <constraint firstItem="hRe-wJ-Uv1" firstAttribute="trailing" secondItem="qI0-mK-0zO" secondAttribute="trailing" constant="19" id="roW-5b-te2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hRe-wJ-Uv1"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomConstraintStackView" destination="2Uq-us-wF9" id="P9f-6G-ndH"/>
+                        <outlet property="detailsButton" destination="9cc-M9-RJA" id="Ieo-n0-0FU"/>
+                        <outlet property="dislikeButton" destination="lJz-iI-2ac" id="agR-cU-ZHa"/>
+                        <outlet property="eventDateLabel" destination="qI0-mK-0zO" id="qz2-9K-VhW"/>
+                        <outlet property="eventImage" destination="KRk-Zg-qcF" id="u03-ul-sjl"/>
+                        <outlet property="eventNameLabel" destination="WEx-T9-cr8" id="X5h-uW-oVV"/>
+                        <outlet property="eventPlaceLabel" destination="bJo-sB-a3z" id="RJI-M3-TpT"/>
+                        <outlet property="heightEventName" destination="JQu-3C-9qQ" id="sod-dN-UJV"/>
+                        <outlet property="likeButton" destination="B85-yV-ibF" id="bty-y0-2Xo"/>
+                        <outlet property="likeDislikeButtons" destination="c9o-gU-86Z" id="YEU-Eu-8hJ"/>
+                        <outlet property="nerdyButton" destination="vjb-1f-GGv" id="KRj-6r-qVf"/>
+                        <outlet property="partyButton" destination="uGd-53-zA3" id="kc7-ax-n7I"/>
+                        <outlet property="partyNerdyButtons" destination="vnt-it-d3d" id="Dd9-y7-10S"/>
+                        <outlet property="profileButton" destination="6vv-Im-VJE" id="UhR-iP-UKq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BQa-UJ-Uke" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-168.11594202898553" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dislike" width="64" height="64"/>
+        <image name="dislikePressed" width="64" height="64"/>
+        <image name="ic_calendar" width="24" height="24"/>
+        <image name="ic_pin" width="24" height="24"/>
+        <image name="like" width="64" height="64"/>
+        <image name="likePressed" width="64" height="64"/>
+        <image name="user" width="18.5" height="24.5"/>
+    </resources>
+</document>
