@@ -13,6 +13,7 @@ protocol RegisterInteractorProtocol {
     func checkValid(login: String?) -> String?
     func checkValid(password: String?) -> String?
 	func registrate(email: String, password: String, completion: @escaping(_ userData: Success?, _ error: Error?) -> Void)
+    func save(token: String)
 }
 
 class RegisterInteractor: RegisterInteractorProtocol {
@@ -30,6 +31,11 @@ class RegisterInteractor: RegisterInteractorProtocol {
     internal func checkValid(password: String?) -> String? {
         return validateManager.validate(password: password)
     }
+    
+    internal func save(token: String) {
+        networkManager.save(token: token)
+    }
+    
 }
 
 

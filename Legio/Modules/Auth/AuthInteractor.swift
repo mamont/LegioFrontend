@@ -12,6 +12,7 @@ protocol AuthInteractorProtocol {
     func checkValid(login: String?) -> String?
     func checkValid(password: String?) -> String?
     func auth(email: String, password: String, completion: @escaping(_ userData: Success?, _ error: Error?) -> Void)
+    func save(token: String)
 }
 
 class AuthInteractor: AuthInteractorProtocol {
@@ -28,6 +29,10 @@ class AuthInteractor: AuthInteractorProtocol {
     
     internal func checkValid(password: String?) -> String? {
         return validateManager.validate(password: password)
+    }
+    
+    internal func save(token: String) {
+        network.save(token: token)
     }
     
 }

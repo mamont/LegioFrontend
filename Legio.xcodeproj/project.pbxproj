@@ -10,6 +10,8 @@
 		040E9C4423770FA600E94707 /* EventTypesAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E9C4323770FA600E94707 /* EventTypesAssembler.swift */; };
 		040E9C4623770FB800E94707 /* EventTypesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E9C4523770FB800E94707 /* EventTypesPresenter.swift */; };
 		040E9C4823770FC600E94707 /* EventTypesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E9C4723770FC600E94707 /* EventTypesInteractor.swift */; };
+		0434CAC923AB4BEC00A8C403 /* Interest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0434CAC823AB4BEC00A8C403 /* Interest.swift */; };
+		0434CACB23AB6CDA00A8C403 /* ResponseSetTimeInvest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0434CACA23AB6CDA00A8C403 /* ResponseSetTimeInvest.swift */; };
 		0463E31E235CBE8A008DF20B /* PresetAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E31D235CBE8A008DF20B /* PresetAssembler.swift */; };
 		0463E320235CBEA9008DF20B /* PresetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E31F235CBEA9008DF20B /* PresetPresenter.swift */; };
 		0463E322235CBEC7008DF20B /* PresetInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E321235CBEC7008DF20B /* PresetInteractor.swift */; };
@@ -29,7 +31,6 @@
 		0486528D235C94BF00151324 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486528C235C94BF00151324 /* CustomButton.swift */; };
 		04E0A4362378265200EC30CB /* HeaderInterestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A4352378265200EC30CB /* HeaderInterestCell.swift */; };
 		04E0A438237826F100EC30CB /* InterestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A437237826F100EC30CB /* InterestCell.swift */; };
-		04E0A43A2378296600EC30CB /* Interest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A4392378296600EC30CB /* Interest.swift */; };
 		04E0A43D23784E3800EC30CB /* SubInterestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A43C23784E3800EC30CB /* SubInterestCell.swift */; };
 		04E0A440237857A800EC30CB /* HeaderInterestPrototypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A43F237857A700EC30CB /* HeaderInterestPrototypeCell.swift */; };
 		04E0A44323786B0000EC30CB /* HeaderInterestCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A44223786B0000EC30CB /* HeaderInterestCellPresenter.swift */; };
@@ -87,6 +88,8 @@
 		040E9C4323770FA600E94707 /* EventTypesAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTypesAssembler.swift; sourceTree = "<group>"; };
 		040E9C4523770FB800E94707 /* EventTypesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTypesPresenter.swift; sourceTree = "<group>"; };
 		040E9C4723770FC600E94707 /* EventTypesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTypesInteractor.swift; sourceTree = "<group>"; };
+		0434CAC823AB4BEC00A8C403 /* Interest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
+		0434CACA23AB6CDA00A8C403 /* ResponseSetTimeInvest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSetTimeInvest.swift; sourceTree = "<group>"; };
 		0463E31D235CBE8A008DF20B /* PresetAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetAssembler.swift; sourceTree = "<group>"; };
 		0463E31F235CBEA9008DF20B /* PresetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetPresenter.swift; sourceTree = "<group>"; };
 		0463E321235CBEC7008DF20B /* PresetInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetInteractor.swift; sourceTree = "<group>"; };
@@ -118,7 +121,6 @@
 		0486528C235C94BF00151324 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		04E0A4352378265200EC30CB /* HeaderInterestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderInterestCell.swift; sourceTree = "<group>"; };
 		04E0A437237826F100EC30CB /* InterestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestCell.swift; sourceTree = "<group>"; };
-		04E0A4392378296600EC30CB /* Interest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
 		04E0A43C23784E3800EC30CB /* SubInterestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubInterestCell.swift; sourceTree = "<group>"; };
 		04E0A43F237857A700EC30CB /* HeaderInterestPrototypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderInterestPrototypeCell.swift; sourceTree = "<group>"; };
 		04E0A44223786B0000EC30CB /* HeaderInterestCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderInterestCellPresenter.swift; sourceTree = "<group>"; };
@@ -399,6 +401,8 @@
 				08D896F923526F2D0026ACBC /* User.swift */,
 				0463E323235CBF55008DF20B /* PresetEntity.swift */,
 				0463E33A235CD559008DF20B /* Event.swift */,
+				0434CAC823AB4BEC00A8C403 /* Interest.swift */,
+				0434CACA23AB6CDA00A8C403 /* ResponseSetTimeInvest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -493,7 +497,6 @@
 				040E9C4723770FC600E94707 /* EventTypesInteractor.swift */,
 				AA2654EE234F6B820013B777 /* EventTypesRouter.swift */,
 				AA2654F0234F6B8C0013B777 /* EventTypes.storyboard */,
-				04E0A4392378296600EC30CB /* Interest.swift */,
 			);
 			path = EventTypes;
 			sourceTree = "<group>";
@@ -636,7 +639,6 @@
 				AA2654D2234F61820013B777 /* AuthRouter.swift in Sources */,
 				AA2654E6234F682D0013B777 /* PresetView.swift in Sources */,
 				AAB4B82623564A8F008273AE /* RootInteractor.swift in Sources */,
-				04E0A43A2378296600EC30CB /* Interest.swift in Sources */,
 				AA2654BB234F57050013B777 /* RootView.swift in Sources */,
 				082B936C235BA173004AD930 /* AuthAssemler.swift in Sources */,
 				0463E320235CBEA9008DF20B /* PresetPresenter.swift in Sources */,
@@ -645,8 +647,10 @@
 				AA2654E8234F68360013B777 /* PresetRouter.swift in Sources */,
 				0463E32F235CD3B9008DF20B /* EventView.swift in Sources */,
 				040E9C4623770FB800E94707 /* EventTypesPresenter.swift in Sources */,
+				0434CAC923AB4BEC00A8C403 /* Interest.swift in Sources */,
 				04E0A440237857A800EC30CB /* HeaderInterestPrototypeCell.swift in Sources */,
 				0463E33D235CD5E1008DF20B /* UIImageView+Extension.swift in Sources */,
+				0434CACB23AB6CDA00A8C403 /* ResponseSetTimeInvest.swift in Sources */,
 				04E0A44523786C8500EC30CB /* UIView+Extension.swift in Sources */,
 				AAB4B82C23564F35008273AE /* RegisterInteractor.swift in Sources */,
 				0463E326235CBFE7008DF20B /* PresetSlider.swift in Sources */,

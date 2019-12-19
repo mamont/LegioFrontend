@@ -26,7 +26,6 @@ class PresetView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupViews()
     }
     
@@ -76,7 +75,7 @@ extension PresetView: PresetViewProtocol{
 extension PresetView {
     
     @IBAction func buttonNextTapped(_ sender: Any) {
-        presenter.showEventTypesTapped()
+        presenter.setTimeInvestTapped()
     }
     
 }

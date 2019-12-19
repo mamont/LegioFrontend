@@ -12,7 +12,7 @@ protocol PresetPresenterProtocol {
     func setupData()
     func updateData(percents: Int)
     func calculatePreset(preset: PresetEntity) ->PresetEntity
-    func showEventTypesTapped()
+    func setTimeInvestTapped()
 }
 
 class PresetPresenter: PresetPresenterProtocol {
@@ -20,6 +20,8 @@ class PresetPresenter: PresetPresenterProtocol {
     weak var view: PresetView?
     var interactor: PresetInteractor!
     var router: PresetRouter!
+    
+    private var currentInvestValue: Int = 50
     
     internal func setupData() {
         guard var party = interactor?.getData(type: .Party),
@@ -44,11 +46,20 @@ class PresetPresenter: PresetPresenterProtocol {
             var nerdy = PresetEntity(typePreset: .Nerdy, percent: 100 - percents, size: 0)
             nerdy = calculatePreset(preset: nerdy)
             interactor?.saveData(data: nerdy)
+        self.currentInvestValue = nerdy.percent
             view?.updateViews(preset: nerdy, font: makeFont(fontSize: nerdy.size))
     }
     
-    internal func showEventTypesTapped() {
-        router.showEventTypes()
+    internal func setTimeInvestTapped() {
+        self.interactor.setInvest(value: currentInvestValue) { [weak self] (response, error) in
+            guard let response = response else {
+                let errorString = error?.localizedDescription
+                return
+            }
+            self?.router.showEventTypes()
+            
+        }
+//        router.showEventTypes()
     }
     
     internal func calculatePreset(preset: PresetEntity) -> PresetEntity {

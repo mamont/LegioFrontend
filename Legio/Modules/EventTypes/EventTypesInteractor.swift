@@ -14,6 +14,8 @@ protocol EventTypesInteractorProtocol {
 
 class EventTypesInteractor: EventTypesInteractorProtocol {
 
+    private let networkManager = NetworkManager.shared
+    
     internal func getInterestList(completion: @escaping(_ interests: [Interest]) -> Void) {
         var interests: [Interest] = []
         interests.append(Interest(id: 0, name: "Кино"))
@@ -23,14 +25,25 @@ class EventTypesInteractor: EventTypesInteractorProtocol {
         interests.append(Interest(id: 0, name: "Длиннннннннннннннннннныйтег"))
         interests.append(Interest(id: 0, name: "Музеи"))
         
-        var subInterests: [Interest] = []
-        subInterests.append(Interest(id: 0, name: "Классика"))
-        subInterests.append(Interest(id: 0, name: "Авангард"))
-        subInterests.append(Interest(id: 0, name: "Популярная"))
-        subInterests.append(Interest(id: 0, name: "Рок"))
-        interests[1].subInterests = subInterests
+        interests.append(Interest(id: 0, name: "Классика"))
+        interests.append(Interest(id: 0, name: "Авангард"))
+        interests.append(Interest(id: 0, name: "Популярная"))
+        interests.append(Interest(id: 0, name: "Рок"))
         
+//        var subInterests: [Interest] = []
+//        subInterests.append(Interest(id: 0, name: "Классика"))
+//        subInterests.append(Interest(id: 0, name: "Авангард"))
+//        subInterests.append(Interest(id: 0, name: "Популярная"))
+//        subInterests.append(Interest(id: 0, name: "Рок"))
+//        interests[1].subInterests = subInterests
         completion(interests)
+//        networkManager.getInterestList { (interests, error) in
+//            if let interests = interests {
+//                completion(interests)
+//            } else {
+//                completion([])
+//            }
+//        }
     }
     
 }

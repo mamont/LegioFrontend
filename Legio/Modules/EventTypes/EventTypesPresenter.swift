@@ -13,6 +13,8 @@ protocol EventTypesPresenterProtocol {
     func viewDidLoad()
     func set(contentWidth: CGFloat)
     func getCellSize(for row: Int) -> CGSize
+    func getInterest(for row: Int) -> Interest
+    func didSelectInterest(at row: Int)
 //    func EventTypesTapped()
 //    func changed(login: String?)
 //    func changed(password: String?)
@@ -26,6 +28,9 @@ class EventTypesPresenter {
     
     private var contentWidth: CGFloat = 0
     private var interests: [Interest] = []
+    
+    private var interestCell: InterestCell? = nil
+    private var headerInterestCell: HeaderInterestDefaultCell? = nil
    
 }
 
@@ -52,20 +57,20 @@ extension EventTypesPresenter: EventTypesPresenterProtocol {
         var cellWidth: CGFloat = 30
         
         let interest: Interest = interests[row]
-        if interest.isOpened && interest.subInterests.count > 0 {
-            cellWidth = self.view.frame.width
-            
-            interestCell = InterestCell(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 600))
-            interestCell?.labelName.text = interest.name
-            interestCell?.subInterests = interest.subInterests
-            
-            interestCell?.contentView.layoutIfNeeded()
-            cellHeight = 70 + (interestCell?.interestsCollectionView.contentSize.height ?? 300)
-            print("cellHeight = \(cellHeight)")
-        } else {
-            headerInterestCell = HeaderInterestDefaultCell(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 600))
+//        if interest.isOpened && interest.subInterests.count > 0 {
+//            cellWidth = self.contentWidth
+//
+//            interestCell = InterestCell(frame: CGRect(x: 0, y: 0, width: self.contentWidth, height: 600))
+//            interestCell?.labelName.text = interest.name
+//            interestCell?.subInterests = interest.subInterests
+//
+//            interestCell?.contentView.layoutIfNeeded()
+//            cellHeight = 70 + (interestCell?.interestsCollectionView.contentSize.height ?? 300)
+//            print("cellHeight = \(cellHeight)")
+//        } else {
+            headerInterestCell = HeaderInterestDefaultCell(frame: CGRect(x: 0, y: 0, width: self.contentWidth, height: 600))
             headerInterestCell?.labelName.text = interest.name
-            let widthMaximum = (self.view.frame.width / 2) - 2
+            let widthMaximum = (self.contentWidth / 2) - 2
             
             headerInterestCell?.contentView.layoutIfNeeded()
             
@@ -74,9 +79,18 @@ extension EventTypesPresenter: EventTypesPresenterProtocol {
                 ? widthMaximum
                 : cellMainWidth
             
-            interests[indexPath.row].cellWidth = cellWidth
-        }
+            interests[row].cellWidth = cellWidth
+//        }
         return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    internal func getInterest(for row: Int) -> Interest {
+        return interests[row]
+    }
+    
+    internal func didSelectInterest(at row: Int) {
+        interests[row].isOpened = !interests[row].isOpened
+        self.view?.updateData()
     }
     
 }
