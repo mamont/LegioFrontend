@@ -15,6 +15,7 @@ protocol NetworkManagerProtocol {
     func userAuth(login: String, password: String, completion: @escaping(_ userData: Success?, _ error: Error?) -> Void)
     func setInvest(value: Int, completion: @escaping(_ : ResponseSetTimeInvest?, _ error: Error?) -> Void)
     func getInterestList(completion: @escaping(_ interests: [Interest]?, _ error: Error?) -> Void)
+    func getEvents(completion: @escaping(_ events: [Event]?, _ error: Error?) -> Void)
 }
 
 class NetworkManager: NetworkManagerProtocol {
@@ -159,9 +160,55 @@ class NetworkManager: NetworkManagerProtocol {
 //                    let userData = try JSONDecoder().decode([Interest].self, from: data)
 //                    completion(userData, nil)
 //                } catch let error {
-                    print(error)
+//                    print(error)
                     completion(nil, error)
 //                }
+            }
+        }.resume()
+    }
+    
+    func getEvents(completion: @escaping(_ events: [Event]?, _ error: Error?) -> Void) {
+        var urlConstructor = URLComponents()
+        let authValue: String = "Bearer \(getToken())"
+        urlConstructor.scheme = "http"
+        urlConstructor.host = "legio-app.tmweb.ru"
+        urlConstructor.path = "/api/events"
+
+        guard let registerURL = urlConstructor.url else {
+            return
+        }
+        var request = URLRequest(url: registerURL)
+        request.httpMethod = "GET"
+        request.setValue(authValue, forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data else { return }
+            
+            if let stringData = String(data: data, encoding: String.Encoding.utf8) as String? {
+                print(stringData)
+            }
+            DispatchQueue.main.async {
+                do {
+                    let events = try JSONDecoder().decode([Event].self, from: data)
+//                    self.event?.id = items.id
+//                    self.event?.created = items.created
+//                    self.event?.updated = items.updated
+//                    self.event?.name = items.name
+//                    self.event?.category = items.category
+//                    self.event?.createdAt = items.createdAt
+//                    self.event?.starts = items.starts
+//                    self.event?.ends = items.ends
+//                    self.event?.image = items.image
+//                    self.event?.url = items.url
+//                    self.event?.location = items.location
+//                    self.event?.organization = items.organization
+//                    self.event?.tagName = items.tagName
+//                    self.event?.categoryName = items.categoryName
+                    completion(events, nil)
+                } catch let error {
+                    completion(nil, error)
+                    print(error)
+                }
             }
         }.resume()
     }

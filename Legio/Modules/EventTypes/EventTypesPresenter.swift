@@ -15,6 +15,7 @@ protocol EventTypesPresenterProtocol {
     func getCellSize(for row: Int) -> CGSize
     func getInterest(for row: Int) -> Interest
     func didSelectInterest(at row: Int)
+    func didNextTapped()
 //    func EventTypesTapped()
 //    func changed(login: String?)
 //    func changed(password: String?)
@@ -38,6 +39,10 @@ extension EventTypesPresenter: EventTypesPresenterProtocol {
     
     internal var itemsCount: Int {
         return interests.count
+    }
+    
+    internal func didNextTapped() {
+        self.router.showMain()
     }
     
     internal func viewDidLoad() {

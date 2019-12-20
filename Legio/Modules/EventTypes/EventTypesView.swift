@@ -107,7 +107,7 @@ extension EventTypesView {
 extension EventTypesView {
 	
 	@IBAction func buttonNextTapped(_ sender: Any) {
-		
+        self.presenter.didNextTapped()
 	}
 	
 }
