@@ -10,6 +10,7 @@ import UIKit
 
 protocol EventViewProtocol: class {
     func show(error: String)
+    func showEvent()
 }
 
 class EventView: UIViewController {
@@ -111,6 +112,10 @@ extension EventView: EventViewProtocol {
     
     @IBAction func nerdyButton(_ sender: UIButton) {
         presenter.showNerdy()
+    }
+    
+    internal func showEvent() {
+        configureViews()
     }
     
 }

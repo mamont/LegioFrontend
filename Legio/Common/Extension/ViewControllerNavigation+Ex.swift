@@ -18,6 +18,7 @@ enum NavigationBarState {
     case onlyBackButton
     case show
 }
+
 extension UIViewController {
     
     internal func configureNavigationBar(state: NavigationBarState) {

@@ -2,17 +2,18 @@
 //  EventTypesAssembler.swift
 //  Legio
 //
-//  Created by Sergey Mikhailov on 30.10.2019.
+//  Created by Mac on 09.11.2019.
 //  Copyright © 2019 Марат Нургалиев. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-protocol EventTypesAssmblerProtocol {
+protocol EventTypesAssemblerProtocol {
     func assemble(with view: EventTypesView)
 }
 
-class EventTypesAssmbler: EventTypesAssmblerProtocol{
+class EventTypesAssembler: EventTypesAssemblerProtocol {
+    
     func assemble(with view: EventTypesView) {
         let router = EventTypesRouter(controller: view)
         let interactor = EventTypesInteractor()
@@ -24,6 +25,4 @@ class EventTypesAssmbler: EventTypesAssmblerProtocol{
         
         view.presenter = presenter
     }
-    
-    
 }

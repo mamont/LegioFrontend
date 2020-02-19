@@ -12,10 +12,13 @@ protocol PresetInteractorProtocol {
     
     func saveData(data: PresetEntity)
     func getData(type: TypePreset) ->PresetEntity
+    func setInvest(value: Int, completion: @escaping(_ response: ResponseSetTimeInvest?, _ error: Error?) -> Void)
     
 }
 
 class PresetInteractor: PresetInteractorProtocol {
+    
+    var network = NetworkManager.shared
     
     func saveData(data: PresetEntity) {
         // Куда-то сохраняем. Куда лучше?
@@ -42,6 +45,10 @@ class PresetInteractor: PresetInteractorProtocol {
         
         let preset = PresetEntity(typePreset: type, percent: middlePercentOfValue, size: Float(middleSize))
         return preset
+    }
+    
+    func setInvest(value: Int, completion: @escaping(_ response: ResponseSetTimeInvest?, _ error: Error?) -> Void) {
+        network.setInvest(value: value, completion: completion)
     }
 
 }

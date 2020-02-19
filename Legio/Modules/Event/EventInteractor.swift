@@ -10,11 +10,16 @@ import Foundation
 
 protocol EventInteractorProtocol {
     func loadEvent() -> Event?
+    func getEvents(completion: @escaping(_ events: [Event]?, _ error: Error?) -> Void)
 }
 
 class EventInteractor: EventInteractorProtocol {
     var event: Event?
+    private var network = NetworkManager.shared
     
+    internal func getEvents(completion: @escaping(_ events: [Event]?, _ error: Error?) -> Void) {
+        network.getEvents(completion: completion)
+    }
     // данный код должен будет перейти в NetworkManager,  но в качестве модуля пойдет
     /*
     func loadEvent() -> Event? {

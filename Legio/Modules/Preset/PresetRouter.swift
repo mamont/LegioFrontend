@@ -18,11 +18,9 @@ class PresetRouter: BaseRouter {
 extension PresetRouter: PresetRouterProtocol {
 	
 	func showEventTypes() {
-
         guard let controller = UIStoryboard(name: "EventTypes", bundle: nil)
             .instantiateViewController(withIdentifier: EventTypesView.storyboardIdentifier) as? EventTypesView else { return }
-        
-        let assembler: EventTypesAssmbler = EventTypesAssmbler()
+        let assembler: EventTypesAssemblerProtocol = EventTypesAssembler()
         assembler.assemble(with: controller)
         self.show(controller)
 	}

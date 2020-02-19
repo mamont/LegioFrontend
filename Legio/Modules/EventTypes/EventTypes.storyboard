@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIText-Semibold.ttf">
+            <string>SFUIText-Semibold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Event Types View-->
         <scene sceneID="1eA-ef-ELZ">
@@ -17,14 +22,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvX-B7-zXC">
-                                <rect key="frame" x="16" y="786" width="382" height="60"/>
-                                <color key="backgroundColor" red="0.19175979500000001" green="0.44129121300000002" blue="0.94280785320000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите, что Вам интересно" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFa-L8-mO4">
+                                <rect key="frame" x="24" y="84" width="366" height="76.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Это поможет подбирать уникальные события" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gac-Nm-oW6">
+                                <rect key="frame" x="24" y="176.5" width="366" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hiy-rW-CnI">
+                                <rect key="frame" x="0.0" y="226" width="414" height="558"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ixA-Dg-5lb">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14L-KU-zn2">
+                                <rect key="frame" x="24" y="808" width="327" height="64"/>
+                                <color key="backgroundColor" red="0.0" green="0.45882352939999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="uwr-PA-gwo"/>
+                                    <constraint firstAttribute="height" constant="64" id="KdJ-tF-URB"/>
+                                    <constraint firstAttribute="width" constant="327" id="hB0-TG-VLT"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="20"/>
                                 <state key="normal" title="Продолжить">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -32,7 +62,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonNextTapped:" destination="e9t-O5-qAe" eventType="touchUpInside" id="yTU-Gk-EbB"/>
+                                    <action selector="buttonNextTapped:" destination="e9t-O5-qAe" eventType="touchUpInside" id="j2S-2p-vwf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите, что вам интересно" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXx-1T-aN4">
@@ -97,19 +127,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6kS-3o-uCm" firstAttribute="trailing" secondItem="sVm-wa-3hI" secondAttribute="trailing" constant="24" id="8F7-k9-7bP"/>
-                            <constraint firstItem="fXx-1T-aN4" firstAttribute="leading" secondItem="6kS-3o-uCm" secondAttribute="leading" constant="24" id="AOh-Uw-Pd0"/>
-                            <constraint firstItem="6kS-3o-uCm" firstAttribute="trailing" secondItem="MYn-Qs-KFa" secondAttribute="trailing" constant="20" id="Dfn-36-N9x"/>
-                            <constraint firstItem="fXx-1T-aN4" firstAttribute="top" secondItem="6kS-3o-uCm" secondAttribute="top" constant="10" id="GEG-Fv-MK0"/>
-                            <constraint firstItem="MYn-Qs-KFa" firstAttribute="leading" secondItem="6kS-3o-uCm" secondAttribute="leading" constant="20" id="NL5-Dn-sxH"/>
-                            <constraint firstItem="sVm-wa-3hI" firstAttribute="leading" secondItem="6kS-3o-uCm" secondAttribute="leading" constant="24" id="QDy-Fb-Pzt"/>
-                            <constraint firstItem="6kS-3o-uCm" firstAttribute="trailing" secondItem="fXx-1T-aN4" secondAttribute="trailing" constant="24" id="SXN-XL-01c"/>
-                            <constraint firstItem="JvX-B7-zXC" firstAttribute="top" secondItem="MYn-Qs-KFa" secondAttribute="bottom" constant="20" id="XPk-QA-IeV"/>
-                            <constraint firstItem="6kS-3o-uCm" firstAttribute="trailing" secondItem="JvX-B7-zXC" secondAttribute="trailing" constant="16" id="Zep-by-OvX"/>
-                            <constraint firstItem="MYn-Qs-KFa" firstAttribute="top" secondItem="sVm-wa-3hI" secondAttribute="bottom" constant="48" id="aCr-al-y8y"/>
-                            <constraint firstItem="sVm-wa-3hI" firstAttribute="top" secondItem="fXx-1T-aN4" secondAttribute="bottom" constant="16" id="hEe-yq-z9g"/>
-                            <constraint firstItem="6kS-3o-uCm" firstAttribute="bottom" secondItem="JvX-B7-zXC" secondAttribute="bottom" constant="16" id="tzZ-X3-mss"/>
-                            <constraint firstItem="JvX-B7-zXC" firstAttribute="leading" secondItem="6kS-3o-uCm" secondAttribute="leading" constant="16" id="uht-r9-7vO"/>
+                            <constraint firstItem="NFa-L8-mO4" firstAttribute="leading" secondItem="6kS-3o-uCm" secondAttribute="leading" constant="24" id="5IP-sD-qOq"/>
+                            <constraint firstItem="hiy-rW-CnI" firstAttribute="leading" secondItem="6kS-3o-uCm" secondAttribute="leading" id="70e-Sg-C18"/>
+                            <constraint firstItem="14L-KU-zn2" firstAttribute="leading" secondItem="VYR-Id-Lw9" secondAttribute="leading" constant="24" id="9EY-Op-Bq4"/>
+                            <constraint firstAttribute="trailing" secondItem="14L-KU-zn2" secondAttribute="trailing" constant="24" id="Iw0-RZ-NK3"/>
+                            <constraint firstItem="6kS-3o-uCm" firstAttribute="trailing" secondItem="Gac-Nm-oW6" secondAttribute="trailing" constant="24" id="JuT-li-0Vj"/>
+                            <constraint firstItem="Gac-Nm-oW6" firstAttribute="leading" secondItem="6kS-3o-uCm" secondAttribute="leading" constant="24" id="Tka-SJ-A03"/>
+                            <constraint firstItem="hiy-rW-CnI" firstAttribute="top" secondItem="Gac-Nm-oW6" secondAttribute="bottom" constant="30" id="ci1-kZ-osd"/>
+                            <constraint firstItem="NFa-L8-mO4" firstAttribute="top" secondItem="6kS-3o-uCm" secondAttribute="top" constant="40" id="goK-Tw-fFv"/>
+                            <constraint firstItem="6kS-3o-uCm" firstAttribute="trailing" secondItem="hiy-rW-CnI" secondAttribute="trailing" id="klu-sK-pGw"/>
+                            <constraint firstItem="14L-KU-zn2" firstAttribute="top" secondItem="hiy-rW-CnI" secondAttribute="bottom" constant="24" id="pSo-Ha-ngz"/>
+                            <constraint firstAttribute="bottom" secondItem="14L-KU-zn2" secondAttribute="bottom" constant="24" id="sLm-m5-Ifh"/>
+                            <constraint firstItem="6kS-3o-uCm" firstAttribute="trailing" secondItem="NFa-L8-mO4" secondAttribute="trailing" constant="24" id="smD-uI-kiL"/>
+                            <constraint firstItem="Gac-Nm-oW6" firstAttribute="top" secondItem="NFa-L8-mO4" secondAttribute="bottom" constant="16" id="yMf-yX-GtV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6kS-3o-uCm"/>
                         <userDefinedRuntimeAttributes>
@@ -119,7 +149,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="MYn-Qs-KFa" id="Hwt-RL-LCU"/>
+                        <outlet property="collectionView" destination="hiy-rW-CnI" id="ECN-XD-D91"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZK-Yh-9gv" userLabel="First Responder" sceneMemberID="firstResponder"/>

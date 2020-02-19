@@ -27,6 +27,8 @@ class EventPresenter {
     var interactor: EventInteractorProtocol!
     var router: EventRouterProtocol!
     var event: Event?
+    
+    private var events: [Event] = []
     let defaultEventImage: String = "eventImage"
     var notification = NotificationDelegate()
     let locationManager = LocationManager.sharedManager
@@ -44,11 +46,17 @@ extension EventPresenter: EventPresenterProtocol {
     }
     
     func loadEvent() {
-        event = interactor.loadEvent()
-        var dateComponents = DateComponents()
-        dateComponents.hour = 11 //Уточнить формат event?.ends
-        dateComponents.minute = 15 //Уточнить формат event?.ends
-        notification.scheduleNotification(notificationType: event!.name, dateComponents: dateComponents)
+//        self.interactor.getEvents { [weak self] (events, error) in
+//            if let events = events,
+//            events.count > 0 {
+//                self?.events = events
+//                self?.event = events[0]
+//            } else {
+//                self?.event = self?.interactor.loadEvent()
+//            }
+//        self?.view?.showEvent()
+//        }
+        self.event = self.interactor.loadEvent()
     }
     
     func loadImage() -> UIImage {
