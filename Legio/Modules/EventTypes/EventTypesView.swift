@@ -16,8 +16,8 @@ class EventTypesView: UIViewController {
 	
     @IBOutlet weak var collectionView: UICollectionView!
     
+  
     private let headerIdentifier: String = "HeaderInterestCell"
-//    private let cellIdentifier: String = "InterestCell"
     
     var presenter: EventTypesPresenterProtocol!
     
@@ -97,7 +97,6 @@ extension EventTypesView {
         collectionView.dataSource = self
         
         collectionView.register(HeaderInterestCell.self, forCellWithReuseIdentifier: headerIdentifier)
-//        collectionView.register(InterestCell.self, forCellWithReuseIdentifier: cellIdentifier)
     }
     
 }

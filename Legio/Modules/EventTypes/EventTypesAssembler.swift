@@ -25,6 +25,4 @@ class EventTypesAssembler: EventTypesAssemblerProtocol {
         
         view.presenter = presenter
     }
-    
 }
-

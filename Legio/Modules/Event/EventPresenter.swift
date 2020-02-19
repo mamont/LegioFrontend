@@ -18,6 +18,8 @@ protocol EventPresenterProtocol: class {
     func correctAddress() -> String
     func loadImage() -> UIImage
     func showParty()
+    func showNerdy
+    func fetchLocationInfo(completion: @escaping (String?) -> Void)
 }
 
 class EventPresenter {
@@ -28,12 +30,15 @@ class EventPresenter {
     
     private var events: [Event] = []
     let defaultEventImage: String = "eventImage"
+    var notification = NotificationDelegate()
+    let locationManager = LocationManager.sharedManager
+    var expectedTravelTime: String?
 }
 
 extension EventPresenter: EventPresenterProtocol {
     
     func profileTapped() {
-        router.showPreset()
+        router.showProfile()
     }
     
     func detailsTapped() {
@@ -111,8 +116,20 @@ extension EventPresenter: EventPresenterProtocol {
         return correctAddress
     }
     
+    func fetchLocationInfo(completion: @escaping (String?) -> Void) {
+        locationManager.getWalkingDistance(destination: self.event!.coordinates) {
+            distanceString, metres in
+            self.expectedTravelTime = distanceString
+            completion(self.expectedTravelTime)
+        }
+    }
+    
     func showParty() {
         router.showParty()
+    }
+    
+    func showNerdy() {
+        router.showNerdy()
     }
     
 }

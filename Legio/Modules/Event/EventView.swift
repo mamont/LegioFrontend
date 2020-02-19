@@ -42,11 +42,7 @@ class EventView: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if mainEvent {
-            self.configureNavigationBar(state: .hide)
-        } else {
-            self.configureNavigationBar(state: .show)
-        }
+        self.configureNavigationBar(state: .hide)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -115,7 +111,7 @@ extension EventView: EventViewProtocol {
     }
     
     @IBAction func nerdyButton(_ sender: UIButton) {
-        presenter.showParty()
+        presenter.showNerdy()
     }
     
     internal func showEvent() {
@@ -127,12 +123,16 @@ extension EventView: EventViewProtocol {
 extension EventView {
     
     private func configureViews() {
+        self.navigationController?.navigationBar.isHidden = false
         partyNerdyButtons.isHidden = true
         eventImage.image = presenter.loadImage()
         eventNameLabel.attributedText = presenter.configureNameLabel()
         eventDateLabel.attributedText = presenter.configureDateLabel()
-        eventPlaceLabel.text = presenter.correctAddress()
+        eventPlaceLabel.set(image: UIImage(named: "ic_bus")!, with: presenter.correctAddress(), and: "- мин")
+        
+        presenter.fetchLocationInfo() {expectedTravelTime in
+            self.eventPlaceLabel.set(image: UIImage(named: "ic_bus")!, with: self.presenter.correctAddress(), and: expectedTravelTime ?? "-")
+        }
     }
     
 }
-
