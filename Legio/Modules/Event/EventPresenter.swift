@@ -18,7 +18,8 @@ protocol EventPresenterProtocol: class {
     func correctAddress() -> String
     func loadImage() -> UIImage
     func showParty()
-    func showNerdy()
+    func showNerdy
+    func fetchLocationInfo(completion: @escaping (String?) -> Void)
 }
 
 class EventPresenter {
@@ -27,6 +28,9 @@ class EventPresenter {
     var router: EventRouterProtocol!
     var event: Event?
     let defaultEventImage: String = "eventImage"
+    var notification = NotificationDelegate()
+    let locationManager = LocationManager.sharedManager
+    var expectedTravelTime: String?
 }
 
 extension EventPresenter: EventPresenterProtocol {
@@ -41,6 +45,10 @@ extension EventPresenter: EventPresenterProtocol {
     
     func loadEvent() {
         event = interactor.loadEvent()
+        var dateComponents = DateComponents()
+        dateComponents.hour = 11 //Уточнить формат event?.ends
+        dateComponents.minute = 15 //Уточнить формат event?.ends
+        notification.scheduleNotification(notificationType: event!.name, dateComponents: dateComponents)
     }
     
     func loadImage() -> UIImage {
@@ -98,6 +106,14 @@ extension EventPresenter: EventPresenterProtocol {
             correctAddress = correctAddress.replacingOccurrences(of: key, with: value)
         }
         return correctAddress
+    }
+    
+    func fetchLocationInfo(completion: @escaping (String?) -> Void) {
+        locationManager.getWalkingDistance(destination: self.event!.coordinates) {
+            distanceString, metres in
+            self.expectedTravelTime = distanceString
+            completion(self.expectedTravelTime)
+        }
     }
     
     func showParty() {
