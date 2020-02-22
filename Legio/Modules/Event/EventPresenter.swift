@@ -18,7 +18,7 @@ protocol EventPresenterProtocol: class {
     func correctAddress() -> String
     func loadImage() -> UIImage
     func showParty()
-    func showNerdy
+    func showNerdy()
     func fetchLocationInfo(completion: @escaping (String?) -> Void)
 }
 

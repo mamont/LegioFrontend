@@ -42,7 +42,7 @@ extension EventTypesPresenter: EventTypesPresenterProtocol {
     }
     
     internal func didNextTapped() {
-        self.router.showMain()
+        self.router.showEvent()
     }
     
     internal func viewDidLoad() {
