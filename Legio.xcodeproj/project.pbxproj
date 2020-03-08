@@ -3,10 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04208E5E240AD6F700FC5F36 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04208E5D240AD6F700FC5F36 /* AuthService.swift */; };
+		04208E60240AD70500FC5F36 /* AuthServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04208E5F240AD70500FC5F36 /* AuthServiceImplementation.swift */; };
+		04208E62240AD71100FC5F36 /* AuthTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04208E61240AD71100FC5F36 /* AuthTarget.swift */; };
+		04208E64240BA38700FC5F36 /* NetworkSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04208E63240BA38700FC5F36 /* NetworkSettings.swift */; };
+		04208E66240C381B00FC5F36 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04208E65240C381B00FC5F36 /* UserProfile.swift */; };
+		04208E68240C3A8100FC5F36 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04208E67240C3A8100FC5F36 /* NetworkError.swift */; };
+		04CFB7E524140A030092D433 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFB7E424140A030092D433 /* ProfileService.swift */; };
+		04CFB7E724140AAF0092D433 /* ProfileServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFB7E624140AAF0092D433 /* ProfileServiceImplementation.swift */; };
+		04CFB7E924140B880092D433 /* ProfileTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFB7E824140B880092D433 /* ProfileTarget.swift */; };
+		04CFB7EB241580850092D433 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFB7EA241580850092D433 /* Profile.swift */; };
+		04CFB7EE241583030092D433 /* EventsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFB7ED241583030092D433 /* EventsService.swift */; };
+		04CFB7F0241583190092D433 /* EventsServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFB7EF241583190092D433 /* EventsServiceImplementation.swift */; };
+		04CFB7F2241583230092D433 /* EventsTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFB7F1241583230092D433 /* EventsTarget.swift */; };
+		04CFB7F42415868E0092D433 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFB7F32415868E0092D433 /* Event.swift */; };
+		04CFB7F6241586F60092D433 /* PosterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFB7F5241586F60092D433 /* PosterImage.swift */; };
+		04CFB7F82415874A0092D433 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFB7F72415874A0092D433 /* Location.swift */; };
+		04CFB7FA241587900092D433 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFB7F9241587900092D433 /* Category.swift */; };
 		E14C3FC423FDDCAA00C43877 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3F6D23FDDC8400C43877 /* AppDelegate.swift */; };
 		E14C3FC523FDDCB000C43877 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3F5023FDDC8400C43877 /* CustomButton.swift */; };
 		E14C3FC623FDDCB400C43877 /* PresetSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3F5123FDDC8400C43877 /* PresetSlider.swift */; };
@@ -23,8 +40,6 @@
 		E14C3FD123FDDCC400C43877 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3F5F23FDDC8400C43877 /* BaseRouter.swift */; };
 		E14C3FD223FDDCCE00C43877 /* Legio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E14C3F6223FDDC8400C43877 /* Legio.xcdatamodeld */; };
 		E14C3FD323FDDCD100C43877 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3F6423FDDC8400C43877 /* NotificationDelegate.swift */; };
-		E14C3FD423FDDCDC00C43877 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3F6623FDDC8400C43877 /* NetworkManager.swift */; };
-		E14C3FD523FDDCDC00C43877 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3F6723FDDC8400C43877 /* User.swift */; };
 		E14C3FD623FDDCE200C43877 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3F6B23FDDC8400C43877 /* LocationManager.swift */; };
 		E14C3FD723FDDCE700C43877 /* ValidateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3F6923FDDC8400C43877 /* ValidateManager.swift */; };
 		E14C3FD823FDDCE700C43877 /* ValidateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3F6A23FDDC8400C43877 /* ValidateProtocol.swift */; };
@@ -87,7 +102,6 @@
 		E14C401123FDDD3A00C43877 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3FBA23FDDC8400C43877 /* MainView.swift */; };
 		E14C401223FDDD4000C43877 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3FBC23FDDC8400C43877 /* EventView.swift */; };
 		E14C401323FDDD4000C43877 /* EventAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3FBD23FDDC8400C43877 /* EventAssembler.swift */; };
-		E14C401423FDDD4000C43877 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3FBE23FDDC8400C43877 /* Event.swift */; };
 		E14C401523FDDD4000C43877 /* EventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3FBF23FDDC8400C43877 /* EventPresenter.swift */; };
 		E14C401623FDDD4000C43877 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14C3FC023FDDC8400C43877 /* Event.storyboard */; };
 		E14C401723FDDD4000C43877 /* EventWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3FC123FDDC8400C43877 /* EventWebView.swift */; };
@@ -112,10 +126,30 @@
 		E14C402B2401351400C43877 /* HeaderInterestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3FA723FDDC8400C43877 /* HeaderInterestCell.swift */; };
 		E14C402C2401351600C43877 /* HeaderInterestCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3FA623FDDC8400C43877 /* HeaderInterestCellPresenter.swift */; };
 		E14C402D2401351900C43877 /* HeaderInterestPrototypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3FA823FDDC8400C43877 /* HeaderInterestPrototypeCell.swift */; };
+		F9C518B94673FEF3995583BE /* Pods_Legio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE3A1D082D90CB0A13800D7 /* Pods_Legio.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04208E5D240AD6F700FC5F36 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		04208E5F240AD70500FC5F36 /* AuthServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceImplementation.swift; sourceTree = "<group>"; };
+		04208E61240AD71100FC5F36 /* AuthTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTarget.swift; sourceTree = "<group>"; };
+		04208E63240BA38700FC5F36 /* NetworkSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSettings.swift; sourceTree = "<group>"; };
+		04208E65240C381B00FC5F36 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		04208E67240C3A8100FC5F36 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		04CFB7E424140A030092D433 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		04CFB7E624140AAF0092D433 /* ProfileServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileServiceImplementation.swift; sourceTree = "<group>"; };
+		04CFB7E824140B880092D433 /* ProfileTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTarget.swift; sourceTree = "<group>"; };
+		04CFB7EA241580850092D433 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		04CFB7ED241583030092D433 /* EventsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsService.swift; sourceTree = "<group>"; };
+		04CFB7EF241583190092D433 /* EventsServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsServiceImplementation.swift; sourceTree = "<group>"; };
+		04CFB7F1241583230092D433 /* EventsTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTarget.swift; sourceTree = "<group>"; };
+		04CFB7F32415868E0092D433 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		04CFB7F5241586F60092D433 /* PosterImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImage.swift; sourceTree = "<group>"; };
+		04CFB7F72415874A0092D433 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		04CFB7F9241587900092D433 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		4017DB3B16079A081922E3B4 /* Pods-Legio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Legio.debug.xcconfig"; path = "Target Support Files/Pods-Legio/Pods-Legio.debug.xcconfig"; sourceTree = "<group>"; };
 		AA26549E234F54D60013B777 /* Legio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Legio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B60D37E4C4512EF3B7DF59E8 /* Pods-Legio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Legio.release.xcconfig"; path = "Target Support Files/Pods-Legio/Pods-Legio.release.xcconfig"; sourceTree = "<group>"; };
 		E14C3F3C23FDDC8400C43877 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E14C3F3E23FDDC8400C43877 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E14C3F4123FDDC8400C43877 /* SFUIText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Medium.ttf"; sourceTree = "<group>"; };
@@ -146,8 +180,6 @@
 		E14C3F5F23FDDC8400C43877 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		E14C3F6323FDDC8400C43877 /* Legio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Legio.xcdatamodel; sourceTree = "<group>"; };
 		E14C3F6423FDDC8400C43877 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDelegate.swift; sourceTree = "<group>"; };
-		E14C3F6623FDDC8400C43877 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		E14C3F6723FDDC8400C43877 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E14C3F6923FDDC8400C43877 /* ValidateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateManager.swift; sourceTree = "<group>"; };
 		E14C3F6A23FDDC8400C43877 /* ValidateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateProtocol.swift; sourceTree = "<group>"; };
 		E14C3F6B23FDDC8400C43877 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -216,12 +248,12 @@
 		E14C3FBA23FDDC8400C43877 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E14C3FBC23FDDC8400C43877 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		E14C3FBD23FDDC8400C43877 /* EventAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAssembler.swift; sourceTree = "<group>"; };
-		E14C3FBE23FDDC8400C43877 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		E14C3FBF23FDDC8400C43877 /* EventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenter.swift; sourceTree = "<group>"; };
 		E14C3FC023FDDC8400C43877 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		E14C3FC123FDDC8400C43877 /* EventWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventWebView.swift; sourceTree = "<group>"; };
 		E14C3FC223FDDC8400C43877 /* EventInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInteractor.swift; sourceTree = "<group>"; };
 		E14C3FC323FDDC8400C43877 /* EventRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRouter.swift; sourceTree = "<group>"; };
+		FDE3A1D082D90CB0A13800D7 /* Pods_Legio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Legio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,17 +261,71 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C518B94673FEF3995583BE /* Pods_Legio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04208E5C240AD6E100FC5F36 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				04208E5D240AD6F700FC5F36 /* AuthService.swift */,
+				04208E5F240AD70500FC5F36 /* AuthServiceImplementation.swift */,
+				04208E61240AD71100FC5F36 /* AuthTarget.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		04CFB7E1241407A30092D433 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		04CFB7E22414092B0092D433 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				04CFB7EA241580850092D433 /* Profile.swift */,
+				04208E65240C381B00FC5F36 /* UserProfile.swift */,
+				04CFB7F32415868E0092D433 /* Event.swift */,
+				04CFB7F5241586F60092D433 /* PosterImage.swift */,
+				04CFB7F72415874A0092D433 /* Location.swift */,
+				04CFB7F9241587900092D433 /* Category.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		04CFB7E3241409DB0092D433 /* Profille */ = {
+			isa = PBXGroup;
+			children = (
+				04CFB7E424140A030092D433 /* ProfileService.swift */,
+				04CFB7E624140AAF0092D433 /* ProfileServiceImplementation.swift */,
+				04CFB7E824140B880092D433 /* ProfileTarget.swift */,
+			);
+			path = Profille;
+			sourceTree = "<group>";
+		};
+		04CFB7EC241582F20092D433 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				04CFB7ED241583030092D433 /* EventsService.swift */,
+				04CFB7EF241583190092D433 /* EventsServiceImplementation.swift */,
+				04CFB7F1241583230092D433 /* EventsTarget.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
 		AA265495234F54D60013B777 = {
 			isa = PBXGroup;
 			children = (
+				04CFB7E1241407A30092D433 /* New Group */,
 				AA2654A0234F54D60013B777 /* Legio */,
 				AA26549F234F54D60013B777 /* Products */,
+				F986928801C64F6F9CFE3DA0 /* Pods */,
+				EAFE9539452F6889960E0065 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -376,8 +462,12 @@
 		E14C3F6523FDDC8400C43877 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				E14C3F6623FDDC8400C43877 /* NetworkManager.swift */,
-				E14C3F6723FDDC8400C43877 /* User.swift */,
+				04208E63240BA38700FC5F36 /* NetworkSettings.swift */,
+				04208E67240C3A8100FC5F36 /* NetworkError.swift */,
+				04CFB7E22414092B0092D433 /* Models */,
+				04208E5C240AD6E100FC5F36 /* Auth */,
+				04CFB7E3241409DB0092D433 /* Profille */,
+				04CFB7EC241582F20092D433 /* Events */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -586,7 +676,6 @@
 			children = (
 				E14C3FBC23FDDC8400C43877 /* EventView.swift */,
 				E14C3FBD23FDDC8400C43877 /* EventAssembler.swift */,
-				E14C3FBE23FDDC8400C43877 /* Event.swift */,
 				E14C3FBF23FDDC8400C43877 /* EventPresenter.swift */,
 				E14C3FC023FDDC8400C43877 /* Event.storyboard */,
 				E14C3FC123FDDC8400C43877 /* EventWebView.swift */,
@@ -596,6 +685,23 @@
 			path = Event;
 			sourceTree = "<group>";
 		};
+		EAFE9539452F6889960E0065 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDE3A1D082D90CB0A13800D7 /* Pods_Legio.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F986928801C64F6F9CFE3DA0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4017DB3B16079A081922E3B4 /* Pods-Legio.debug.xcconfig */,
+				B60D37E4C4512EF3B7DF59E8 /* Pods-Legio.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -603,9 +709,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA2654B3234F54DA0013B777 /* Build configuration list for PBXNativeTarget "Legio" */;
 			buildPhases = (
+				18B054DC7483A5B4ADE908C8 /* [CP] Check Pods Manifest.lock */,
 				AA26549A234F54D60013B777 /* Sources */,
 				AA26549B234F54D60013B777 /* Frameworks */,
 				AA26549C234F54D60013B777 /* Resources */,
+				C43473929893DD154AC26B74 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -684,6 +792,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18B054DC7483A5B4ADE908C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Legio-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C43473929893DD154AC26B74 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Legio/Pods-Legio-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Legio/Pods-Legio-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Legio/Pods-Legio-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AA26549A234F54D60013B777 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -693,6 +843,7 @@
 				E14C3FC523FDDCB000C43877 /* CustomButton.swift in Sources */,
 				E14C3FE723FDDD0500C43877 /* FeedbackAssembler.swift in Sources */,
 				E14C3FDC23FDDCF200C43877 /* PresetRouter.swift in Sources */,
+				04CFB7EE241583030092D433 /* EventsService.swift in Sources */,
 				E14C3FF123FDDD0C00C43877 /* RegisterView.swift in Sources */,
 				E14C3FCA23FDDCBB00C43877 /* UIView+Extension.swift in Sources */,
 				E14C3FD823FDDCE700C43877 /* ValidateProtocol.swift in Sources */,
@@ -701,17 +852,20 @@
 				E14C3FF223FDDD1200C43877 /* ProfilePresenter.swift in Sources */,
 				E14C3FC923FDDCBB00C43877 /* UILabel+Extension.swift in Sources */,
 				E14C3FDB23FDDCF200C43877 /* PresetPresenter.swift in Sources */,
+				04CFB7F42415868E0092D433 /* Event.swift in Sources */,
 				E14C3FE123FDDCFE00C43877 /* AuthPresenter.swift in Sources */,
 				E14C3FE423FDDCFE00C43877 /* AuthAssemler.swift in Sources */,
 				E14C3FED23FDDD0C00C43877 /* RegisterRouter.swift in Sources */,
-				E14C401423FDDD4000C43877 /* Event.swift in Sources */,
 				E14C3FEC23FDDD0C00C43877 /* RegisterPresenter.swift in Sources */,
 				E14C3FCB23FDDCBB00C43877 /* Double+Extension.swift in Sources */,
 				E14C3FF723FDDD1200C43877 /* ProfileInteractor.swift in Sources */,
 				E14C401923FDDD4000C43877 /* EventRouter.swift in Sources */,
 				E14C400723FDDD2E00C43877 /* RootRouter.swift in Sources */,
+				04208E5E240AD6F700FC5F36 /* AuthService.swift in Sources */,
 				E14C3FEF23FDDD0C00C43877 /* RegisterInteractor.swift in Sources */,
 				E14C400023FDDD1F00C43877 /* EventTypesAssembler.swift in Sources */,
+				04CFB7F2241583230092D433 /* EventsTarget.swift in Sources */,
+				04CFB7F0241583190092D433 /* EventsServiceImplementation.swift in Sources */,
 				E14C3FFF23FDDD1F00C43877 /* EventTypesRouter.swift in Sources */,
 				E14C3FCF23FDDCC000C43877 /* ResponseSetTimeInvest.swift in Sources */,
 				E14C3FFD23FDDD1700C43877 /* LoginMainView.swift in Sources */,
@@ -724,7 +878,6 @@
 				E14C3FEA23FDDD0500C43877 /* FeedbackInteractor.swift in Sources */,
 				E14C3FD023FDDCC000C43877 /* Interest.swift in Sources */,
 				E14C3FCC23FDDCBB00C43877 /* plugs.swift in Sources */,
-				E14C3FD423FDDCDC00C43877 /* NetworkManager.swift in Sources */,
 				E14C3FC723FDDCBB00C43877 /* UIImageView+Extension.swift in Sources */,
 				E14C3FD923FDDCF200C43877 /* PresetAssembler.swift in Sources */,
 				E14C3FD123FDDCC400C43877 /* BaseRouter.swift in Sources */,
@@ -736,7 +889,10 @@
 				E14C3FFB23FDDD1700C43877 /* LoginMainAssembler.swift in Sources */,
 				E14C401523FDDD4000C43877 /* EventPresenter.swift in Sources */,
 				E14C402B2401351400C43877 /* HeaderInterestCell.swift in Sources */,
+				04CFB7F82415874A0092D433 /* Location.swift in Sources */,
 				E14C3FE223FDDCFE00C43877 /* AuthView.swift in Sources */,
+				04CFB7E724140AAF0092D433 /* ProfileServiceImplementation.swift in Sources */,
+				04CFB7F6241586F60092D433 /* PosterImage.swift in Sources */,
 				E14C3FDE23FDDCF200C43877 /* PresetEntity.swift in Sources */,
 				E14C401223FDDD4000C43877 /* EventView.swift in Sources */,
 				E14C3FD723FDDCE700C43877 /* ValidateManager.swift in Sources */,
@@ -746,29 +902,37 @@
 				E14C3FCD23FDDCBB00C43877 /* Float+Extention.swift in Sources */,
 				E14C3FDD23FDDCF200C43877 /* PresetView.swift in Sources */,
 				E14C401323FDDD4000C43877 /* EventAssembler.swift in Sources */,
-				E14C3FD523FDDCDC00C43877 /* User.swift in Sources */,
+				04208E66240C381B00FC5F36 /* UserProfile.swift in Sources */,
+				04CFB7EB241580850092D433 /* Profile.swift in Sources */,
 				E14C400223FDDD1F00C43877 /* EventTypesEntity.swift in Sources */,
 				E14C402D2401351900C43877 /* HeaderInterestPrototypeCell.swift in Sources */,
 				E14C400B23FDDD2E00C43877 /* RootAssembler.swift in Sources */,
 				E14C400A23FDDD2E00C43877 /* RootPresenter.swift in Sources */,
+				04CFB7FA241587900092D433 /* Category.swift in Sources */,
 				E14C3FFC23FDDD1700C43877 /* LoginMainPresenter.swift in Sources */,
 				E14C3FF423FDDD1200C43877 /* ProfileView.swift in Sources */,
 				E14C3FC623FDDCB400C43877 /* PresetSlider.swift in Sources */,
 				E14C402C2401351600C43877 /* HeaderInterestCellPresenter.swift in Sources */,
 				E14C3FE523FDDCFE00C43877 /* AuthInteractor.swift in Sources */,
+				04CFB7E924140B880092D433 /* ProfileTarget.swift in Sources */,
 				E14C400E23FDDD3300C43877 /* ForgotRouter.swift in Sources */,
 				E14C3FC823FDDCBB00C43877 /* UIColor+Extension.swift in Sources */,
 				E14C401823FDDD4000C43877 /* EventInteractor.swift in Sources */,
+				04208E62240AD71100FC5F36 /* AuthTarget.swift in Sources */,
 				E14C3FFA23FDDD1700C43877 /* LoginMainRouter.swift in Sources */,
+				04CFB7E524140A030092D433 /* ProfileService.swift in Sources */,
 				E14C3FEB23FDDD0500C43877 /* FeedbackPresenter.swift in Sources */,
+				04208E68240C3A8100FC5F36 /* NetworkError.swift in Sources */,
 				E14C400323FDDD2700C43877 /* EventTypesCell.swift in Sources */,
 				E14C400623FDDD2E00C43877 /* RootInteractor.swift in Sources */,
 				E14C3FEE23FDDD0C00C43877 /* RegisterAssembler.swift in Sources */,
 				E14C3FF923FDDD1700C43877 /* LoginMainInteractor.swift in Sources */,
+				04208E60240AD70500FC5F36 /* AuthServiceImplementation.swift in Sources */,
 				E14C3FD623FDDCE200C43877 /* LocationManager.swift in Sources */,
 				E14C3FCE23FDDCBB00C43877 /* ViewControllerNavigation+Ex.swift in Sources */,
 				E14C401023FDDD3A00C43877 /* MainRouter.swift in Sources */,
 				E14C400123FDDD1F00C43877 /* EventTypesInteractor.swift in Sources */,
+				04208E64240BA38700FC5F36 /* NetworkSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -904,11 +1068,12 @@
 		};
 		AA2654B4234F54DA0013B777 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4017DB3B16079A081922E3B4 /* Pods-Legio.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XBW4F9AQY3;
+				DEVELOPMENT_TEAM = 7J4TANDD7J;
 				INFOPLIST_FILE = "$(SRCROOT)/Legio/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -925,11 +1090,12 @@
 		};
 		AA2654B5234F54DA0013B777 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B60D37E4C4512EF3B7DF59E8 /* Pods-Legio.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XBW4F9AQY3;
+				DEVELOPMENT_TEAM = 7J4TANDD7J;
 				INFOPLIST_FILE = "$(SRCROOT)/Legio/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (

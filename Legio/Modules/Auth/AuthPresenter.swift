@@ -75,14 +75,17 @@ extension AuthPresenter {
     
     private func auth(email: String, password: String) {
         // progress hud load
-        interactor.auth(email: email, password: password) { [weak self] (userData, error) in
-            guard let token = userData?.success.token else {
-                let errorText = error?.localizedDescription ?? "some network error"
+        interactor.auth(email: email, password: password) { [weak self] result in
+            
+            switch result {
+            case .success(let profile):
+                self?.interactor.save(token: profile.token)
+                self?.router.showSingIn()
+                
+            case .failure(let error):
+                let errorText = error.localizedDescription ?? "some network error"
 //                self?.view?.show(error: errorText)
-                return
             }
-            self?.interactor.save(token: token)
-            self?.router.showSingIn()
         }
     }
     

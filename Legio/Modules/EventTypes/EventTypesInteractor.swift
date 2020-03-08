@@ -14,7 +14,6 @@ protocol EventTypesInteractorProtocol {
 
 class EventTypesInteractor: EventTypesInteractorProtocol {
 
-    private let networkManager = NetworkManager.shared
     
     internal func getInterestList(completion: @escaping(_ interests: [Interest]) -> Void) {
         var interests: [Interest] = []
