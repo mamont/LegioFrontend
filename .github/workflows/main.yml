@@ -23,5 +23,6 @@ jobs:
         ssh-keyscan github.com >> ~/.ssh/known_hosts
     - name: Fastlane
       run: |
-        fastlane setup
+        #fastlane setup
+        fastlane beta
         #fastlane upload_firebase
