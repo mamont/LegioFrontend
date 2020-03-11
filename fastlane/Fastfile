@@ -51,5 +51,11 @@ platform :ios do
       release_notes: "This is a test release!"
     )
   end
+
+
+  lane :setup do
+    setup_project
+  end
 end
+
 
