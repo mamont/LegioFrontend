@@ -26,6 +26,11 @@ Description of what the lane does
 fastlane ios beta
 ```
 Send a build to Fabric for our Beta testers
+### ios setup
+```
+fastlane ios setup
+```
+
 
 ----
 
