@@ -21,6 +21,9 @@ jobs:
         chmod 600 ~/.ssh/certs_rsa
         ssh-add ~/.ssh/certs_rsa
         ssh-keyscan github.com >> ~/.ssh/known_hosts
+    - name: Install firebase tool
+      run: |
+        curl -sL firebase.tools | bash
     - name: Fastlane
       run: |
         fastlane setup
