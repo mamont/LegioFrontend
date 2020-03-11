@@ -1,0 +1,8 @@
+app_identifier("ru.ms.app.legio") # The bundle identifier of your app
+apple_id("chertkov.s.a@gmail.com") # Your Apple email address
+
+
+team_id("R3DDJ3W82T") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

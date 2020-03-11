@@ -1,0 +1,41 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :custom_lane do
+    # add actions here: https://docs.fastlane.tools/actions
+  end
+
+
+end
+
+platform :ios do
+  desc "Send a build to Fabric for our Beta testers"
+  lane :beta do
+    disable_automatic_code_signing(code_sign_identity: 'Apple Distribution: Sergei Chertkov (R3DDJ3W82T)')
+    sync_code_signing(type: "adhoc", readonly: true)
+    update_project_provisioning(profile: ENV['sigh_ru.ms.app.legio_adhoc_profile-path'])
+    build_app
+
+    # disable_automatic_code_signing(code_sign_identity: 'Apple Distribution: Sergei Chertkov (R3DDJ3W82T)')
+    # update_project_provisioning(profile: ENV['sigh_ru.ms.app.legio_adhoc_profile-path'])
+    # sync_code_signing(type: "adhoc", readonly: true)
+    # gym(scheme: "Legio", export_method: "development")
+  end
+end
+

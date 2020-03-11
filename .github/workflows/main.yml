@@ -1,0 +1,27 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: macOS-latest
+
+    env:
+      APPLE_ACCOUNT: ${{ secrets.APPLE_ACCOUNT }}
+      TEAM_ID: ${{ secrets.TEAM_ID }}
+      MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+      FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup SSH Keys and known_hosts
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.CERTS_REPO_CERT }}" > ~/.ssh/certs_rsa
+        chmod 600 ~/.ssh/certs_rsa
+        ssh-add ~/.ssh/certs_rsa
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
+    - name: Fastlane
+      run: |
+        fastlane setup
+        #fastlane upload_firebase
