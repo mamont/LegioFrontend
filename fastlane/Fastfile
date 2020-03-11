@@ -1,0 +1,65 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :custom_lane do
+    # add actions here: https://docs.fastlane.tools/actions
+  end
+
+
+end
+
+private_lane :setup_project do
+  create_keychain(
+    name: "actiontest_keychain",
+    password: "meow",
+    default_keychain: true,
+    unlock: true,
+    timeout: 3600,
+    lock_when_sleeps: false
+  )
+end
+
+
+platform :ios do
+  desc "Send a build to Fabric for our Beta testers"
+  lane :build_snapshot do
+    increment_build_number(build_number: ENV['GITHUB_RUN_NUMBER'])
+    disable_automatic_code_signing(code_sign_identity: 'Apple Distribution: Sergei Chertkov (R3DDJ3W82T)')
+    sync_code_signing(type: "adhoc", readonly: true, keychain_name: "actiontest_keychain", keychain_password: "meow")
+    update_project_team(teamid: "R3DDJ3W82T")
+    update_project_provisioning(profile: ENV['sigh_ru.ms.app.legio_adhoc_profile-path'])
+    build_app
+  end
+
+
+  lane :upload_to_firebase do
+    firebase_app_distribution(
+      app: "1:726161715073:ios:596ea3ad72d8f1a8bc4280",
+      groups: "developers",
+      release_notes: "This is a snapshot build, use with care!",
+      firebase_cli_token: ENV['FIREBASE_ACCESS_TOKEN']
+    )
+  end
+
+  lane :setup do
+    setup_project
+  end
+end
+
+
