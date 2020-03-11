@@ -32,10 +32,12 @@ platform :ios do
     update_project_provisioning(profile: ENV['sigh_ru.ms.app.legio_adhoc_profile-path'])
     build_app
 
-    # disable_automatic_code_signing(code_sign_identity: 'Apple Distribution: Sergei Chertkov (R3DDJ3W82T)')
-    # update_project_provisioning(profile: ENV['sigh_ru.ms.app.legio_adhoc_profile-path'])
-    # sync_code_signing(type: "adhoc", readonly: true)
-    # gym(scheme: "Legio", export_method: "development")
+
+    firebase_app_distribution(
+      app: "1:429595693101:ios:0d56afb24974f1382068a4",
+      groups: "pms",
+      release_notes: "This is a test release!"
+    )
   end
 end
 
