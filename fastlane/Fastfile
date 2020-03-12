@@ -39,6 +39,7 @@ end
 platform :ios do
   desc "Send a build to Fabric for our Beta testers"
   lane :beta do
+    team_id("R3DDJ3W82T")
     disable_automatic_code_signing(code_sign_identity: 'Apple Distribution: Sergei Chertkov (R3DDJ3W82T)')
     sync_code_signing(type: "adhoc", readonly: true, keychain_name: "actiontest_keychain", keychain_password: "meow")
     update_project_provisioning(profile: ENV['sigh_ru.ms.app.legio_adhoc_profile-path'])
