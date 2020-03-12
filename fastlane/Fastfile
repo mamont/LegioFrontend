@@ -47,8 +47,8 @@ platform :ios do
 
 
     firebase_app_distribution(
-      app: "1:429595693101:ios:0d56afb24974f1382068a4",
-      groups: "pms",
+      app: "1:726161715073:ios:596ea3ad72d8f1a8bc4280",
+      groups: "developers",
       release_notes: "This is a test release!",
       firebase_cli_token: ENV['FIREBASE_ACCESS_TOKEN']
     )
