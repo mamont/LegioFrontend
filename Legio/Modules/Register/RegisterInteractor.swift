@@ -12,16 +12,19 @@ protocol RegisterInteractorProtocol {
     
     func checkValid(login: String?) -> String?
     func checkValid(password: String?) -> String?
-	func registrate(email: String, password: String, completion: @escaping(_ userData: Success?, _ error: Error?) -> Void)
+	func registrate(email: String, password: String, completion: @escaping AuthService.AuthResponse)
+    func save(token: String)
 }
 
 class RegisterInteractor: RegisterInteractorProtocol {
+    
+    private let networkService = NetworkSettings.shared
 	private let validateManager = ValidateManager()
-	private let networkManager = NetworkManager.shared
+	private let authService: AuthService = AuthServiceImplementation()
    	
-	func registrate(email: String, password: String, completion: @escaping(_ userData: Success?, _ error: Error?) -> Void) {
-		networkManager.registrate(login: email, password: password, completion: completion)
-	}
+	func registrate(email: String, password: String, completion: @escaping AuthService.AuthResponse) {
+        authService.register(identity: email, password: password, completion: completion)
+    }
     
     internal func checkValid(login: String?) -> String? {
         return validateManager.validate(email: login)
@@ -30,6 +33,11 @@ class RegisterInteractor: RegisterInteractorProtocol {
     internal func checkValid(password: String?) -> String? {
         return validateManager.validate(password: password)
     }
+    
+    internal func save(token: String) {
+        networkService.token = token
+    }
+    
 }
 
 

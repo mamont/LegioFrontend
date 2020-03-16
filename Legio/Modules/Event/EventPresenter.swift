@@ -16,9 +16,10 @@ protocol EventPresenterProtocol: class {
     func configureNameLabel() -> NSAttributedString
     func configureDateLabel() -> NSAttributedString
     func correctAddress() -> String
-    func loadImage() -> UIImage
+    func loadImage() -> UIImage?
     func showParty()
     func showNerdy()
+    func fetchLocationInfo(completion: @escaping (String?) -> Void)
 }
 
 class EventPresenter {
@@ -26,13 +27,21 @@ class EventPresenter {
     var interactor: EventInteractorProtocol!
     var router: EventRouterProtocol!
     var event: Event?
+    
+    private var events: [Event] = []
     let defaultEventImage: String = "eventImage"
+    var notification = NotificationDelegate()
+    let locationManager = LocationManager.sharedManager
+    var expectedTravelTime: String?
 }
 
 extension EventPresenter: EventPresenterProtocol {
     
+    private enum Texts {
+        static let defaultEventStart = "Сегодня, 20:45"
+    }
     func profileTapped() {
-        router.showPreset()
+        router.showProfile()
     }
     
     func detailsTapped() {
@@ -40,23 +49,38 @@ extension EventPresenter: EventPresenterProtocol {
     }
     
     func loadEvent() {
-        event = interactor.loadEvent()
-    }
-    
-    func loadImage() -> UIImage {
-        guard let eventImageUrl = event?.image,
-            let url = URL(string: eventImageUrl) else { return defaultImage() }
-        do {
-            let data = try Data(contentsOf: url)
-            return UIImage(data: data) ?? defaultImage()
-        } catch {
-            return UIImage(named: event!.image)!//Только для заглушки
-//            return defaultImage()
+        self.interactor.getEvents(dislikedEvents: []) { [weak self] result in
+            
+            switch result {
+            case .success(let events):
+                self?.events = events
+                self?.event = events[0]
+                self?.view?.showEvent()
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
     }
     
-    func defaultImage() -> UIImage {
-        return UIImage(named: defaultEventImage)!
+    func loadImage() -> UIImage? {
+        guard let event = event,
+            let imageUrl = event.posterImage.defaultUrl,
+            let url = URL(string: imageUrl) else {
+                return defaultImage()
+        }
+        
+        do {
+            let data = try Data(contentsOf: url)
+            return UIImage(data: data) ?? defaultImage()
+            
+        } catch {
+            return defaultImage()
+        }
+    }
+    
+    func defaultImage() -> UIImage? {
+        return UIImage(named: defaultEventImage)
     }
     
     func configureTextLabel(string: String) -> NSAttributedString {
@@ -71,33 +95,48 @@ extension EventPresenter: EventPresenterProtocol {
     }
     
     func configureDateLabel() -> NSAttributedString {
-        return configureTextLabel(string: event?.starts ?? "Сегодня, 20:45")
+        
+        let returnedText = event?.startsAt ?? Texts.defaultEventStart
+        return configureTextLabel(string: returnedText)
     }
     
     func correctAddress() -> String {
-        let dictionary: [String: String] = [
-            "площадь": "пл.",
-            "район": "р-н",
-            "бульвар": "б-р",
-            "линия": "линия",
-            "шоссе": "ш.",
-            "улица": "ул.",
-            "дом": "д.",
-            "проспект": "пр-т",
-            "корпус": "корп.",
-            "проезд": "пр.",
-            "строение": "стр.",
-            "переулок": "пер.",
-            "этаж": "этаж",
-            "набережная": "наб.",
-            "квартира":"кв."
-            ]
-        guard var correctAddress = event?.location else { return "Басманный пер, 5" }
-
-        for (key, value) in dictionary {
-            correctAddress = correctAddress.replacingOccurrences(of: key, with: value)
-        }
-        return correctAddress
+//        let dictionary: [String: String] = [
+//            "площадь": "пл.",
+//            "район": "р-н",
+//            "бульвар": "б-р",
+//            "линия": "линия",
+//            "шоссе": "ш.",
+//            "улица": "ул.",
+//            "дом": "д.",
+//            "проспект": "пр-т",
+//            "корпус": "корп.",
+//            "проезд": "пр.",
+//            "строение": "стр.",
+//            "переулок": "пер.",
+//            "этаж": "этаж",
+//            "набережная": "наб.",
+//            "квартира":"кв."
+//            ]
+//        guard var correctAddress = event?.location else { return "Басманный пер, 5" }
+//
+//        for (key, value) in dictionary {
+//            correctAddress = correctAddress.replacingOccurrences(of: key, with: value)
+//        }
+//        return correctAddress
+        return ""
+//        for (key, value) in dictionary {
+//            correctAddress = correctAddress.replacingOccurrences(of: key, with: value)
+//        }
+//        return correctAddress
+    }
+    
+    func fetchLocationInfo(completion: @escaping (String?) -> Void) {
+//        locationManager.getWalkingDistance(destination: self.event!.coordinates) {
+//            distanceString, metres in
+//            self.expectedTravelTime = distanceString
+//            completion(self.expectedTravelTime)
+//        }
     }
     
     func showParty() {

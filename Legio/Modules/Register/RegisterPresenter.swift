@@ -76,18 +76,17 @@ extension RegisterPresenter {
     
     private func registrate(email: String, password: String) {
         // progress hud load
-        interactor.registrate(email: email, password: password) { [weak self] (userData, error) in
-            // self?. progress hud finish load
-            /*
-            if let userData = userData {
-                //do something with data
+        interactor.registrate(email: email, password: password) { [weak self]  result in
+            
+            switch result {
+            case .success(let profile):
+                self?.interactor.save(token: profile.token)
                 self?.router.showSingIn()
-            } else {
-                let errorText = error?.localizedDescription ?? "some network error"
-                self?.view?.show(error: errorText)
+                
+            case .failure(let error):
+                let errorText = error.localizedDescription ?? "some network error"
+                //                self?.view?.show(error: errorText)
             }
-            */
-             self?.router.showSingIn()
         }
     }
     
