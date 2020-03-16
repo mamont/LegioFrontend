@@ -9,18 +9,21 @@
 import UIKit
 
 protocol AuthInteractorProtocol {
+    
     func checkValid(login: String?) -> String?
     func checkValid(password: String?) -> String?
-    func auth(email: String, password: String, completion: @escaping(_ userData: Success?, _ error: Error?) -> Void)
+    func auth(email: String, password: String, completion: @escaping AuthService.AuthResponse)
     func save(token: String)
 }
 
 class AuthInteractor: AuthInteractorProtocol {
-    private let validateManager = ValidateManager()
-    var network = NetworkManager.shared
     
-    func auth(email: String, password: String, completion: @escaping (_ userData: Success?,_ error: Error?) -> Void) {
-        network.userAuth(login: email, password: password, completion: completion)
+    private let networkService = NetworkSettings.shared
+    private let validateManager: ValidateManager = ValidateManager()
+    private let authService: AuthService = AuthServiceImplementation()
+    
+    func auth(email: String, password: String, completion: @escaping AuthService.AuthResponse) {
+        authService.signIn(identity: email, password: password, completion: completion)
     }
     
     internal func checkValid(login: String?) -> String? {
@@ -32,7 +35,7 @@ class AuthInteractor: AuthInteractorProtocol {
     }
     
     internal func save(token: String) {
-        network.save(token: token)
+        networkService.token = token
     }
     
 }

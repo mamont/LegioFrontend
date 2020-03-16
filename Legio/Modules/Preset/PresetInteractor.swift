@@ -18,8 +18,6 @@ protocol PresetInteractorProtocol {
 
 class PresetInteractor: PresetInteractorProtocol {
     
-    var network = NetworkManager.shared
-    
     func saveData(data: PresetEntity) {
         // Куда-то сохраняем. Куда лучше?
         
@@ -48,7 +46,7 @@ class PresetInteractor: PresetInteractorProtocol {
     }
     
     func setInvest(value: Int, completion: @escaping(_ response: ResponseSetTimeInvest?, _ error: Error?) -> Void) {
-        network.setInvest(value: value, completion: completion)
+        //TO DO: Вставить метод по отправке данных инвестиции времени
     }
 
 }
