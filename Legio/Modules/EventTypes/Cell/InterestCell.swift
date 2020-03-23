@@ -1,5 +1,5 @@
 //
-//  HeaderInterestCell.swift
+//  InterestCell.swift
 //  Legio
 //
 //  Created by Mac on 10.11.2019.
@@ -8,7 +8,8 @@
 
 import UIKit
 
-class HeaderInterestCell: UICollectionViewCell {
+class InterestCell: UICollectionViewCell {
+    
     private var widthConstraint: NSLayoutConstraint?
     
     override init(frame: CGRect) {
@@ -59,23 +60,21 @@ class HeaderInterestCell: UICollectionViewCell {
         return label
     }()
     
-    public func updateSelected(count: Int) {
-        if count < 1 {
-            viewHeart.isHidden = true
-            labelSelectedCount.text = ""
-            labelSelectedCount.isHidden = true
-        } else {
+    
+    func configure(viewModel: InterestCellViewModel) {
+        
+        labelName.text = viewModel.name
+        
+        if viewModel.isSelected {
             viewHeart.isHidden = false
-            labelSelectedCount.text = "\(count)"
-            labelSelectedCount.isHidden = false
+            labelName.textColor = UIColor.white
+            viewMain.backgroundColor = UIColor.legio.legioBlue
+            
+        } else {
+            viewHeart.isHidden = true
+            labelName.textColor = UIColor.darkText
+            viewMain.backgroundColor = UIColor.white
         }
-        let isSelected = count > 0
-        labelName.textColor = isSelected
-            ? UIColor.white
-            : UIColor.darkText
-        viewMain.backgroundColor = isSelected
-            ? UIColor.legio.legioBlue
-            : UIColor.white
     }
     
     public func updateCell(width: CGFloat) {
@@ -89,9 +88,10 @@ class HeaderInterestCell: UICollectionViewCell {
     
 }
 
-extension HeaderInterestCell {
+extension InterestCell {
     
     private func setupViews() {
+        
         self.contentView.addSubview(viewMain)
         self.contentView.addSubview(viewHeart)
         self.contentView.addSubview(labelSelectedCount)
@@ -100,9 +100,10 @@ extension HeaderInterestCell {
     }
     
     private func activateConstraints() {
+        
         NSLayoutConstraint.activate([
             self.viewMain.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 8),
-            self.viewMain.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -8),
+            self.viewMain.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -16),
             self.viewMain.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0),
             self.viewMain.heightAnchor.constraint(equalToConstant: 40),
             

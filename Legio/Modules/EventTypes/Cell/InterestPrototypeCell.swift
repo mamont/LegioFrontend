@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeaderInterestDefaultCell: UICollectionViewCell {
+class InterestDefaultCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,7 +40,7 @@ class HeaderInterestDefaultCell: UICollectionViewCell {
     
 }
 
-extension HeaderInterestDefaultCell {
+extension InterestDefaultCell {
     
     private func setupViews() {
         self.contentView.addSubview(viewMain)
@@ -58,7 +58,6 @@ extension HeaderInterestDefaultCell {
             self.labelName.rightAnchor.constraint(equalTo: self.viewMain.rightAnchor, constant: -16),
             self.labelName.topAnchor.constraint(equalTo: self.viewMain.topAnchor, constant: 0),
             self.labelName.bottomAnchor.constraint(equalTo: self.viewMain.bottomAnchor, constant: 0)
-            //               self.labelName.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
     
