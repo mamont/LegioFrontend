@@ -8,26 +8,33 @@
 
 import Foundation
 
-enum ModerationStatus: String, Decodable {
+enum ModerationStatus: String, Codable {
     case shown = "shown"
 }
 
-class Event: Decodable {
+class Event: Codable {
     
-    var id: Int
-    var startsAt: String
-    var name: String
-    var url: String
-    var posterImage: PosterImage
-    var location: Location
-    var categories: [Category]
-    var moderationStatus: String
+    let id: String
+    let name: String
+    let addedAt: String
+    let startsAt: String
+    let description: String
+    
+    let location: Location
+    
+    let url: String?
+    let moderationStatus: String?
+    let posterImage: PosterImage?
+    
+    let categories: [Category]
     
     enum CodingKeys: String, CodingKey {
         
         case id = "id"
-        case startsAt = "starts_at"
+        case addedAt = "addedAt"
+        case startsAt = "startsAt"
         case name = "name"
+        case description = "description"
         case url = "url"
         case posterImage = "poster_image"
         case location = "location"

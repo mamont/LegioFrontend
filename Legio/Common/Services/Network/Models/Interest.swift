@@ -15,10 +15,10 @@ enum InterestType: String {
 
 class Interest: Codable {
 
-    var id: Int
-    var name: String
-    var type: InterestType.RawValue
-    var tags: [String]
+    let id: Int
+    let name: String
+    let type: InterestType.RawValue
+    let tags: [String]
     
     enum CodingKeys: String, CodingKey {
         case id = "id"

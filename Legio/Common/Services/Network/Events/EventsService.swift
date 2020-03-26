@@ -10,10 +10,15 @@ import Foundation
 
 protocol EventsService {
     
-    func getEvents(dislikedEvents: [Int], completion: @escaping EventsResponse)
+    func getEvents(
+        city: String?,
+        location: String?,
+        distance: Float?,
+        metro: String?,
+        completion: @escaping EventsResult)
 }
 
 extension EventsService {
     
-    public typealias EventsResponse = (Result<[Event], Error>) -> Void
+    public typealias EventsResult = (Result<EventsResponse, Error>) -> Void
 }

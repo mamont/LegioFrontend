@@ -10,7 +10,7 @@ import UIKit
 
 protocol EventViewProtocol: class {
     func show(error: String)
-    func showEvent()
+    func showEvent(viewModel: EventViewModel)
 }
 
 class EventView: UIViewController {
@@ -37,8 +37,8 @@ class EventView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.loadEvent()
-        self.configureViews()
+        presenter.viewDidLoad()
+        configureViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,24 +51,40 @@ class EventView: UIViewController {
     
 }
 
-//MARK: - Actions
-
 extension EventView: EventViewProtocol {
     
     func show(error: String) {
         plugsAlert(title: error)
     }
     
-    @IBAction func profileButton(_ sender: UIButton) {
+    func showEvent(viewModel: EventViewModel) {
+        eventImage.downloaded(
+            from: viewModel.imageUrl,
+            placeholderImage: viewModel.defaultImage,
+            contentMode: .scaleAspectFill)
+        
+        eventNameLabel.text = viewModel.name
+        eventDateLabel.text = viewModel.date
+        eventPlaceLabel.text = viewModel.place
+        
+        updateButtons(isEnable: true)
+    }
+}
+
+//MARK: - Actions
+
+extension EventView {
+    
+    @IBAction func profileButtonTapped(_ sender: UIButton) {
         presenter.profileTapped()
     }
     
-    @IBAction func detailsButton(_ sender: UIButton) {
+    @IBAction func detailsButtonTapped(_ sender: UIButton) {
         presenter.detailsTapped()
     }
     
     // Перенести эту логику в пресентер
-    @IBAction func likeButton(_ sender: UIButton) {
+    @IBAction func likeButtonTapped(_ sender: UIButton) {
         if likeButton.isEnabled, dislikeButton.isEnabled {
             dislikeButton.isEnabled = true
             likeButton.isEnabled = false
@@ -91,7 +107,7 @@ extension EventView: EventViewProtocol {
     }
     
     // Перенести эту логику в пресентер
-    @IBAction func dislikeButton(_ sender: UIButton) {
+    @IBAction func dislikeButtonTapped(_ sender: UIButton) {
         if mainEvent {
             if isHiddenBottomButtons {
                 partyNerdyButtons.isHidden = false
@@ -106,16 +122,12 @@ extension EventView: EventViewProtocol {
         likeButton.isEnabled = true
     }
     
-    @IBAction func partyButton(_ sender: UIButton) {
+    @IBAction func partyButtonTapped(_ sender: UIButton) {
         presenter.showParty()
     }
     
-    @IBAction func nerdyButton(_ sender: UIButton) {
+    @IBAction func nerdyButtonTapped(_ sender: UIButton) {
         presenter.showNerdy()
-    }
-    
-    internal func showEvent() {
-        configureViews()
     }
     
 }
@@ -123,17 +135,20 @@ extension EventView: EventViewProtocol {
 extension EventView {
     
     private func configureViews() {
-        self.navigationController?.navigationBar.isHidden = false
-
+        navigationController?.navigationBar.isHidden = false
         partyNerdyButtons.isHidden = true
-        eventImage.image = presenter.loadImage()
         eventNameLabel.attributedText = presenter.configureNameLabel()
         eventDateLabel.attributedText = presenter.configureDateLabel()
-        eventPlaceLabel.set(image: UIImage(named: "ic_bus")!, with: presenter.correctAddress(), and: "- мин")
         
-        presenter.fetchLocationInfo() {expectedTravelTime in
-            self.eventPlaceLabel.set(image: UIImage(named: "ic_bus")!, with: self.presenter.correctAddress(), and: expectedTravelTime ?? "-")
-        }
+        updateButtons(isEnable: false)
+    }
+    
+    private func updateButtons(isEnable: Bool) {
+        likeButton.isEnabled = isEnable
+        dislikeButton.isEnabled = isEnable
+        
+        partyButton.isEnabled = isEnable
+        nerdyButton.isEnabled = isEnable
     }
     
 }

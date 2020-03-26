@@ -18,9 +18,12 @@ class EventAssembler: EventAssemblerProtocol {
     func assemble(with view: EventView) {
         let router = EventRouter(controller: view)
         let interactor = EventInteractor()
+        
         let presenter = EventPresenter()
         presenter.router = router
         presenter.interactor = interactor
+        presenter.view = view
+        
         view.presenter = presenter
         view.mainEvent = true
     }
