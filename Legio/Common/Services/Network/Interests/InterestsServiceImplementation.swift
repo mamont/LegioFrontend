@@ -15,14 +15,14 @@ class InterestsServiceImplementation: InterestsService {
         NetworkSettings.shared.token
     }
     
-    func interestsList(completion: @escaping AllInterestsResponse) {
+    func interestsList(completion: @escaping AllInterestsResult) {
         let target = MoyaProvider<InterestsTarget>()
         target.request(.interestsList) { result in
             
             switch result {
             case .success(let response):
                 do {
-                    let interestsList = try response.map(InterestsList.self)
+                    let interestsList = try response.map(InterestsResponse.self)
                     completion(.success(interestsList))
                 } catch {
                     completion(
@@ -35,7 +35,7 @@ class InterestsServiceImplementation: InterestsService {
         }
     }
     
-    func myInterests(completion: @escaping MyInterestsResponse) {
+    func myInterests(completion: @escaping MyInterestsResult) {
         
         let target = MoyaProvider<InterestsTarget>(
         plugins: [authPlugin])
@@ -63,7 +63,7 @@ class InterestsServiceImplementation: InterestsService {
         }
     }
     
-    func update(idMyInterests: [Int], completion: @escaping MyInterestsResponse) {
+    func update(idMyInterests: [Int], completion: @escaping MyInterestsResult) {
     
         let target = MoyaProvider<InterestsTarget>(
             plugins: [authPlugin])
@@ -91,7 +91,7 @@ class InterestsServiceImplementation: InterestsService {
         }
     }
     
-    func add(idMyInterests: [Int], completion: @escaping MyInterestsResponse) {
+    func add(idMyInterests: [Int], completion: @escaping MyInterestsResult) {
     
         let target = MoyaProvider<InterestsTarget>(
             plugins: [authPlugin])
