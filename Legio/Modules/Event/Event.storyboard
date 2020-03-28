@@ -21,6 +21,17 @@
                                 <rect key="frame" x="125" y="369" width="240" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrT-o9-LVI">
+                                <rect key="frame" x="350" y="108" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="Qby-TK-LN5"/>
+                                    <constraint firstAttribute="width" secondItem="wrT-o9-LVI" secondAttribute="height" multiplier="1:1" id="nC5-2W-T3s"/>
+                                </constraints>
+                                <state key="normal" image="preset"/>
+                                <connections>
+                                    <action selector="settingsButtonTapped:" destination="0ju-0k-I1B" eventType="touchUpInside" id="l8f-Bs-QcR"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="c9o-gU-86Z">
                                 <rect key="frame" x="125" y="768" width="164" height="64"/>
                                 <subviews>
@@ -98,7 +109,9 @@
                             <constraint firstItem="hRe-wJ-Uv1" firstAttribute="bottom" secondItem="c9o-gU-86Z" secondAttribute="bottom" constant="30" id="2Uq-us-wF9"/>
                             <constraint firstItem="cOV-Lt-fni" firstAttribute="top" secondItem="hRe-wJ-Uv1" secondAttribute="top" id="Gd7-K4-BBE"/>
                             <constraint firstItem="vnt-it-d3d" firstAttribute="top" secondItem="c9o-gU-86Z" secondAttribute="bottom" constant="50" id="M52-jL-h8G"/>
+                            <constraint firstItem="wrT-o9-LVI" firstAttribute="top" secondItem="hRe-wJ-Uv1" secondAttribute="top" constant="20" id="MyU-Hd-tz2"/>
                             <constraint firstItem="c9o-gU-86Z" firstAttribute="centerX" secondItem="CXE-9v-FVP" secondAttribute="centerX" id="R6f-oV-4Jo"/>
+                            <constraint firstItem="hRe-wJ-Uv1" firstAttribute="trailing" secondItem="wrT-o9-LVI" secondAttribute="trailing" constant="20" id="RY5-X0-z9W"/>
                             <constraint firstItem="cOV-Lt-fni" firstAttribute="leading" secondItem="hRe-wJ-Uv1" secondAttribute="leading" id="TM5-gj-oH7"/>
                             <constraint firstItem="vnt-it-d3d" firstAttribute="leading" secondItem="CXE-9v-FVP" secondAttribute="leading" constant="20" id="TdC-tk-WHj"/>
                             <constraint firstItem="c9o-gU-86Z" firstAttribute="top" secondItem="cOV-Lt-fni" secondAttribute="bottom" id="d3B-PG-BzD"/>
@@ -116,6 +129,7 @@
                         <outlet property="nerdyButton" destination="vjb-1f-GGv" id="KRj-6r-qVf"/>
                         <outlet property="partyButton" destination="uGd-53-zA3" id="kc7-ax-n7I"/>
                         <outlet property="partyNerdyButtons" destination="vnt-it-d3d" id="Dd9-y7-10S"/>
+                        <outlet property="settingsButton" destination="wrT-o9-LVI" id="1Y9-eN-p0m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQa-UJ-Uke" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -146,5 +160,6 @@
         <image name="dislikePressed" width="64" height="64"/>
         <image name="like" width="64" height="64"/>
         <image name="likePressed" width="64" height="64"/>
+        <image name="preset" width="32" height="32"/>
     </resources>
 </document>

@@ -16,6 +16,8 @@ protocol EventViewProtocol: class {
 class EventView: UIViewController {
     
     @IBOutlet weak var eventsContainerView: EventsContainerView!
+    
+    @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet var likeButton: UIButton!
     @IBOutlet var dislikeButton: UIButton!
     @IBOutlet weak var partyButton: UIButton!
@@ -62,7 +64,8 @@ extension EventView: EventViewProtocol {
 
 extension EventView {
     
-    @IBAction func profileButtonTapped(_ sender: UIButton) {
+    
+    @IBAction func settingsButtonTapped(_ sender: Any) {
         presenter.profileTapped()
     }
     
