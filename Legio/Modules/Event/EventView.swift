@@ -10,18 +10,12 @@ import UIKit
 
 protocol EventViewProtocol: class {
     func show(error: String)
-    func showEvent(viewModel: EventViewModel)
+    func showEvents(viewModels: [EventViewModel])
 }
 
 class EventView: UIViewController {
     
-    @IBOutlet var eventImage: UIImageView!
-    @IBOutlet var eventNameLabel: UILabel!
-    @IBOutlet var heightEventName: NSLayoutConstraint!
-    @IBOutlet var eventDateLabel: UILabel!
-    @IBOutlet var profileButton: UIButton!
-    @IBOutlet var eventPlaceLabel: UILabel!
-    @IBOutlet var detailsButton: UIButton!
+    @IBOutlet weak var eventsContainerView: EventsContainerView!
     @IBOutlet var likeButton: UIButton!
     @IBOutlet var dislikeButton: UIButton!
     @IBOutlet weak var partyButton: UIButton!
@@ -57,17 +51,10 @@ extension EventView: EventViewProtocol {
         plugsAlert(title: error)
     }
     
-    func showEvent(viewModel: EventViewModel) {
-        eventImage.downloaded(
-            from: viewModel.imageUrl,
-            placeholderImage: viewModel.defaultImage,
-            contentMode: .scaleAspectFill)
-        
-        eventNameLabel.text = viewModel.name
-        eventDateLabel.text = viewModel.date
-        eventPlaceLabel.text = viewModel.place
-        
-        updateButtons(isEnable: true)
+    func showEvents(viewModels: [EventViewModel]) {
+        eventsContainerView.configure(viewModels: viewModels)
+        likeButton.isEnabled = true
+        dislikeButton.isEnabled = true
     }
 }
 
@@ -79,47 +66,45 @@ extension EventView {
         presenter.profileTapped()
     }
     
-    @IBAction func detailsButtonTapped(_ sender: UIButton) {
-        presenter.detailsTapped()
-    }
-    
     // Перенести эту логику в пресентер
     @IBAction func likeButtonTapped(_ sender: UIButton) {
-        if likeButton.isEnabled, dislikeButton.isEnabled {
-            dislikeButton.isEnabled = true
-            likeButton.isEnabled = false
-            isHiddenBottomButtons = true
-        } else {
-            if mainEvent {
-                if !isHiddenBottomButtons {
-                    bottomConstraintStackView.constant -= 100
-                    UIView.animate(withDuration: 0.3, animations: {
-                        self.view.layoutIfNeeded()
-                    }, completion: { finished in
-                        self.partyNerdyButtons.isHidden = true
-                    })
-                }
-            }
-            dislikeButton.isEnabled = true
-            likeButton.isEnabled = false
-            isHiddenBottomButtons = true
-        }
+        eventsContainerView.likeHandled()
+//        if likeButton.isEnabled, dislikeButton.isEnabled {
+//            dislikeButton.isEnabled = true
+//            likeButton.isEnabled = false
+//            isHiddenBottomButtons = true
+//        } else {
+//            if mainEvent {
+//                if !isHiddenBottomButtons {
+//                    bottomConstraintStackView.constant -= 100
+//                    UIView.animate(withDuration: 0.3, animations: {
+//                        self.view.layoutIfNeeded()
+//                    }, completion: { finished in
+//                        self.partyNerdyButtons.isHidden = true
+//                    })
+//                }
+//            }
+//            dislikeButton.isEnabled = true
+//            likeButton.isEnabled = false
+//            isHiddenBottomButtons = true
+//        }
     }
     
     // Перенести эту логику в пресентер
     @IBAction func dislikeButtonTapped(_ sender: UIButton) {
-        if mainEvent {
-            if isHiddenBottomButtons {
-                partyNerdyButtons.isHidden = false
-                bottomConstraintStackView.constant += 100
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.view.layoutIfNeeded()
-                })
-                isHiddenBottomButtons = false
-            }
-        }
-        dislikeButton.isEnabled = false
-        likeButton.isEnabled = true
+        eventsContainerView.dislikeHandled()
+        //        if mainEvent {
+//            if isHiddenBottomButtons {
+//                partyNerdyButtons.isHidden = false
+//                bottomConstraintStackView.constant += 100
+//                UIView.animate(withDuration: 0.3, animations: {
+//                    self.view.layoutIfNeeded()
+//                })
+//                isHiddenBottomButtons = false
+//            }
+//        }
+//        dislikeButton.isEnabled = false
+//        likeButton.isEnabled = true
     }
     
     @IBAction func partyButtonTapped(_ sender: UIButton) {
@@ -137,18 +122,6 @@ extension EventView {
     private func configureViews() {
         navigationController?.navigationBar.isHidden = false
         partyNerdyButtons.isHidden = true
-        eventNameLabel.attributedText = presenter.configureNameLabel()
-        eventDateLabel.attributedText = presenter.configureDateLabel()
-        
-        updateButtons(isEnable: false)
-    }
-    
-    private func updateButtons(isEnable: Bool) {
-        likeButton.isEnabled = isEnable
-        dislikeButton.isEnabled = isEnable
-        
-        partyButton.isEnabled = isEnable
-        nerdyButton.isEnabled = isEnable
     }
     
 }

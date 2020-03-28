@@ -20,12 +20,16 @@ struct EventViewModel {
     
     let imageUrl: URL?
     let defaultImage: UIImage?
+    let detailUrlString: String
+    let action: ((String) -> Void)?
     
-    init(event: Event) {
+    init(event: Event, action: ((String) -> Void)?) {
         self.name = event.name
         self.place = "\(event.location.country), \(event.location.city), \(event.location.address)"
         self.date = DateStringConverter.convert(input: event.startsAt)
         self.imageUrl = URL(string: event.posterImage?.defaultUrl ?? DefaultConstants.urlString)
         self.defaultImage = UIImage(named: DefaultConstants.imageName)
+        self.detailUrlString = event.url ?? "https://www.pikabu.ru"
+        self.action = action
     }
 }

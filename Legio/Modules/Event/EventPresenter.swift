@@ -12,7 +12,6 @@ protocol EventPresenterProtocol: class {
     func viewDidLoad()
     
     func profileTapped()
-    func detailsTapped()
     
     func configureTextLabel(string: String) -> NSAttributedString
     func configureNameLabel() -> NSAttributedString
@@ -50,7 +49,7 @@ extension EventPresenter: EventPresenterProtocol {
             case .success(let eventsResponse):
                 self?.events = eventsResponse.events
                 self?.event = eventsResponse.events[0]
-                self?.showEvent(event: eventsResponse.events[0])
+                self?.showEvents()
                 
             case .failure(let error):
                 print(error.localizedDescription)
@@ -61,11 +60,6 @@ extension EventPresenter: EventPresenterProtocol {
     func profileTapped() {
         router.showProfile()
     }
-    
-    func detailsTapped() {
-        router.showDetails(url: event?.url ?? "https://www.yandex.ru")
-    }
-    
    
     
     func fetchLocationInfo(completion: @escaping (String?) -> Void) {
@@ -84,9 +78,19 @@ extension EventPresenter: EventPresenterProtocol {
         router.showNerdy()
     }
     
-    private func showEvent(event: Event) {
-        let eventViewModel = EventViewModel(event: event)
-        view?.showEvent(viewModel: eventViewModel)
+    private func showEvents() {
+        let eventsViewModel = events.map({
+            EventViewModel(
+                event: $0,
+                action: { [weak self] urlString in
+                    self?.openDetail(urlString: urlString)
+            })
+        })
+        view?.showEvents(viewModels: eventsViewModel)
+    }
+    
+    private func openDetail(urlString: String) {
+        router.showDetails(url: urlString)
     }
     
 }
