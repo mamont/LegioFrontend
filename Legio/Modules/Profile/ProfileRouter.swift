@@ -31,8 +31,10 @@ extension ProfileRouter: ProfileRouterProtocol {
     }
     
     func showEvent() {
-        let controller = UIStoryboard(name: "EventTypes", bundle: nil)
-            .instantiateViewController(withIdentifier: EventTypesView.storyboardIdentifier)
+        guard let controller = UIStoryboard(name: "EventTypes", bundle: nil)
+            .instantiateViewController(withIdentifier: EventTypesView.storyboardIdentifier) as? EventTypesView else { return }
+        let assembler: EventTypesAssemblerProtocol = EventTypesAssembler()
+        assembler.assemble(with: controller)
         self.show(controller)
     }
     
