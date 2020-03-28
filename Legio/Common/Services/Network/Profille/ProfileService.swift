@@ -9,14 +9,10 @@
 import Foundation
 
 protocol ProfileService {
-    
     func getProfile(completion: @escaping GetProfileResponse)
-    func add(interests: [String], completion: @escaping InterestsResponse)
-    func change(interests: [String], completion: @escaping InterestsResponse)
 }
 
 extension ProfileService {
     
     public typealias GetProfileResponse = (Result<Profile, Error>) -> Void
-    public typealias InterestsResponse = (Result<[String], Error>) -> Void
 }

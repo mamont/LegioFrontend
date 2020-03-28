@@ -1,18 +1,18 @@
 //
-//  InterestsResponse.swift
+//  EventsResponse.swift
 //  Legio
 //
-//  Created by Mac on 17.03.2020.
+//  Created by Mac on 26.03.2020.
 //  Copyright © 2020 Марат Нургалиев. All rights reserved.
 //
 
 import Foundation
 
-class InterestsList: Codable {
+class EventsResponse: Codable {
     
-    var interests: [Interest]
+    let events: [Event]
     
     enum CodingKeys: String, CodingKey {
-        case interests = "interests"
+        case events = "events"
     }
 }

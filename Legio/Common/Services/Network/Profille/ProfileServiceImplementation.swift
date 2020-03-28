@@ -32,50 +32,5 @@ class ProfileServiceImplementation: ProfileService {
             }
         }
     }
-    
-    func add(interests: [String], completion: @escaping InterestsResponse) {
-        
-        let target = MoyaProvider<ProfileTarget>()
-        target.request(.add(interests: interests)) { result in
-            
-            switch result {
-            case .success(let response):
-                do {
-                    let interests = try response.map([String].self)
-                    completion(.success(interests))
-                    
-                } catch {
-                    completion(.failure(NetworkError.decodable))
-                }
-                
-            case .failure(let error):
-                completion(.failure(error))
-                
-            }
-        }
-    }
-    
-    func change(interests: [String], completion: @escaping InterestsResponse) {
-        
-        let target = MoyaProvider<ProfileTarget>()
-        target.request(.add(interests: interests)) { result in
-            
-            switch result {
-            case .success(let response):
-                do {
-                    let interests = try response.map([String].self)
-                    completion(.success(interests))
-                    
-                } catch {
-                    completion(.failure(NetworkError.decodable))
-                }
-                
-            case .failure(let error):
-                completion(.failure(error))
-                
-            }
-        }
-    }
-    
-    
+
 }

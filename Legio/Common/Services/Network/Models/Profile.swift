@@ -10,9 +10,9 @@ import Foundation
 
 class Profile: Decodable {
     
-    var name: String
-    var identity: String
-    var interests: [String]?
+    let name: String
+    let identity: String
+    let interests: [String]?
     
     enum CodingKeys: String, CodingKey {
         

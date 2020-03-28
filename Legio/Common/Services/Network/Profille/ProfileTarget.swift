@@ -11,8 +11,6 @@ import Moya
 
 enum ProfileTarget {
     case getProfile
-    case add(interests: [String])
-    case change(interests: [String])
 }
 
 extension ProfileTarget: TargetType {
@@ -20,7 +18,6 @@ extension ProfileTarget: TargetType {
     private enum Keys {
         static let contentType = "Content-Type"
         static let header = "X-Auth-Token"
-        static let interests = "interests"
     }
     
     private enum Constants {
@@ -37,20 +34,12 @@ extension ProfileTarget: TargetType {
     var path: String {
         switch self {
         case .getProfile: return "/profile"
-            
-        case .add: return "/interests"
-            
-        case .change: return "/interests"
         }
     }
     
     var method: Moya.Method {
         switch self {
         case .getProfile: return .get
-            
-        case .add: return .post
-            
-        case .change: return .put
         }
     }
     
@@ -66,12 +55,6 @@ extension ProfileTarget: TargetType {
         switch self {
         case .getProfile:
             return .requestPlain
-            
-        case .add(let interests), .change(let interests):
-            return .requestParameters(
-                parameters: [Keys.interests: interests],
-                encoding:  URLEncoding.default)
-            
         }
     }
     

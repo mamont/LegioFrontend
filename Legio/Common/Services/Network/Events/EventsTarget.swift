@@ -10,15 +10,24 @@ import Foundation
 import Moya
 
 enum EventsTarget {
-    case getEvents(dislikedEvents: [Int])
+    case getEvents(
+        city: String?,
+        location: String?,
+        distance: Float?,
+        metro: String?)
 }
 
-extension EventsTarget: TargetType {
+extension EventsTarget: TargetType, AccessTokenAuthorizable {
     
     private enum Keys {
         static let contentType = "Content-Type"
         static let header = "X-Auth-Token"
         static let dislikedEvents = "dislikes"
+        
+        static let city = "city"
+        static let location = "location"
+        static let distance = "distance"
+        static let metro = "metro"
     }
     
     private enum Constants {
@@ -34,14 +43,14 @@ extension EventsTarget: TargetType {
     
     var path: String {
         switch self {
-        case .getEvents(let dislikedEvents):
-            if dislikedEvents.count > 0 {
-                let dislikedString = dislikedEvents.map({"\($0)"}).joined(separator: ",")
-                return "/events?\(Keys.dislikedEvents)={\(dislikedString)}"
-                
-            } else {
+        case .getEvents:
+//            if dislikedEvents.count > 0 {
+//                let dislikedString = dislikedEvents.map({"\($0)"}).joined(separator: ",")
+//                return "/events?\(Keys.dislikedEvents)={\(dislikedString)}"
+//
+//            } else {
                 return "/events"
-            }
+//            }
             
         }
     }
@@ -62,21 +71,39 @@ extension EventsTarget: TargetType {
     
     public var task: Task {
         switch self {
-        case .getEvents:
-            return .requestPlain
+        case .getEvents(
+        let city,
+        let location,
+        let distance,
+        let metro):
+    
+            var parameters: [String: Any] = [:]
+            if let city = city {
+                parameters[Keys.city] = city
+            }
+            if let location = location {
+                parameters[Keys.location] = location
+            }
+            if let distance = distance {
+                parameters[Keys.distance] = distance
+            }
+            if let metro = metro {
+                parameters[Keys.metro] = metro
+            }
+            
+            return .requestParameters(
+            parameters: parameters,
+            encoding: URLEncoding.default)
         }
     }
     
     public var headers: [String: String]? {
-        
-        var headers: [String: String] = [Keys.contentType: Constants.contentTypeValue]
-        
-//        if let token = NetworkSettings.shared.token {
-//            headers[Keys.header] = token
-//        }
-        return headers
+        return [Keys.contentType: Constants.contentTypeValue]
     }
     
+    var authorizationType: AuthorizationType? {
+        return .bearer
+    }
     
 }
 

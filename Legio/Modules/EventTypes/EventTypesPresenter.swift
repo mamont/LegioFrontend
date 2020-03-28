@@ -76,13 +76,13 @@ extension EventTypesPresenter {
         
         var interestError: Error? = nil
         var myInterests: [Int]? = nil
-        var interestsList: InterestsList? = nil
+        var interestsResponse: InterestsResponse? = nil
         
         dispatchGroup.enter()
         interactor.getInterestList { response in
             switch response {
             case .success(let interests):
-                interestsList = interests
+                interestsResponse = interests
                 
             case .failure(let error):
                 interestError = error
@@ -106,10 +106,10 @@ extension EventTypesPresenter {
             if let error = interestError {
                 print(error.localizedDescription)
                 
-            } else if let interestsList = interestsList,
+            } else if let interestsResponse = interestsResponse,
                 let myInterests = myInterests {
                 self?.handle(
-                    interestsList: interestsList,
+                    interestsResponse: interestsResponse,
                     myInterests: myInterests)
                 
             } else {
@@ -147,9 +147,9 @@ extension EventTypesPresenter {
         }
     }
     
-    private func handle(interestsList: InterestsList, myInterests: [Int]) {
+    private func handle(interestsResponse: InterestsResponse, myInterests: [Int]) {
         interests = makeInterestsViewModel(
-            interests: interestsList.interests, myInterests: myInterests)
+            interests: interestsResponse.interests, myInterests: myInterests)
         view?.updateData()
     }
     

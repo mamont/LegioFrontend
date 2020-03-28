@@ -8,15 +8,18 @@
 
 import Foundation
 
-class Location: Decodable {
+class Location: Codable {
     
-    var city: String
-    var country: String
+    let city: String
+    let country: String
+    let address: String
+    let coordinates: [Double]
     
     enum CodingKeys: String, CodingKey {
-        
         case city = "city"
         case country = "country"
+        case address = "address"
+        case coordinates = "coordinates"
     }
     
 }

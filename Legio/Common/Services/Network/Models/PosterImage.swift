@@ -8,10 +8,10 @@
 
 import Foundation
 
-class PosterImage: Decodable {
+class PosterImage: Codable {
     
-    var defaultUrl: String?
-    var uploadcareUrl: String?
+    let defaultUrl: String?
+    let uploadcareUrl: String?
     
     enum CodingKeys: String, CodingKey {
         

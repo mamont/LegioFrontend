@@ -13,6 +13,15 @@
 		04208E64240BA38700FC5F36 /* NetworkSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04208E63240BA38700FC5F36 /* NetworkSettings.swift */; };
 		04208E66240C381B00FC5F36 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04208E65240C381B00FC5F36 /* UserProfile.swift */; };
 		04208E68240C3A8100FC5F36 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04208E67240C3A8100FC5F36 /* NetworkError.swift */; };
+		0440E07F242D072A005447BC /* EventsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440E07E242D072A005447BC /* EventsResponse.swift */; };
+		0440E088242D1ED6005447BC /* DateStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440E087242D1ED6005447BC /* DateStringConverter.swift */; };
+		0440E08A242D28A0005447BC /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440E085242D1CE7005447BC /* EventViewModel.swift */; };
+		04443F2C242FDF74005C42DE /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04443F2B242FDF74005C42DE /* EventCardView.swift */; };
+		04443F2E242FDF80005C42DE /* EventCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04443F2D242FDF80005C42DE /* EventCardView.xib */; };
+		04443F30242FE478005C42DE /* EventsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04443F2F242FE478005C42DE /* EventsContainerView.swift */; };
+		04443F32242FE49D005C42DE /* EventsContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04443F31242FE49D005C42DE /* EventsContainerView.xib */; };
+		04443F37243009AA005C42DE /* EmptyEventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04443F36243009AA005C42DE /* EmptyEventCardView.swift */; };
+		04443F39243009B7005C42DE /* EmptyEventCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04443F38243009B7005C42DE /* EmptyEventCardView.xib */; };
 		04C66A1F24215A2000584A55 /* InterestsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C66A1E24215A2000584A55 /* InterestsService.swift */; };
 		04C66A2124215A3900584A55 /* InterestsServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C66A2024215A3900584A55 /* InterestsServiceImplementation.swift */; };
 		04C66A2324215A4C00584A55 /* InterestsTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C66A2224215A4C00584A55 /* InterestsTarget.swift */; };
@@ -138,6 +147,15 @@
 		04208E63240BA38700FC5F36 /* NetworkSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSettings.swift; sourceTree = "<group>"; };
 		04208E65240C381B00FC5F36 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		04208E67240C3A8100FC5F36 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		0440E07E242D072A005447BC /* EventsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsResponse.swift; sourceTree = "<group>"; };
+		0440E085242D1CE7005447BC /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		0440E087242D1ED6005447BC /* DateStringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStringConverter.swift; sourceTree = "<group>"; };
+		04443F2B242FDF74005C42DE /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
+		04443F2D242FDF80005C42DE /* EventCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCardView.xib; sourceTree = "<group>"; };
+		04443F2F242FE478005C42DE /* EventsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsContainerView.swift; sourceTree = "<group>"; };
+		04443F31242FE49D005C42DE /* EventsContainerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsContainerView.xib; sourceTree = "<group>"; };
+		04443F36243009AA005C42DE /* EmptyEventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyEventCardView.swift; sourceTree = "<group>"; };
+		04443F38243009B7005C42DE /* EmptyEventCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyEventCardView.xib; sourceTree = "<group>"; };
 		04C66A1E24215A2000584A55 /* InterestsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsService.swift; sourceTree = "<group>"; };
 		04C66A2024215A3900584A55 /* InterestsServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsServiceImplementation.swift; sourceTree = "<group>"; };
 		04C66A2224215A4C00584A55 /* InterestsTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsTarget.swift; sourceTree = "<group>"; };
@@ -282,6 +300,27 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		0440E089242D25A2005447BC /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				0440E085242D1CE7005447BC /* EventViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		04443F2A242FDF3F005C42DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04443F2B242FDF74005C42DE /* EventCardView.swift */,
+				04443F2D242FDF80005C42DE /* EventCardView.xib */,
+				04443F2F242FE478005C42DE /* EventsContainerView.swift */,
+				04443F31242FE49D005C42DE /* EventsContainerView.xib */,
+				04443F36243009AA005C42DE /* EmptyEventCardView.swift */,
+				04443F38243009B7005C42DE /* EmptyEventCardView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		04C66A1D24215A0200584A55 /* Interests */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +341,9 @@
 		04CFB7E22414092B0092D433 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E14C3F5D23FDDC8400C43877 /* Interest.swift */,
+				04C66A24242161F600584A55 /* InterestsResponse.swift */,
+				0440E07E242D072A005447BC /* EventsResponse.swift */,
 				04CFB7EA241580850092D433 /* Profile.swift */,
 				04208E65240C381B00FC5F36 /* UserProfile.swift */,
 				04CFB7F32415868E0092D433 /* Event.swift */,
@@ -440,8 +482,6 @@
 			isa = PBXGroup;
 			children = (
 				E14C3F5C23FDDC8400C43877 /* ResponseSetTimeInvest.swift */,
-				E14C3F5D23FDDC8400C43877 /* Interest.swift */,
-				04C66A24242161F600584A55 /* InterestsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -462,6 +502,7 @@
 				E14C3F6523FDDC8400C43877 /* Network */,
 				E14C3F6823FDDC8400C43877 /* AuthValidate */,
 				E14C3F6B23FDDC8400C43877 /* LocationManager.swift */,
+				0440E087242D1ED6005447BC /* DateStringConverter.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -664,13 +705,15 @@
 		E14C3FBB23FDDC8400C43877 /* Event */ = {
 			isa = PBXGroup;
 			children = (
-				E14C3FBC23FDDC8400C43877 /* EventView.swift */,
+				04443F2A242FDF3F005C42DE /* View */,
+				0440E089242D25A2005447BC /* View Model */,
 				E14C3FBD23FDDC8400C43877 /* EventAssembler.swift */,
+				E14C3FBC23FDDC8400C43877 /* EventView.swift */,
 				E14C3FBF23FDDC8400C43877 /* EventPresenter.swift */,
-				E14C3FC023FDDC8400C43877 /* Event.storyboard */,
-				E14C3FC123FDDC8400C43877 /* EventWebView.swift */,
 				E14C3FC223FDDC8400C43877 /* EventInteractor.swift */,
 				E14C3FC323FDDC8400C43877 /* EventRouter.swift */,
+				E14C3FC123FDDC8400C43877 /* EventWebView.swift */,
+				E14C3FC023FDDC8400C43877 /* Event.storyboard */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -755,6 +798,7 @@
 				E14C3FE023FDDCFE00C43877 /* Auth.storyboard in Resources */,
 				E14C400F23FDDD3A00C43877 /* Main.storyboard in Resources */,
 				E14C402323FDDD5C00C43877 /* SFUIText-LightItalic.ttf in Resources */,
+				04443F32242FE49D005C42DE /* EventsContainerView.xib in Resources */,
 				E14C3FDA23FDDCF200C43877 /* Preset.storyboard in Resources */,
 				E14C401623FDDD4000C43877 /* Event.storyboard in Resources */,
 				E14C402823FDDD5C00C43877 /* SFUIText-RegularItalic.ttf in Resources */,
@@ -773,6 +817,8 @@
 				E14C401E23FDDD5C00C43877 /* SFUIText-Regular.ttf in Resources */,
 				E14C3FF523FDDD1200C43877 /* ProfileView.storyboard in Resources */,
 				E14C3FF823FDDD1700C43877 /* LoginMain.storyboard in Resources */,
+				04443F2E242FDF80005C42DE /* EventCardView.xib in Resources */,
+				04443F39243009B7005C42DE /* EmptyEventCardView.xib in Resources */,
 				E14C401A23FDDD4A00C43877 /* Assets.xcassets in Resources */,
 				E14C402623FDDD5C00C43877 /* SFUIText-SemiboldItalic.ttf in Resources */,
 				E14C400523FDDD2700C43877 /* EventTypes.storyboard in Resources */,
@@ -846,9 +892,11 @@
 				E14C3FE123FDDCFE00C43877 /* AuthPresenter.swift in Sources */,
 				E14C3FE423FDDCFE00C43877 /* AuthAssemler.swift in Sources */,
 				E14C3FED23FDDD0C00C43877 /* RegisterRouter.swift in Sources */,
+				0440E088242D1ED6005447BC /* DateStringConverter.swift in Sources */,
 				E14C3FEC23FDDD0C00C43877 /* RegisterPresenter.swift in Sources */,
 				04C66A2324215A4C00584A55 /* InterestsTarget.swift in Sources */,
 				E14C3FCB23FDDCBB00C43877 /* Double+Extension.swift in Sources */,
+				04443F30242FE478005C42DE /* EventsContainerView.swift in Sources */,
 				E14C3FF723FDDD1200C43877 /* ProfileInteractor.swift in Sources */,
 				E14C401923FDDD4000C43877 /* EventRouter.swift in Sources */,
 				E14C400723FDDD2E00C43877 /* RootRouter.swift in Sources */,
@@ -866,6 +914,7 @@
 				E14C3FE823FDDD0500C43877 /* FeedbackRouter.swift in Sources */,
 				E14C3FD323FDDCD100C43877 /* NotificationDelegate.swift in Sources */,
 				E14C3FEA23FDDD0500C43877 /* FeedbackInteractor.swift in Sources */,
+				04443F37243009AA005C42DE /* EmptyEventCardView.swift in Sources */,
 				E14C3FD023FDDCC000C43877 /* Interest.swift in Sources */,
 				E14C3FCC23FDDCBB00C43877 /* plugs.swift in Sources */,
 				04C66A2124215A3900584A55 /* InterestsServiceImplementation.swift in Sources */,
@@ -899,6 +948,7 @@
 				04CFB7EB241580850092D433 /* Profile.swift in Sources */,
 				E14C400223FDDD1F00C43877 /* EventTypesEntity.swift in Sources */,
 				E14C402D2401351900C43877 /* InterestPrototypeCell.swift in Sources */,
+				0440E07F242D072A005447BC /* EventsResponse.swift in Sources */,
 				E14C400B23FDDD2E00C43877 /* RootAssembler.swift in Sources */,
 				E14C400A23FDDD2E00C43877 /* RootPresenter.swift in Sources */,
 				04CFB7FA241587900092D433 /* Category.swift in Sources */,
@@ -916,8 +966,10 @@
 				E14C3FEB23FDDD0500C43877 /* FeedbackPresenter.swift in Sources */,
 				04208E68240C3A8100FC5F36 /* NetworkError.swift in Sources */,
 				E14C400323FDDD2700C43877 /* EventTypesCell.swift in Sources */,
+				04443F2C242FDF74005C42DE /* EventCardView.swift in Sources */,
 				E14C400623FDDD2E00C43877 /* RootInteractor.swift in Sources */,
 				E14C3FEE23FDDD0C00C43877 /* RegisterAssembler.swift in Sources */,
+				0440E08A242D28A0005447BC /* EventViewModel.swift in Sources */,
 				E14C3FF923FDDD1700C43877 /* LoginMainInteractor.swift in Sources */,
 				04208E60240AD70500FC5F36 /* AuthServiceImplementation.swift in Sources */,
 				E14C3FD623FDDCE200C43877 /* LocationManager.swift in Sources */,

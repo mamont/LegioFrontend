@@ -10,15 +10,15 @@ import Foundation
 
 protocol InterestsService {
     
-    func myInterests(completion: @escaping MyInterestsResponse)
-    func interestsList(completion: @escaping AllInterestsResponse)
-    func add(idMyInterests: [Int], completion: @escaping MyInterestsResponse)
-    func update(idMyInterests: [Int], completion: @escaping MyInterestsResponse)
+    func myInterests(completion: @escaping MyInterestsResult)
+    func interestsList(completion: @escaping AllInterestsResult)
+    func add(idMyInterests: [Int], completion: @escaping MyInterestsResult)
+    func update(idMyInterests: [Int], completion: @escaping MyInterestsResult)
     
 }
 
 extension InterestsService {
     
-    public typealias AllInterestsResponse = (Result<InterestsList, Error>) -> Void
-    public typealias MyInterestsResponse = (Result<[Int], Error>) -> Void
+    public typealias AllInterestsResult = (Result<InterestsResponse, Error>) -> Void
+    public typealias MyInterestsResult = (Result<[Int], Error>) -> Void
 }

@@ -8,10 +8,10 @@
 
 import Foundation
 
-class Category: Decodable {
+class Category: Codable {
     
-    var id: Int
-    var name: String
+    let id: Int
+    let name: String
     
     enum CodingKeys: String, CodingKey {
         
