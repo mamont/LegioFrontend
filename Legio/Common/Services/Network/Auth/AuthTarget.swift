@@ -35,7 +35,7 @@ extension AuthTarget: TargetType {
     
     var path: String {
         switch self {
-        case .signIn: return "/users"
+        case .signIn: return "/user-sessions"
             
         case .register: return "/users"
         }
@@ -64,14 +64,14 @@ extension AuthTarget: TargetType {
                 parameters: [
                     Keys.identity: identity,
                     Keys.password: password],
-                encoding: URLEncoding.default)
+                encoding: JSONEncoding.default)
             
         case .register(let identity, let password):
             return .requestParameters(
                 parameters: [
                     Keys.identity: identity,
                     Keys.password: password],
-                encoding: URLEncoding.default)
+                encoding: JSONEncoding.default)
             
         }
     }

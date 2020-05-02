@@ -79,7 +79,8 @@ extension AuthPresenter {
             
             switch result {
             case .success(let profile):
-                self?.interactor.save(token: profile.token)
+                guard let token = profile.token else { return }
+                self?.interactor.save(token: token)
                 self?.router.showSingIn()
                 
             case .failure(let error):

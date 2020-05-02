@@ -22,8 +22,8 @@ class RootPresenter {
 extension RootPresenter: RootPresenterProtocol {
 	
 	func viewDidLoad() {
-//		router.showLoginMain()
-        router.showEventTypes()
+		router.showLoginMain()
+//        router.showEventTypes()
 	}
 	
 }
