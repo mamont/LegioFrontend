@@ -10,16 +10,14 @@ import Foundation
 
 class UserProfile: Codable {
     
-    let login: String
-    let token: String
-    let justCreated: Bool
-    let name: String
-    let identity: String
+    let token: String?
+    let justCreated: Bool?
+    let name: String?
+    let identity: String?
     let interests: [String]?
     
     enum CodingKeys: String, CodingKey {
         
-        case login = "login"
         case name = "friendlyName"
         case identity = "identity"
         case token = "token"
