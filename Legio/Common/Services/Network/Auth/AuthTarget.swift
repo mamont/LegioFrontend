@@ -35,7 +35,7 @@ extension AuthTarget: TargetType {
     
     var path: String {
         switch self {
-        case .signIn: return "/users"
+        case .signIn: return "/user-session"
             
         case .register: return "/users"
         }
