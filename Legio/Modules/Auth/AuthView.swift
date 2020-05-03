@@ -49,7 +49,7 @@ class AuthView: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setupBackToViewControllerInStack()
+        setupReturnToPreviousViewController()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
