@@ -10,5 +10,6 @@ target 'Legio' do
 	pod 'Alamofire', '~> 5.0'
 	pod 'Moya', '~> 14.0'
 	pod 'Moya-ModelMapper'
+  pod 'KeychainSwift', '~> 19.0'
 
 end

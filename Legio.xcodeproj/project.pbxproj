@@ -137,6 +137,7 @@
 		E14C402823FDDD5C00C43877 /* SFUIText-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E14C3F4C23FDDC8400C43877 /* SFUIText-RegularItalic.ttf */; };
 		E14C402B2401351400C43877 /* InterestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3FA723FDDC8400C43877 /* InterestCell.swift */; };
 		E14C402D2401351900C43877 /* InterestPrototypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3FA823FDDC8400C43877 /* InterestPrototypeCell.swift */; };
+		E1705592245EF4E100697762 /* HasRunBefore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1705591245EF4E100697762 /* HasRunBefore.swift */; };
 		F9C518B94673FEF3995583BE /* Pods_Legio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE3A1D082D90CB0A13800D7 /* Pods_Legio.framework */; };
 /* End PBXBuildFile section */
 
@@ -275,6 +276,8 @@
 		E14C3FC123FDDC8400C43877 /* EventWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventWebView.swift; sourceTree = "<group>"; };
 		E14C3FC223FDDC8400C43877 /* EventInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInteractor.swift; sourceTree = "<group>"; };
 		E14C3FC323FDDC8400C43877 /* EventRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRouter.swift; sourceTree = "<group>"; };
+		E1705590245EEF0A00697762 /* Legio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Legio.entitlements; sourceTree = "<group>"; };
+		E1705591245EF4E100697762 /* HasRunBefore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasRunBefore.swift; sourceTree = "<group>"; };
 		FDE3A1D082D90CB0A13800D7 /* Pods_Legio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Legio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -396,6 +399,7 @@
 		AA2654A0234F54D60013B777 /* Legio */ = {
 			isa = PBXGroup;
 			children = (
+				E1705590245EEF0A00697762 /* Legio.entitlements */,
 				E14C3F6C23FDDC8400C43877 /* Application */,
 				E14C3F4E23FDDC8400C43877 /* Common */,
 				E14C3F6E23FDDC8400C43877 /* Modules */,
@@ -503,6 +507,7 @@
 				E14C3F6823FDDC8400C43877 /* AuthValidate */,
 				E14C3F6B23FDDC8400C43877 /* LocationManager.swift */,
 				0440E087242D1ED6005447BC /* DateStringConverter.swift */,
+				E1705591245EF4E100697762 /* HasRunBefore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -941,6 +946,7 @@
 				E14C401123FDDD3A00C43877 /* MainView.swift in Sources */,
 				04C66A25242161F600584A55 /* InterestsResponse.swift in Sources */,
 				E14C3FCD23FDDCBB00C43877 /* Float+Extention.swift in Sources */,
+				E1705592245EF4E100697762 /* HasRunBefore.swift in Sources */,
 				E14C3FDD23FDDCF200C43877 /* PresetView.swift in Sources */,
 				04C66A1F24215A2000584A55 /* InterestsService.swift in Sources */,
 				E14C401323FDDD4000C43877 /* EventAssembler.swift in Sources */,
@@ -1115,9 +1121,10 @@
 			baseConfigurationReference = 4017DB3B16079A081922E3B4 /* Pods-Legio.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Legio/Legio.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7J4TANDD7J;
+				DEVELOPMENT_TEAM = XBW4F9AQY3;
 				INFOPLIST_FILE = "$(SRCROOT)/Legio/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1137,9 +1144,10 @@
 			baseConfigurationReference = B60D37E4C4512EF3B7DF59E8 /* Pods-Legio.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Legio/Legio.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7J4TANDD7J;
+				DEVELOPMENT_TEAM = XBW4F9AQY3;
 				INFOPLIST_FILE = "$(SRCROOT)/Legio/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (

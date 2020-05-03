@@ -28,6 +28,10 @@ class RootView: UIViewController {
         self.configureNavigationBar(state: .hide)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupReturnToPreviousViewController()
+    }
 }
 
 extension RootView: RootViewProtocol {

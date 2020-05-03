@@ -47,6 +47,11 @@ class RegisterView: UIViewController {
         self.configureNavigationBar(state: .onlyBackButton)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupReturnToPreviousViewController()
+    }
+    
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		self.view.endEditing(true)
 	}

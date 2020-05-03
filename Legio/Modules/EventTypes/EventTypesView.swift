@@ -43,6 +43,11 @@ class EventTypesView: UIViewController {
         super.viewWillAppear(animated)
         self.configureNavigationBar(state: .onlyBackButton)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupReturnToPreviousViewController()
+    }
 	
 }
 

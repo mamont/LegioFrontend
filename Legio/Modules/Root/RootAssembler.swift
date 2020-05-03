@@ -17,11 +17,13 @@ class RootAssembler: RootAssemblerProtocol {
 	func assemble(with view: RootView) {
 		let router = RootRouter(controller: view)
 		let interactor = RootInteractor()
+        let authInteractor = AuthInteractor()
 		
 		let presenter = RootPresenter()
 		presenter.router = router
 		presenter.interactor = interactor
         presenter.view = view
+        presenter.authInteractor = authInteractor
 		
 		view.presenter = presenter
 	}
