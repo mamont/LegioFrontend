@@ -34,6 +34,11 @@ class PresetView: UIViewController {
         self.configureNavigationBar(state: .onlyBackButton)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupBackToViewControllerInStack()
+    }
+    
     @IBAction func presetSliderAction(_ sender: Any) {
         let value = presetSlider.value
         //print(value.convertToPercent())

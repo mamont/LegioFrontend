@@ -24,6 +24,11 @@ class LoginMainView: UIViewController {
         super.viewWillAppear(animated)
         self.configureNavigationBar(state: .hide)
 	}
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupBackToViewControllerInStack()
+    }
 	
 }
 

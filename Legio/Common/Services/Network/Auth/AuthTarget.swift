@@ -14,13 +14,13 @@ enum AuthTarget {
     case register(identity: String, password: String)
 }
 
+enum Keys {
+    static let contentType = "Content-Type"
+    static let identity = "identity"
+    static let password = "password"
+}
+
 extension AuthTarget: TargetType {
-    
-    private enum Keys {
-        static let contentType = "Content-Type"
-        static let identity = "identity"
-        static let password = "password"
-    }
     
     private enum Constants {
         static let contentTypeValue = "application/json"

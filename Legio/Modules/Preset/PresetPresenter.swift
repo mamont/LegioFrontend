@@ -50,15 +50,15 @@ class PresetPresenter: PresetPresenterProtocol {
     }
     
     internal func setTimeInvestTapped() {
-        self.interactor.setInvest(value: currentInvestValue) { [weak self] (response, error) in
-            guard let response = response else {
-                let errorString = error?.localizedDescription
-                return
-            }
-            self?.router.showEventTypes()
-            
-        }
-//        router.showEventTypes()
+//        self.interactor.setInvest(value: currentInvestValue) { [weak self] (response, error) in
+//            guard let response = response else {
+//                let errorString = error?.localizedDescription
+//                return
+//            }
+//            self?.router.showEventTypes()
+//
+//        }
+        router.showEventTypes()
     }
     
     internal func calculatePreset(preset: PresetEntity) -> PresetEntity {

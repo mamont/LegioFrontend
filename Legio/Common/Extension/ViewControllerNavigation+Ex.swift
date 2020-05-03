@@ -37,6 +37,44 @@ extension UIViewController {
         }
     }
     
+    // TO DO: Придумать решение лучше
+    internal func setupReturnToPreviousViewController() {
+        guard let previousViewController = self.navigationController?.previousViewController() else {
+            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+            return
+        }
+        if previousViewController.isKind(of: RootView.self) {
+            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+            return
+        }
+        
+        if previousViewController.isKind(of: AuthView.self) && !(self.navigationController?.visibleViewController?.isKind(of: RegisterView.self))! {
+            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+            return
+        }
+        
+        if previousViewController.isKind(of: RegisterView.self) {
+            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+            return
+        }
+        
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+    }
+
+}
+
+extension UINavigationController {
+    
+    ///Get previous view controller of the navigation stack
+    func previousViewController() -> UIViewController? {
+        
+        let lenght = self.viewControllers.count
+        
+        let previousViewController: UIViewController? = lenght >= 2 ? self.viewControllers[lenght-2] : nil
+        
+        return previousViewController
+    }
+    
 }
 
 // Расширение UIViewController,

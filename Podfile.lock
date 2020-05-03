@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.0.2)
+  - KeychainSwift (19.0.0)
   - ModelMapper (10.0.0):
     - ModelMapper/Core (= 10.0.0)
   - ModelMapper/Core (10.0.0)
@@ -15,22 +16,25 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.0)
+  - KeychainSwift (~> 19.0)
   - Moya (~> 14.0)
   - Moya-ModelMapper
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - KeychainSwift
     - ModelMapper
     - Moya
     - Moya-ModelMapper
 
 SPEC CHECKSUMS:
   Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
+  KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
   ModelMapper: a8dbf2a2003bf626627b9fe7c9a22b3405a30404
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Moya-ModelMapper: e3a478500921e7299804dc1ac550f1ebf3228ade
 
-PODFILE CHECKSUM: 3b2d8c7f5670e364f3b352e164d736b70ef76d0c
+PODFILE CHECKSUM: aa84b85d1d56b5905fc8483523770c79b4c91993
 
 COCOAPODS: 1.9.1

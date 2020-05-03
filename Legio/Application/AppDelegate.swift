@@ -2,6 +2,7 @@
 import UIKit
 import CoreData
 import UserNotifications
+import KeychainSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         notification.notificationCenter.delegate = notification
         notification.userRequest()
         locationManager.start()
+        if !HasRunBefore.yes {
+            let keychain = KeychainSwift()
+            keychain.clear()
+        }
         return true
 	}
 

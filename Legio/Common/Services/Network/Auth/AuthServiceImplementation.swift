@@ -8,6 +8,7 @@
 
 import Moya
 import Alamofire
+import KeychainSwift
 
 class AuthServiceImplementation: AuthService {
     
@@ -22,6 +23,9 @@ class AuthServiceImplementation: AuthService {
                 case .success(let response):
                     do {
                         let singInResponse = try response.map(UserProfile.self)
+                        let keychain = KeychainSwift()
+                        keychain.set(identity, forKey: Keys.identity)
+                        keychain.set(password, forKey: Keys.password)
                         completion(.success(singInResponse))
                         
                     } catch {

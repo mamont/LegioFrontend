@@ -11,6 +11,7 @@ import UIKit
 protocol RootRouterProtocol: class {
 	func showLoginMain()
     func showEventTypes()
+    func showPreset()
 }
 
 class RootRouter: BaseRouter {
@@ -33,6 +34,14 @@ extension RootRouter: RootRouterProtocol {
         guard let controller = UIStoryboard(name: "EventTypes", bundle: nil)
             .instantiateViewController(withIdentifier: EventTypesView.storyboardIdentifier) as? EventTypesView else { return }
         let assembler: EventTypesAssemblerProtocol = EventTypesAssembler()
+        assembler.assemble(with: controller)
+        self.show(controller)
+    }
+    
+    func showPreset() {
+        guard let controller = UIStoryboard(name: "Preset", bundle: nil)
+            .instantiateViewController(withIdentifier: PresetView.storyboardIdentifier) as? PresetView else { return }
+        let assembler: PresetAssemblerProtocol = PresetAssembler()
         assembler.assemble(with: controller)
         self.show(controller)
     }
