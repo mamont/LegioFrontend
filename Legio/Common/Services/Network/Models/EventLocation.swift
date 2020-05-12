@@ -1,5 +1,5 @@
 //
-//  Location.swift
+//  EventLocation.swift
 //  Legio
 //
 //  Created by Mac on 08.03.2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Location: Codable {
+final class EventLocation: Codable {
     
     let city: String
     let country: String

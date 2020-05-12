@@ -36,8 +36,9 @@
 		04CFB7F2241583230092D433 /* EventsTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFB7F1241583230092D433 /* EventsTarget.swift */; };
 		04CFB7F42415868E0092D433 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFB7F32415868E0092D433 /* Event.swift */; };
 		04CFB7F6241586F60092D433 /* PosterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFB7F5241586F60092D433 /* PosterImage.swift */; };
-		04CFB7F82415874A0092D433 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFB7F72415874A0092D433 /* Location.swift */; };
+		04CFB7F82415874A0092D433 /* EventLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFB7F72415874A0092D433 /* EventLocation.swift */; };
 		04CFB7FA241587900092D433 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFB7F9241587900092D433 /* Category.swift */; };
+		48B95694246B137D008F6178 /* EventSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B95693246B137D008F6178 /* EventSource.swift */; };
 		E14C3FC423FDDCAA00C43877 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3F6D23FDDC8400C43877 /* AppDelegate.swift */; };
 		E14C3FC523FDDCB000C43877 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3F5023FDDC8400C43877 /* CustomButton.swift */; };
 		E14C3FC623FDDCB400C43877 /* PresetSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C3F5123FDDC8400C43877 /* PresetSlider.swift */; };
@@ -170,9 +171,10 @@
 		04CFB7F1241583230092D433 /* EventsTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTarget.swift; sourceTree = "<group>"; };
 		04CFB7F32415868E0092D433 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		04CFB7F5241586F60092D433 /* PosterImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImage.swift; sourceTree = "<group>"; };
-		04CFB7F72415874A0092D433 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		04CFB7F72415874A0092D433 /* EventLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLocation.swift; sourceTree = "<group>"; };
 		04CFB7F9241587900092D433 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4017DB3B16079A081922E3B4 /* Pods-Legio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Legio.debug.xcconfig"; path = "Target Support Files/Pods-Legio/Pods-Legio.debug.xcconfig"; sourceTree = "<group>"; };
+		48B95693246B137D008F6178 /* EventSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSource.swift; sourceTree = "<group>"; };
 		AA26549E234F54D60013B777 /* Legio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Legio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60D37E4C4512EF3B7DF59E8 /* Pods-Legio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Legio.release.xcconfig"; path = "Target Support Files/Pods-Legio/Pods-Legio.release.xcconfig"; sourceTree = "<group>"; };
 		E14C3F3C23FDDC8400C43877 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -351,8 +353,9 @@
 				04208E65240C381B00FC5F36 /* UserProfile.swift */,
 				04CFB7F32415868E0092D433 /* Event.swift */,
 				04CFB7F5241586F60092D433 /* PosterImage.swift */,
-				04CFB7F72415874A0092D433 /* Location.swift */,
+				04CFB7F72415874A0092D433 /* EventLocation.swift */,
 				04CFB7F9241587900092D433 /* Category.swift */,
+				48B95693246B137D008F6178 /* EventSource.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -911,6 +914,7 @@
 				04CFB7F2241583230092D433 /* EventsTarget.swift in Sources */,
 				04CFB7F0241583190092D433 /* EventsServiceImplementation.swift in Sources */,
 				E14C3FFF23FDDD1F00C43877 /* EventTypesRouter.swift in Sources */,
+				48B95694246B137D008F6178 /* EventSource.swift in Sources */,
 				E14C3FCF23FDDCC000C43877 /* ResponseSetTimeInvest.swift in Sources */,
 				E14C3FFD23FDDD1700C43877 /* LoginMainView.swift in Sources */,
 				E14C400823FDDD2E00C43877 /* RootView.swift in Sources */,
@@ -934,7 +938,7 @@
 				04C66A262422A8CC00584A55 /* InterestCellViewModel.swift in Sources */,
 				E14C401523FDDD4000C43877 /* EventPresenter.swift in Sources */,
 				E14C402B2401351400C43877 /* InterestCell.swift in Sources */,
-				04CFB7F82415874A0092D433 /* Location.swift in Sources */,
+				04CFB7F82415874A0092D433 /* EventLocation.swift in Sources */,
 				E14C3FE223FDDCFE00C43877 /* AuthView.swift in Sources */,
 				04CFB7E724140AAF0092D433 /* ProfileServiceImplementation.swift in Sources */,
 				04CFB7F6241586F60092D433 /* PosterImage.swift in Sources */,

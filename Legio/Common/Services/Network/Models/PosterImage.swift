@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PosterImage: Codable {
+final class PosterImage: Codable {
     
     let preview: String?
     let original: String?
