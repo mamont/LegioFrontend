@@ -31,7 +31,7 @@ extension RootPresenter: RootPresenterProtocol {
                 router.showLoginMain()
                 return
         }
-        
+
         let auth = AuthServiceImplementation()
         auth.signIn(identity: identity, password: password) { [weak self] result in
             switch result {
@@ -40,7 +40,7 @@ extension RootPresenter: RootPresenterProtocol {
                 self?.authInteractor.save(token: token)
                 //self?.router.showEventTypes()
                 self?.router.showPreset()
-                
+
             case .failure( _):
                 self?.router.showLoginMain()
             }

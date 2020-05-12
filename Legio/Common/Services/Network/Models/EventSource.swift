@@ -1,24 +1,22 @@
 //
-//  Category.swift
+//  EventSource.swift
 //  Legio
 //
-//  Created by Mac on 08.03.2020.
+//  Created by Марат Нургалиев on 12.05.2020.
 //  Copyright © 2020 Марат Нургалиев. All rights reserved.
 //
 
 import Foundation
 
-final class Category: Codable {
+final class EventSource: Codable {
     
-    let id: Int
+    let url: String
     let name: String
-    let slug: String
     
     enum CodingKeys: String, CodingKey {
         
-        case id = "id"
+        case url = "url"
         case name = "name"
-        case slug = "slug"
     }
     
 }
