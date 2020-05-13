@@ -13,9 +13,18 @@ private enum AnimateDirection {
     case right
 }
 
+/// Протокол, уведомляющий об окончании предоставленных событий
+protocol EventsContainerViewDelegate {
+    
+    /// Метод, который сообщает, что все ивенты были показаны
+    func allEventsShowed()
+}
+
 class EventsContainerView: UIView {
     
     @IBOutlet var containerView: UIView!
+    
+    var delegate: EventsContainerViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,13 +40,13 @@ class EventsContainerView: UIView {
         
         for viewModel in viewModels {
             let eventCardView = EventCardView(frame: bounds)
-            self.addSubview(eventCardView)
+            addSubview(eventCardView)
             eventCardView.configure(viewModel: viewModel)
             
         }
         let emptyCardView = EmptyEventCardView(frame: bounds)
-        self.insertSubview(emptyCardView, at: 0)
-        self.layoutIfNeeded()
+        insertSubview(emptyCardView, at: 0)
+        layoutIfNeeded()
     }
     
     func likeHandled() {
@@ -52,10 +61,9 @@ class EventsContainerView: UIView {
     //MARK: - Private funcs
     
     private func prepareChangeEvent(direction: AnimateDirection) {
-        guard let subview = subviews.last,
-            subviews.count > 1 else {
-                return
-        }
+        
+        guard let subview = subviews.last else { return }
+        
         animateChangeSubview(
             view: subview,
             direction: direction)
@@ -65,28 +73,43 @@ class EventsContainerView: UIView {
         Bundle.main.loadNibNamed(self.nibName, owner: self, options: nil)
     }
     
+   
+    
     private func animateChangeSubview(
         view: UIView,
         direction: AnimateDirection) {
-           
-           let endXPosition: CGFloat = direction == .left
-               ? -frame.width
-               : frame.width
-           
-           UIView.animate(
+        
+        let endXPosition: CGFloat = direction == .left
+            ? -frame.width
+            : frame.width
+        
+        UIView.animate(
             withDuration: 0.3,
             delay: 0,
             options: .curveEaseIn,
             animations: {
-                   
-                   view.frame = CGRect(
-                       x: endXPosition,
-                       y: view.frame.origin.y,
-                       width: view.frame.width,
-                       height: view.frame.height)
-           }, completion: { _ in
-               view.removeFromSuperview()
-           })
-           
-       }
+                
+                view.frame = CGRect(
+                    x: endXPosition,
+                    y: view.frame.origin.y,
+                    width: view.frame.width,
+                    height: view.frame.height)
+        }, completion: { [weak self] _ in
+            view.removeFromSuperview()
+            self?.sendAllEventsShowedIfNeeded()
+        })
+        
+    }
+    
+    /// Проверяем, является ли крайнее сабвью заглушкой об окончании событий,
+    /// если да, то сообщаем об этом делегату
+    private func sendAllEventsShowedIfNeeded() {
+        
+        guard let subview = subviews.last,
+            let _ = subview as? EmptyEventCardView else {
+                return
+        }
+        
+        delegate?.allEventsShowed()
+    }
 }

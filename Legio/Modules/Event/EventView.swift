@@ -125,6 +125,30 @@ extension EventView {
     private func configureViews() {
         navigationController?.navigationBar.isHidden = false
         partyNerdyButtons.isHidden = true
+        eventsContainerView.delegate = self
     }
+    
+}
+
+
+// MARK: - EventsContainerViewDelegate
+
+extension EventView: EventsContainerViewDelegate {
+    
+    func allEventsShowed() {
+        // были показаны все ивенты, следует убрать кнопки
+        updateLikeButtonsAlpha(needHide: true)
+    }
+    
+    private func updateLikeButtonsAlpha(needHide: Bool) {
+        let alpha: CGFloat = needHide
+            ? 0
+            : 1
+        UIView.animate(withDuration: 0.1, animations: {
+            self.likeButton.alpha = alpha
+            self.dislikeButton.alpha = alpha
+        })
+    }
+    
     
 }
