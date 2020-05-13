@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 protocol RegisterViewProtocol: class {
 	func show(error: String)
+    func showError(title: String, subtitle: String)
     func updateButtonRegister(isEnabled: Bool)
     func updateLoginAlert(isHidden: Bool)
     func updateLoginProgressBar(progress: Float)
@@ -80,6 +82,11 @@ extension RegisterView: RegisterViewProtocol {
 	func show(error: String) {
 		plugsAlert(title: error)
 	}
+    
+    func showError(title: String, subtitle: String) {
+        showNotificationBanner(title: title, subtitle: subtitle, style: .danger)
+        plugsAlert(title: title)
+    }
     
     func updateButtonRegister(isEnabled: Bool) {
         self.buttonRegister.update(isEnabled: isEnabled)

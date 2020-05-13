@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 protocol EventTypesViewProtocol: class {
+    func showError(title: String, subtitle: String)
     func updateData()
     func updateCell(row: Int)
 }
@@ -52,6 +54,10 @@ class EventTypesView: UIViewController {
 }
 
 extension EventTypesView: EventTypesViewProtocol {
+    
+    func showError(title: String, subtitle: String) {
+        showNotificationBanner(title: title, subtitle: subtitle, style: .warning)
+    }
     
     internal func updateData() {
         collectionView.reloadData()

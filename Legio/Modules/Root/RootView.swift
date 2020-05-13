@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 protocol RootViewProtocol: class {
-	
+	func showError(title: String, subtitle: String)
 }
 
 class RootView: UIViewController {
@@ -35,5 +36,8 @@ class RootView: UIViewController {
 }
 
 extension RootView: RootViewProtocol {
+    func showError(title: String, subtitle: String) {
+        showNotificationBanner(title: title, subtitle: subtitle, style: .warning)
+    }
     
 }

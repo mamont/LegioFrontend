@@ -11,5 +11,6 @@ target 'Legio' do
 	pod 'Moya', '~> 14.0'
 	pod 'Moya-ModelMapper'
   pod 'KeychainSwift', '~> 19.0'
+  pod 'NotificationBannerSwift', '~> 3.0.0'
 
 end
