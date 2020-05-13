@@ -85,8 +85,7 @@ extension RegisterPresenter {
                 self?.router.showSingIn()
                 
             case .failure(let error):
-                let errorText = error.localizedDescription ?? "some network error"
-                //                self?.view?.show(error: errorText)
+                self?.view?.showError(title: "Что-то пошло не так", subtitle: error.localizedDescription)
             }
         }
     }

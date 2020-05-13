@@ -41,8 +41,9 @@ extension RootPresenter: RootPresenterProtocol {
                 //self?.router.showEventTypes()
                 self?.router.showPreset()
 
-            case .failure( _):
+            case .failure(let error):
                 self?.router.showLoginMain()
+                self?.view?.showError(title: "Что-то пошло не так", subtitle: error.localizedDescription)
             }
         }
     }

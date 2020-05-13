@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 // Протокол для объектов, имеющих идентификатор в сториборде
 protocol StoryboardIdentifiable {
@@ -59,6 +60,11 @@ extension UIViewController {
         }
         
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+    }
+    
+    internal func showNotificationBanner(title: String, subtitle: String, style: BannerStyle) {
+        let banner = NotificationBanner(title: title, subtitle: subtitle, style: style)
+        banner.show()
     }
 
 }

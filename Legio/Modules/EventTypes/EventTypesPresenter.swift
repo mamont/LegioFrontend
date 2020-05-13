@@ -104,6 +104,7 @@ extension EventTypesPresenter {
         
         dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
             if let error = interestError {
+                self?.view?.showError(title: "Ошибка", subtitle: error.localizedDescription)
                 print(error.localizedDescription)
                 
             } else if let interestsResponse = interestsResponse,
@@ -114,6 +115,7 @@ extension EventTypesPresenter {
                 
             } else {
                 let emptyDataError = NetworkError.emptyData
+                self?.view?.showError(title: "Ошибка", subtitle: emptyDataError.localizedDescription)
                 print(emptyDataError.localizedDescription)
                 
             }
@@ -140,8 +142,7 @@ extension EventTypesPresenter {
                 }
             }
         } else {
-            //TO DO: Сделать универсальный вывод алертов
-            //showError()
+            view?.showError(title: "Ошибка", subtitle: Texts.noSelectedInterests)
             print(Texts.noSelectedInterests)
 
         }

@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 protocol AuthViewProtocol: class {
     func errorData()
+    func showError(title: String, subtitle: String)
     func updateButtonLogin(isEnabled: Bool)
     func updateLoginAlert(isHidden: Bool)
     func updateLoginProgressBar(progress: Float)
@@ -80,6 +82,10 @@ extension AuthView {
 }
 
 extension AuthView: AuthViewProtocol {
+    
+    func showError(title: String, subtitle: String) {
+        showNotificationBanner(title: title, subtitle: subtitle, style: .danger)
+    }
     
     func errorData() {
         let alert = UIAlertController(title: "Error", message: "Проверьте введенные данные", preferredStyle: .alert)
