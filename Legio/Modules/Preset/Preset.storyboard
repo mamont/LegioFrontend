@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -73,49 +73,53 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="emoji nerdy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeM-eu-gTi">
-                                <rect key="frame" x="265.5" y="350" width="124.5" height="25"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="emoji party" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8S-WN-58Z">
-                                <rect key="frame" x="24" y="349.5" width="120" height="25.5"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emojiParty" translatesAutoresizingMaskIntoConstraints="NO" id="W8r-eN-98V">
+                                <rect key="frame" x="24" y="353" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="Myi-1Z-ofJ"/>
+                                    <constraint firstAttribute="width" secondItem="W8r-eN-98V" secondAttribute="height" multiplier="1:1" id="nsa-Va-hfH"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emojiNerby" translatesAutoresizingMaskIntoConstraints="NO" id="nEo-MF-tCu">
+                                <rect key="frame" x="368" y="353" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="3tO-XY-Y8y"/>
+                                    <constraint firstAttribute="width" secondItem="nEo-MF-tCu" secondAttribute="height" multiplier="1:1" id="cbE-OC-T2W"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hpE-G2-j1C" firstAttribute="leading" secondItem="Yta-lT-b6f" secondAttribute="leading" constant="24" id="2Pu-q5-keS"/>
                             <constraint firstItem="nuR-El-7dB" firstAttribute="leading" secondItem="Yta-lT-b6f" secondAttribute="leading" constant="24" id="82G-9o-GF8"/>
                             <constraint firstItem="qmI-uf-vAO" firstAttribute="top" secondItem="nuR-El-7dB" secondAttribute="bottom" constant="80" id="Abz-Op-peq"/>
-                            <constraint firstItem="qmI-uf-vAO" firstAttribute="top" secondItem="S8S-WN-58Z" secondAttribute="bottom" id="DZi-wD-Ouo"/>
+                            <constraint firstItem="qmI-uf-vAO" firstAttribute="top" secondItem="nEo-MF-tCu" secondAttribute="bottom" id="D5E-fT-2Ww"/>
+                            <constraint firstItem="W8r-eN-98V" firstAttribute="leading" secondItem="Yta-lT-b6f" secondAttribute="leading" constant="24" id="Dx7-hU-KU1"/>
                             <constraint firstItem="9qM-WF-ZEz" firstAttribute="top" secondItem="qmI-uf-vAO" secondAttribute="bottom" constant="16" id="G2Q-xx-jfF"/>
+                            <constraint firstItem="Yta-lT-b6f" firstAttribute="trailing" secondItem="nEo-MF-tCu" secondAttribute="trailing" constant="24" id="I9z-be-D5l"/>
                             <constraint firstItem="Yta-lT-b6f" firstAttribute="bottom" secondItem="hpE-G2-j1C" secondAttribute="bottom" constant="24" id="NcW-Dn-u4P"/>
-                            <constraint firstItem="Yta-lT-b6f" firstAttribute="trailing" secondItem="eeM-eu-gTi" secondAttribute="trailing" constant="24" id="R6d-Fo-QpP"/>
                             <constraint firstItem="Yta-lT-b6f" firstAttribute="trailing" secondItem="qmI-uf-vAO" secondAttribute="trailing" constant="24" id="UUH-Ox-ILB"/>
                             <constraint firstItem="X24-zx-5fs" firstAttribute="top" secondItem="qmI-uf-vAO" secondAttribute="bottom" constant="16" id="V5S-r8-gI9"/>
-                            <constraint firstItem="S8S-WN-58Z" firstAttribute="leading" secondItem="Yta-lT-b6f" secondAttribute="leading" constant="24" id="V6d-qe-Fuj"/>
                             <constraint firstItem="xvZ-PZ-nDo" firstAttribute="centerY" secondItem="q32-d9-8qS" secondAttribute="centerY" multiplier="0.4" id="cUz-Ho-cat"/>
                             <constraint firstItem="9qM-WF-ZEz" firstAttribute="leading" secondItem="Yta-lT-b6f" secondAttribute="leading" constant="24" id="dM1-kX-EkY"/>
                             <constraint firstItem="Yta-lT-b6f" firstAttribute="trailing" secondItem="nuR-El-7dB" secondAttribute="trailing" constant="24" id="feg-pO-t87"/>
                             <constraint firstItem="qmI-uf-vAO" firstAttribute="leading" secondItem="Yta-lT-b6f" secondAttribute="leading" constant="24" id="fmM-Xr-VC0"/>
                             <constraint firstItem="Yta-lT-b6f" firstAttribute="trailing" secondItem="X24-zx-5fs" secondAttribute="trailing" constant="24" id="i2e-Js-6lA"/>
+                            <constraint firstItem="qmI-uf-vAO" firstAttribute="top" secondItem="W8r-eN-98V" secondAttribute="bottom" id="j1J-MX-30N"/>
                             <constraint firstItem="xvZ-PZ-nDo" firstAttribute="leading" secondItem="Yta-lT-b6f" secondAttribute="leading" constant="24" id="niu-pS-WRE"/>
                             <constraint firstItem="nuR-El-7dB" firstAttribute="top" secondItem="xvZ-PZ-nDo" secondAttribute="bottom" constant="20" id="rGk-sl-xDx"/>
                             <constraint firstItem="Yta-lT-b6f" firstAttribute="trailing" secondItem="hpE-G2-j1C" secondAttribute="trailing" constant="24" id="sq7-zN-Ktk"/>
                             <constraint firstItem="Yta-lT-b6f" firstAttribute="trailing" secondItem="xvZ-PZ-nDo" secondAttribute="trailing" constant="24" id="w6s-1w-syr"/>
-                            <constraint firstItem="qmI-uf-vAO" firstAttribute="top" secondItem="eeM-eu-gTi" secondAttribute="bottom" id="xnB-xt-alP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yta-lT-b6f"/>
                     </view>
                     <connections>
-                        <outlet property="emojiNerdy" destination="eeM-eu-gTi" id="pda-8a-5Ji"/>
-                        <outlet property="emojiParty" destination="S8S-WN-58Z" id="PxR-05-PM3"/>
+                        <outlet property="nerbyImageView" destination="nEo-MF-tCu" id="Mth-IE-BIj"/>
+                        <outlet property="nerbyImageViewHeightConstraint" destination="3tO-XY-Y8y" id="z5p-2A-KUU"/>
                         <outlet property="nerdyPercent" destination="X24-zx-5fs" id="x0K-Q6-PZZ"/>
                         <outlet property="nextButton" destination="hpE-G2-j1C" id="O1b-lG-o6v"/>
+                        <outlet property="partyImageView" destination="W8r-eN-98V" id="ERG-4i-hLU"/>
+                        <outlet property="partyImageViewHeightConstraint" destination="Myi-1Z-ofJ" id="jaW-X9-GYz"/>
                         <outlet property="partyPercent" destination="9qM-WF-ZEz" id="1sm-kW-4Mu"/>
                         <outlet property="presetSlider" destination="qmI-uf-vAO" id="86p-41-Q1Q"/>
                     </connections>
@@ -125,4 +129,8 @@
             <point key="canvasLocation" x="-168" y="94"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="emojiNerby" width="38" height="38"/>
+        <image name="emojiParty" width="40" height="38"/>
+    </resources>
 </document>
