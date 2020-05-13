@@ -33,25 +33,22 @@ class EventCardView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
-        configureAppearance()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
-        configureAppearance()
     }
     
     
     func configure(viewModel: EventViewModel) {
-        configureAppearance()
         eventImageView.downloaded(
             from: viewModel.imageUrl,
             placeholderImage: viewModel.defaultImage,
             contentMode: .scaleAspectFill)
         
-        titleLabel.text = viewModel.name
-        dateLabel.text = viewModel.date
+        titleLabel.attributedText = configureTextLabel(string: viewModel.name)
+        dateLabel.attributedText = configureTextLabel(string: viewModel.date)
         placeLabel.text = viewModel.place
         
         detailUrlString = viewModel.detailUrlString
@@ -70,11 +67,6 @@ class EventCardView: UIView {
         addSubview(containerView)
         containerView.frame = frame
         containerView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-    }
-    
-    private func configureAppearance() {
-        titleLabel.attributedText = configureTextLabel(string: Texts.title)
-        dateLabel.attributedText = configureTextLabel(string: Texts.date)
     }
     
     private func configureTextLabel(string: String) -> NSAttributedString {
