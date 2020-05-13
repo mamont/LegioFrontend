@@ -18,11 +18,15 @@ class PresetView: UIViewController {
     @IBOutlet var nerdyPercent: UILabel!
     @IBOutlet var partyPercent: UILabel!
     @IBOutlet var presetSlider: PresetSlider!
-    @IBOutlet var emojiNerdy: UILabel!
-    @IBOutlet var emojiParty: UILabel!
     @IBOutlet var nextButton: UIButton!
+    @IBOutlet weak var partyImageView: UIImageView!
+    @IBOutlet weak var nerbyImageView: UIImageView!
+    
+    @IBOutlet weak var partyImageViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var nerbyImageViewHeightConstraint: NSLayoutConstraint!
     
     var presenter: PresetPresenterProtocol!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,43 +44,44 @@ class PresetView: UIViewController {
     }
     
     @IBAction func presetSliderAction(_ sender: Any) {
-        let value = presetSlider.value
-        //print(value.convertToPercent())
         
         guard presenter != nil else { return }
-        presenter.updateData(percents: value.convertToPercent())
         
+        let value = presetSlider.value
+        presenter.updateData(percents: value.convertToPercent())
     }
     
 }
 
+
 //MARK: - Scale by percents
-extension PresetView: PresetViewProtocol{
+
+extension PresetView: PresetViewProtocol {
     
     func setupViews() {
-        emojiNerdy.text = "🤓"
-        emojiParty.text = "🥳"
-
         nextButton.clipsToBounds = true
-        
         presetSlider.setThumbImage(UIImage(named:"OvalPreset"), for: .normal)
     }
     
     func updateViews(preset: PresetEntity, font: UIFont) {
         
-        if(preset.typePreset == .Party){
-            emojiParty.font = font
+        if (preset.typePreset == .Party) {
             partyPercent.font = font
             partyPercent.text = "\(preset.percent)%\nвеселее"
-        }else{
-            emojiNerdy.font = font
+            partyImageViewHeightConstraint.constant = font.pointSize
+            
+        } else {
             nerdyPercent.font = font
             nerdyPercent.text = "\(preset.percent)%\nумнее"
+            nerbyImageViewHeightConstraint.constant = font.pointSize
+            
         }
     }
 }
 
+
 //MARK: - Actions
+
 extension PresetView {
     
     @IBAction func buttonNextTapped(_ sender: Any) {
@@ -84,7 +89,3 @@ extension PresetView {
     }
     
 }
-
-
-
-
