@@ -33,8 +33,8 @@ class EventView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewDidLoad()
         configureViews()
+        presenter.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {

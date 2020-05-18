@@ -107,7 +107,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vnt-it-d3d" secondAttribute="trailing" constant="20" id="0oP-ti-nCN"/>
                             <constraint firstItem="hRe-wJ-Uv1" firstAttribute="bottom" secondItem="c9o-gU-86Z" secondAttribute="bottom" constant="30" id="2Uq-us-wF9"/>
-                            <constraint firstItem="cOV-Lt-fni" firstAttribute="top" secondItem="hRe-wJ-Uv1" secondAttribute="top" id="Gd7-K4-BBE"/>
+                            <constraint firstItem="cOV-Lt-fni" firstAttribute="top" secondItem="CXE-9v-FVP" secondAttribute="top" constant="-20" id="Gd7-K4-BBE"/>
                             <constraint firstItem="vnt-it-d3d" firstAttribute="top" secondItem="c9o-gU-86Z" secondAttribute="bottom" constant="50" id="M52-jL-h8G"/>
                             <constraint firstItem="wrT-o9-LVI" firstAttribute="top" secondItem="hRe-wJ-Uv1" secondAttribute="top" constant="20" id="MyU-Hd-tz2"/>
                             <constraint firstItem="c9o-gU-86Z" firstAttribute="centerX" secondItem="CXE-9v-FVP" secondAttribute="centerX" id="R6f-oV-4Jo"/>
