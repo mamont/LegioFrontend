@@ -10,6 +10,10 @@ import UIKit
 
 class InterestCell: UICollectionViewCell {
     
+    private enum Constants {
+        static let maxCellWidth: CGFloat = (UIScreen.main.bounds.width - 32) / 3 - 2
+    }
+    
     private var widthConstraint: NSLayoutConstraint?
     
     override init(frame: CGRect) {
@@ -25,7 +29,7 @@ class InterestCell: UICollectionViewCell {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 20
-        view.layer.borderColor = UIColor.init(red: 233/255, green: 237/255, blue: 255/255, alpha: 1).cgColor
+        view.layer.borderColor = UIColor.legio.legioBlue.cgColor
         view.layer.borderWidth = 2
         return view
     }()
@@ -33,7 +37,7 @@ class InterestCell: UICollectionViewCell {
     let labelName: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = .center
         label.textColor = UIColor.darkText
         label.lineBreakMode = .byTruncatingMiddle
@@ -102,25 +106,26 @@ extension InterestCell {
     private func activateConstraints() {
         
         NSLayoutConstraint.activate([
-            self.viewMain.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 8),
-            self.viewMain.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -16),
-            self.viewMain.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0),
-            self.viewMain.heightAnchor.constraint(equalToConstant: 40),
+            viewMain.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 2),
+            viewMain.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 2),
+            viewMain.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
+            viewMain.heightAnchor.constraint(equalToConstant: 40),
+            viewMain.widthAnchor.constraint(lessThanOrEqualToConstant: Constants.maxCellWidth),
             
-            self.viewHeart.topAnchor.constraint(equalTo: self.viewMain.topAnchor, constant: -8),
-            self.viewHeart.rightAnchor.constraint(equalTo: self.viewMain.rightAnchor, constant: 14),
-            self.viewHeart.heightAnchor.constraint(equalToConstant: 30),
-            self.viewHeart.widthAnchor.constraint(equalToConstant: 30),
+            viewHeart.topAnchor.constraint(equalTo: viewMain.topAnchor, constant: -8),
+            viewHeart.rightAnchor.constraint(equalTo: viewMain.rightAnchor, constant: 10),
+            viewHeart.heightAnchor.constraint(equalToConstant: 30),
+            viewHeart.widthAnchor.constraint(equalToConstant: 30),
             
-            self.labelSelectedCount.centerXAnchor.constraint(equalTo: self.viewHeart.centerXAnchor, constant: 0),
-            self.labelSelectedCount.centerYAnchor.constraint(equalTo: self.viewHeart.centerYAnchor, constant: -2),
-            self.labelSelectedCount.heightAnchor.constraint(equalToConstant: 30),
-            self.labelSelectedCount.widthAnchor.constraint(equalToConstant: 30),
+            labelSelectedCount.centerXAnchor.constraint(equalTo: viewHeart.centerXAnchor, constant: 0),
+            labelSelectedCount.centerYAnchor.constraint(equalTo: viewHeart.centerYAnchor, constant: -2),
+            labelSelectedCount.heightAnchor.constraint(equalToConstant: 30),
+            labelSelectedCount.widthAnchor.constraint(equalToConstant: 30),
                
-            self.labelName.leftAnchor.constraint(equalTo: self.viewMain.leftAnchor, constant: 16),
-            self.labelName.rightAnchor.constraint(equalTo: self.viewMain.rightAnchor, constant: -16),
-            self.labelName.topAnchor.constraint(equalTo: self.viewMain.topAnchor, constant: 0),
-            self.labelName.bottomAnchor.constraint(equalTo: self.viewMain.bottomAnchor, constant: 0)
+            labelName.leftAnchor.constraint(equalTo: viewMain.leftAnchor, constant: 16),
+            labelName.rightAnchor.constraint(equalTo: viewMain.rightAnchor, constant: -16),
+            labelName.topAnchor.constraint(equalTo: viewMain.topAnchor, constant: 0),
+            labelName.bottomAnchor.constraint(equalTo: viewMain.bottomAnchor, constant: 0)
         ])
     }
     

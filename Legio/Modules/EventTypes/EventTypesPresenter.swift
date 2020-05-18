@@ -63,7 +63,7 @@ extension EventTypesPresenter: EventTypesPresenterProtocol {
     
     internal func didSelectInterest(at row: Int) {
         interests[row].isSelected = !interests[row].isSelected
-        view?.updateData()
+        view?.updateCell(row: row)
     }
     
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,11 +33,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hiy-rW-CnI">
-                                <rect key="frame" x="0.0" y="226" width="414" height="558"/>
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hiy-rW-CnI">
+                                <rect key="frame" x="16" y="226" width="382" height="558"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ixA-Dg-5lb">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="ixA-Dg-5lb" customClass="AlignedCollectionViewFlowLayout" customModule="AlignedCollectionViewFlowLayout">
+                                    <size key="itemSize" width="80" height="44"/>
+                                    <size key="estimatedItemSize" width="80" height="44"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -67,14 +68,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NFa-L8-mO4" firstAttribute="leading" secondItem="6kS-3o-uCm" secondAttribute="leading" constant="24" id="5IP-sD-qOq"/>
-                            <constraint firstItem="hiy-rW-CnI" firstAttribute="leading" secondItem="6kS-3o-uCm" secondAttribute="leading" id="70e-Sg-C18"/>
+                            <constraint firstItem="hiy-rW-CnI" firstAttribute="leading" secondItem="6kS-3o-uCm" secondAttribute="leading" constant="16" id="70e-Sg-C18"/>
                             <constraint firstItem="14L-KU-zn2" firstAttribute="leading" secondItem="VYR-Id-Lw9" secondAttribute="leading" constant="24" id="9EY-Op-Bq4"/>
                             <constraint firstAttribute="trailing" secondItem="14L-KU-zn2" secondAttribute="trailing" constant="24" id="Iw0-RZ-NK3"/>
                             <constraint firstItem="6kS-3o-uCm" firstAttribute="trailing" secondItem="Gac-Nm-oW6" secondAttribute="trailing" constant="24" id="JuT-li-0Vj"/>
                             <constraint firstItem="Gac-Nm-oW6" firstAttribute="leading" secondItem="6kS-3o-uCm" secondAttribute="leading" constant="24" id="Tka-SJ-A03"/>
                             <constraint firstItem="hiy-rW-CnI" firstAttribute="top" secondItem="Gac-Nm-oW6" secondAttribute="bottom" constant="30" id="ci1-kZ-osd"/>
                             <constraint firstItem="NFa-L8-mO4" firstAttribute="top" secondItem="6kS-3o-uCm" secondAttribute="top" constant="40" id="goK-Tw-fFv"/>
-                            <constraint firstItem="6kS-3o-uCm" firstAttribute="trailing" secondItem="hiy-rW-CnI" secondAttribute="trailing" id="klu-sK-pGw"/>
+                            <constraint firstItem="6kS-3o-uCm" firstAttribute="trailing" secondItem="hiy-rW-CnI" secondAttribute="trailing" constant="16" id="klu-sK-pGw"/>
                             <constraint firstItem="14L-KU-zn2" firstAttribute="top" secondItem="hiy-rW-CnI" secondAttribute="bottom" constant="24" id="pSo-Ha-ngz"/>
                             <constraint firstAttribute="bottom" secondItem="14L-KU-zn2" secondAttribute="bottom" constant="24" id="sLm-m5-Ifh"/>
                             <constraint firstItem="6kS-3o-uCm" firstAttribute="trailing" secondItem="NFa-L8-mO4" secondAttribute="trailing" constant="24" id="smD-uI-kiL"/>

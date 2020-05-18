@@ -23,7 +23,7 @@ class InterestDefaultCell: UICollectionViewCell {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 20
-        view.layer.borderColor = UIColor.init(red: 233/255, green: 237/255, blue: 255/255, alpha: 1).cgColor
+        view.layer.borderColor = UIColor.legio.legioBlue.cgColor
         view.layer.borderWidth = 2
         return view
     }()

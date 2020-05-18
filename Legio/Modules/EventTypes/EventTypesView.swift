@@ -8,6 +8,7 @@
 
 import UIKit
 import NotificationBannerSwift
+import AlignedCollectionViewFlowLayout
 
 protocol EventTypesViewProtocol: class {
     func showError(title: String, subtitle: String)
@@ -28,20 +29,18 @@ class EventTypesView: UIViewController {
     
 	
 	override func viewDidLoad() {
-        
 		super.viewDidLoad()
+        
         configureUI()
         presenter.viewDidLoad()
 	}
     
     override func viewDidLayoutSubviews() {
-        
         super.viewDidLayoutSubviews()
         presenter.set(contentWidth: self.view.frame.width - 10)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         super.viewWillAppear(animated)
         self.configureNavigationBar(state: .onlyBackButton)
     }
@@ -68,6 +67,7 @@ extension EventTypesView: EventTypesViewProtocol {
         let indexPath: IndexPath = IndexPath(
             item: row,
             section: Constants.section)
+        collectionView.reloadItems(at: [indexPath])
     }
     
 }
@@ -102,10 +102,6 @@ extension EventTypesView: UICollectionViewDelegate, UICollectionViewDataSource, 
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return presenter.getCellSize(for: indexPath.row)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         collectionView.deselectItem(at: indexPath, animated: false)
@@ -122,6 +118,9 @@ extension EventTypesView {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(InterestCell.self, forCellWithReuseIdentifier: Constants.cellIdentifier)
+        let alignedFlowLayout = collectionView?.collectionViewLayout as? AlignedCollectionViewFlowLayout
+        alignedFlowLayout?.horizontalAlignment = .left
+        alignedFlowLayout?.verticalAlignment = .top
     }
     
 }

@@ -13,8 +13,8 @@ struct InterestCellViewModel {
     
     private enum Constants {
         static let defaultCellWidth: CGFloat = 30
-        static let defaultCellHeight: CGFloat = 50
-        static let cellRightSpace: CGFloat = 10
+        static let defaultCellHeight: CGFloat = 44
+        static let cellRightSpace: CGFloat = 2
     }
     
     /// Id интереса
@@ -42,17 +42,12 @@ struct InterestCellViewModel {
         name: String,
         containerWidth: CGFloat) -> CGSize {
         
-        let maxCellWidth: CGFloat = (containerWidth / 2) - 2
+        let maxCellWidth: CGFloat = (containerWidth / 4) - 2
         
         let cellHeight = Constants.defaultCellHeight
         var cellWidth = Constants.defaultCellWidth
         
-        let interestCell = InterestDefaultCell(
-            frame: CGRect(
-                x: 0,
-                y: 0,
-                width: containerWidth,
-                height: cellHeight))
+        let interestCell = InterestDefaultCell(frame: .zero)
         
         interestCell.labelName.text = name
         interestCell.contentView.layoutIfNeeded()
