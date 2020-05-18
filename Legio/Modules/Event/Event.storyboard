@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrT-o9-LVI">
-                                <rect key="frame" x="350" y="108" width="44" height="44"/>
+                                <rect key="frame" x="350" y="64" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="Qby-TK-LN5"/>
                                     <constraint firstAttribute="width" secondItem="wrT-o9-LVI" secondAttribute="height" multiplier="1:1" id="nC5-2W-T3s"/>
@@ -107,7 +107,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vnt-it-d3d" secondAttribute="trailing" constant="20" id="0oP-ti-nCN"/>
                             <constraint firstItem="hRe-wJ-Uv1" firstAttribute="bottom" secondItem="c9o-gU-86Z" secondAttribute="bottom" constant="30" id="2Uq-us-wF9"/>
-                            <constraint firstItem="cOV-Lt-fni" firstAttribute="top" secondItem="hRe-wJ-Uv1" secondAttribute="top" id="Gd7-K4-BBE"/>
+                            <constraint firstItem="cOV-Lt-fni" firstAttribute="top" secondItem="CXE-9v-FVP" secondAttribute="top" constant="-20" id="Gd7-K4-BBE"/>
                             <constraint firstItem="vnt-it-d3d" firstAttribute="top" secondItem="c9o-gU-86Z" secondAttribute="bottom" constant="50" id="M52-jL-h8G"/>
                             <constraint firstItem="wrT-o9-LVI" firstAttribute="top" secondItem="hRe-wJ-Uv1" secondAttribute="top" constant="20" id="MyU-Hd-tz2"/>
                             <constraint firstItem="c9o-gU-86Z" firstAttribute="centerX" secondItem="CXE-9v-FVP" secondAttribute="centerX" id="R6f-oV-4Jo"/>
@@ -120,6 +120,7 @@
                         <viewLayoutGuide key="safeArea" id="hRe-wJ-Uv1"/>
                     </view>
                     <navigationItem key="navigationItem" id="Bp1-Co-AoQ"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="bottomConstraintStackView" destination="2Uq-us-wF9" id="P9f-6G-ndH"/>
                         <outlet property="dislikeButton" destination="lJz-iI-2ac" id="agR-cU-ZHa"/>
