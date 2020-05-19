@@ -71,7 +71,9 @@ extension EventView {
     
     // Перенести эту логику в пресентер
     @IBAction func likeButtonTapped(_ sender: UIButton) {
-        eventsContainerView.likeHandled()
+        updateLikeButtonsAlpha(needHide: true)
+//        eventsContainerView.likeHandled()
+        
 //        if likeButton.isEnabled, dislikeButton.isEnabled {
 //            dislikeButton.isEnabled = true
 //            likeButton.isEnabled = false
@@ -126,6 +128,7 @@ extension EventView {
         navigationController?.navigationBar.isHidden = false
         partyNerdyButtons.isHidden = true
         eventsContainerView.delegate = self
+        settingsButton.isHidden = true
     }
     
 }
