@@ -11,6 +11,10 @@ import Alamofire
 
 class InterestsServiceImplementation: InterestsService {
     
+    private enum Constants {
+        static let successStatusCode = 200
+    }
+    
     private let authPlugin = AccessTokenPlugin { _ in
         NetworkSettings.shared.token
     }
@@ -52,9 +56,16 @@ class InterestsServiceImplementation: InterestsService {
                 do {
                     let interestsList = try response.map([Int].self)
                     completion(.success(interestsList))
+                    
                 } catch {
-                    completion(
-                    .failure(NetworkError.decodable))
+                    // В случае, если пользователь еще не выбирал интересы,
+                    // может прийти пустая строка, которая не является фейлом
+                    if response.statusCode == Constants.successStatusCode {
+                        completion(.success([]))
+                    } else {
+                        completion(.failure(NetworkError.decodable))
+                    }
+                    
                 }
                 
             case .failure(let error):
