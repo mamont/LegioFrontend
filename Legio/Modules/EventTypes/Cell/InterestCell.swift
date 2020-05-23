@@ -11,7 +11,7 @@ import UIKit
 class InterestCell: UICollectionViewCell {
     
     private enum Constants {
-        static let maxCellWidth: CGFloat = (UIScreen.main.bounds.width - 32) / 3 - 2
+        static let maxCellWidth: CGFloat = (UIScreen.main.bounds.width - 32) / 2 - 2
     }
     
     private var widthConstraint: NSLayoutConstraint?
@@ -38,6 +38,7 @@ class InterestCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
+        label.numberOfLines = 2
         label.textAlignment = .center
         label.textColor = UIColor.darkText
         label.lineBreakMode = .byTruncatingMiddle
@@ -79,6 +80,7 @@ class InterestCell: UICollectionViewCell {
             labelName.textColor = UIColor.darkText
             viewMain.backgroundColor = UIColor.white
         }
+        
     }
     
     public func updateCell(width: CGFloat) {
@@ -109,8 +111,8 @@ extension InterestCell {
             viewMain.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 2),
             viewMain.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 2),
             viewMain.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
-            viewMain.heightAnchor.constraint(equalToConstant: 40),
-            viewMain.widthAnchor.constraint(lessThanOrEqualToConstant: Constants.maxCellWidth),
+            viewMain.heightAnchor.constraint(equalToConstant: 44),
+            viewMain.widthAnchor.constraint(equalToConstant: Constants.maxCellWidth),
             
             viewHeart.topAnchor.constraint(equalTo: viewMain.topAnchor, constant: -8),
             viewHeart.rightAnchor.constraint(equalTo: viewMain.rightAnchor, constant: 10),
