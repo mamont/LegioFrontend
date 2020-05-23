@@ -12,9 +12,11 @@ import UIKit
 struct InterestCellViewModel {
     
     private enum Constants {
-        static let defaultCellWidth: CGFloat = 30
-        static let defaultCellHeight: CGFloat = 44
+        static let defaultCellWidth: CGFloat = (UIScreen.main.bounds.width - 32) / 2 - 2
+        static let defaultCellHeight: CGFloat = 48
         static let cellRightSpace: CGFloat = 2
+        
+        static let defaultSize = CGSize(width: defaultCellWidth, height: defaultCellHeight)
     }
     
     /// Id интереса
@@ -42,23 +44,25 @@ struct InterestCellViewModel {
         name: String,
         containerWidth: CGFloat) -> CGSize {
         
-        let maxCellWidth: CGFloat = (containerWidth / 4) - 2
+        return Constants.defaultSize
         
-        let cellHeight = Constants.defaultCellHeight
-        var cellWidth = Constants.defaultCellWidth
-        
-        let interestCell = InterestDefaultCell(frame: .zero)
-        
-        interestCell.labelName.text = name
-        interestCell.contentView.layoutIfNeeded()
-        
-        if (interestCell.viewMain.frame.width + Constants.cellRightSpace) < maxCellWidth {
-            cellWidth = interestCell.viewMain.frame.width + Constants.cellRightSpace
-        } else {
-            cellWidth = maxCellWidth
-        }
-        
-        return CGSize(width: cellWidth, height: cellHeight)
+//        let maxCellWidth: CGFloat = (containerWidth / 4) - 2
+//
+//        let cellHeight = Constants.defaultCellHeight
+//        var cellWidth = Constants.defaultCellWidth
+//
+//        let interestCell = InterestDefaultCell(frame: .zero)
+//
+//        interestCell.labelName.text = name
+//        interestCell.contentView.layoutIfNeeded()
+//
+//        if (interestCell.viewMain.frame.width + Constants.cellRightSpace) < maxCellWidth {
+//            cellWidth = interestCell.viewMain.frame.width + Constants.cellRightSpace
+//        } else {
+//            cellWidth = maxCellWidth
+//        }
+//
+//        return CGSize(width: cellWidth, height: cellHeight)
     }
     
 }
