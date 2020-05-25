@@ -24,6 +24,13 @@ protocol EventPresenterProtocol: class {
 }
 
 class EventPresenter {
+    
+    private enum Texts {
+        static let errorTitle: String = "Ошибка"
+        static let errorMessage: String = "Что-то пошло не так"
+        static let defaultEventStart = "Сегодня, 20:45"
+    }
+    
     weak var view: EventViewProtocol?
     var interactor: EventInteractorProtocol!
     var router: EventRouterProtocol!
@@ -38,10 +45,6 @@ class EventPresenter {
 
 extension EventPresenter: EventPresenterProtocol {
     
-    private enum Texts {
-        static let defaultEventStart = "Сегодня, 20:45"
-    }
-    
     func viewDidLoad() {
         interactor.getEvents(city: nil, location: nil, distance: nil, metro: nil) { [weak self] result in
             
@@ -52,7 +55,10 @@ extension EventPresenter: EventPresenterProtocol {
                 self?.showEvents()
                 
             case .failure(let error):
-                print(error.localizedDescription)
+                let message = error.localizedDescription
+                self?.view?.showError(
+                    title: Texts.errorTitle,
+                    subtitle: message)
             }
         }
     }
@@ -61,7 +67,6 @@ extension EventPresenter: EventPresenterProtocol {
         router.showProfile()
     }
    
-    
     func fetchLocationInfo(completion: @escaping (String?) -> Void) {
 //        locationManager.getWalkingDistance(destination: self.event!.coordinates) {
 //            distanceString, metres in
